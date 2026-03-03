@@ -1,0 +1,112 @@
+@import "../../styles/_variables.scss";
+
+.langSwitcher {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ========== Navbar flagi ========== */
+.currentFlag {
+  background: none;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+
+  img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  }
+
+  
+}
+
+/* ========== DROPDOWN – YANGI ODDIY DIZAYN ========== */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  padding: 6px 0;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.09);   /* soyasi kamaytirildi */
+  list-style: none;
+  min-width: 148px;
+  z-index: 100;
+  overflow: hidden;
+
+  /* Oddiy va tez animatsiya */
+  opacity: 0;
+  transform: translateY(-8px);
+  visibility: hidden;
+  transition: all 0.2s ease;   /* kamroq va tez animatsiya */
+
+  /* Ochilganda */
+  .langSwitcher:has(button:focus) &,
+  .langSwitcher:hover & {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  /* Oddiy uchburchak */
+  &::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    right: 16px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid white;
+  }
+}
+
+/* ========== Til varianti ========== */
+.langOption {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  padding: 9px 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 14px;
+  color: #1f2937;
+  transition: all 0.2s ease;
+
+  span {
+    white-space: nowrap;
+  }
+
+  img {
+    width: 32px;
+    height: 24px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  &:hover {
+    background: #f8fafc;
+    padding-left: 20px;
+  }
+
+  &.active {
+    background: rgba($primary, 0.07);
+    font-weight: 600;
+  }
+}
+
+/* ========== Mobil uchun ========== */
+@media (max-width: 767px) {
+  .dropdown {
+    min-width: 158px;
+  }
+}

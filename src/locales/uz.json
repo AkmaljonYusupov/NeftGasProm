@@ -1,0 +1,21 @@
+{
+	"truckIconAlt": "Yetkazib berish mashinasi",
+	"topBar": "Yetkazib berish xizmati ham mavjud",
+	"nav": {
+		"home": "Bosh sahifa",
+		"products": "Mahsulotlar",
+		"about": "Biz haqimizda",
+		"contact": "Bog‘lanish"
+	},
+	"hero": {
+		"title": " — zamonaviy gidroizolyatsiya yechimlari!",
+		"patternAlt": "Gidroizolyatsiya naqshlari",	
+		"leftImageAlt": "NeftGasProm qurilish maydonchasi",
+		"button": "Buyurtma berish"
+	},
+	"lang": {
+		"uz": "O‘zbek",
+		"ru": "Русский",
+		"en": "English"
+	}
+}
