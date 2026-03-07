@@ -21,7 +21,10 @@
 			"alt":{
 				"main":"Biz haqimizda"
 			},
-			"productname":"Mahsulotlar"
+			"product":{
+				"title":"Mahsulotlar"				
+			}
+
 		}
 	},
 	"lang": {

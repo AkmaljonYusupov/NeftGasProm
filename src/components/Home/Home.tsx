@@ -74,7 +74,7 @@ export default function Home() {
                 />
                 <div className={styles.overlay}>
                   <span className={styles.overlayText}>
-                    {t("home.about.productname")}
+                    {t("home.about.product.title")}
                   </span>
                   <button className={styles.overlayButton}>
                     {t("home.about.more")}
@@ -143,7 +143,7 @@ export default function Home() {
               </div>
 
               <div className={styles.modalTextSide}>
-                <h3 className={styles.modalTitle}>{selectedProduct.name}</h3>
+                <h3 className={styles.modalTitle}>{selectedProduct.name}ss</h3>
 
                 <p className={styles.modalDescription}>
                   {selectedProduct.description}
