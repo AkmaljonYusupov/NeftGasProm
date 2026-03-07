@@ -13,6 +13,17 @@
 		"leftImageAlt": "NeftGasProm qurilish maydonchasi",
 		"button": "Buyurtma berish"
 	},
+	"home":{
+		"about":{
+			"title":"Biz haqimizda",
+			"more":"Batafsil",
+			"description":"NeftGasProm — Toshkentda ro‘yxatdan o‘tgan, gidroizolyatsiya materiallari ishlab chiqarishga ixtisoslashgan mahalliy kompaniya. Bitum va bitum-polimer asosidagi mahsulotlarni ishlab chiqarib, obyektlarni namlik va suv ta’siridan ishonchli himoya bilan ta’minlaydi.  Zamonaviy texnologiyalar va sifatga qat’iy rioya qilish orqali barqaror natijalarga erishib kelmoqdamiz.",
+			"alt":{
+				"main":"Biz haqimizda"
+			},
+			"productname":"Mahsulotlar"
+		}
+	},
 	"lang": {
 		"uz": "O‘zbek",
 		"ru": "Русский",

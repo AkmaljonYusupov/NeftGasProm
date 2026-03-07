@@ -1,0 +1,447 @@
+@import "../../styles/variables";
+
+.aboutSection {
+  padding: 80px 0 120px;
+  background: white;
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: 767px) {
+    padding: 40px 0 40px;
+  }
+}
+
+.mainTitle {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 900;
+  color: #000;
+  margin-bottom: 60px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  @media (max-width: 767px) {
+    padding: 0;
+  }
+}
+
+/* Rasmlar grid – 1 qator, oraliq yo'q */
+.imagesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 0;
+
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.imageItem {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gridImage {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Hover overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 0 10px;
+}
+
+.imageItem:hover .overlay {
+  opacity: 1;
+}
+
+.overlayText {
+  color: white;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.overlayButton {
+  background: #ff9f00;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: #ff8800;
+  }
+}
+
+/* Chap rasm + o'ng matn bloki */
+.mainContent {
+  position: relative;
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  margin-top: 0;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.leftImageBlock {
+  flex: 1;
+}
+
+.mainImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.rightTextBlock {
+  flex: 1;
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+}
+
+.aboutImgRight {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 480px;
+  transform: rotate(180deg);
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.logoText {
+  margin-top: 150px;
+  font-size: 42px;
+  font-weight: 900;
+  color: #0055ff;
+  margin-bottom: 32px;
+
+  @media (max-width: 768px) {
+    margin-top: 50px;
+  }
+}
+
+.description {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #000;
+  margin-bottom: 20px;
+  font-weight: 500;
+
+  @media (max-width: 768px) {
+    text-align: start;
+    padding: 0 20px;
+  }
+}
+
+.moreBtn {
+  background: #0055ff;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 16px 48px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 85, 255, 0.3);
+  transition: all 0.3s ease;
+  align-self: flex-start;
+
+  &:hover {
+    background: #0044cc;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0, 85, 255, 0.4);
+  }
+
+  @media (max-width: 768px) {
+    align-self: center;
+    width: 100%;
+    max-width: 340px;
+  }
+}
+
+/* ────────────────────────────────────────────────
+   MODAL — responsiv + matn scroll bilan
+   Gorizontal (x o‘qi) scrollni butunlay olib tashladik
+───────────────────────────────────────────────── */
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.4s ease;
+  overflow: hidden;                     /* overlayda hech qanday scroll bo‘lmasin */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modalContent {
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  border-radius: 20px;
+  width: 90%;
+  max-width: 1200px;
+  max-height: 90vh;
+  overflow: hidden;                     /* umumiy modalda scroll bo‘lmasin */
+  overflow-x: hidden;                   /* gorizontal scrollni taqiqlaymiz */
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: 1024px) {
+    width: 94%;
+    max-width: 1000px;
+  }
+
+  @media (max-width: 768px) {
+    width: 96%;
+    border-radius: 16px;
+    flex-direction: column;
+    overflow-x: hidden;                 /* mobil holatda ham gorizontal scroll yo‘q */
+  }
+
+  @media (max-width: 480px) {
+    width: 98%;
+    border-radius: 12px;
+  }
+}
+
+.modalClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(0, 0, 0, 0.65);
+  color: white;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.25s ease;
+
+  &:hover {
+    background: #ff4444;
+    transform: rotate(90deg) scale(1.1);
+  }
+
+  @media (max-width: 480px) {
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
+  }
+}
+
+.modalInner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;                   /* ichki konteyner ham gorizontal chiqib ketmasin */
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.modalImageSide {
+  flex: 0 0 52%;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+  overflow: hidden;
+
+  @media (max-width: 1024px) {
+    flex: 0 0 48%;
+    padding: 28px 20px;
+  }
+
+  @media (max-width: 768px) {
+    flex: 0 0 auto;
+    max-height: 45vh;
+    padding: 20px 16px;
+    order: 1;
+  }
+
+  @media (max-width: 480px) {
+    max-height: 40vh;
+    padding: 16px 12px;
+  }
+}
+
+.modalImage {
+  max-width: 100%;
+  max-height: 82vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  display: block;
+
+  @media (max-width: 768px) {
+    max-height: 100%;
+  }
+}
+
+.modalTextSide {
+  flex: 1;
+  padding: 48px 56px 48px 40px;
+  overflow-y: auto;                     // faqat vertical scroll
+  overflow-x: hidden;                   // gorizontal scrollni butunlay taqiqlaymiz
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #aaa #f5f5f5;
+
+  /* matn chegaradan chiqib ketmasligi uchun majburiy qoidalar */
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+    border: 2px solid #f5f5f5;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #888;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 40px 48px 40px 32px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 32px 28px;
+    max-height: 55vh;
+    order: 2;
+  }
+
+  @media (max-width: 480px) {
+    padding: 24px 20px;
+    max-height: 50vh;
+  }
+}
+
+.modalTitle {
+  font-size: 36px;
+  font-weight: 800;
+  color: #0055ff;
+  margin: 0 0 24px 0;
+  line-height: 1.2;
+  word-break: break-word;               // sarlavha ham chiqib ketmasin
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 24px;
+  }
+}
+
+.modalDescription {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 32px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+}
+
+.modalContactBtn {
+  background: linear-gradient(90deg, #ff9f00, #ff8800);
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 14px 48px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(255, 159, 0, 0.3);
+  align-self: flex-start;
+  max-width: 100%;                      // tugma kenglikdan chiqib ketmasin
+  box-sizing: border-box;
+  white-space: nowrap;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 36px rgba(255, 159, 0, 0.45);
+  }
+
+  @media (max-width: 768px) {
+    align-self: center;
+    padding: 14px 60px;
+    width: 100%;
+    max-width: 320px;
+  }
+}
