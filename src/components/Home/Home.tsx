@@ -10,11 +10,19 @@ import aboutImgRight from "../../assets/images/hero-right.png"
 
 import styles from "./Home.module.scss"
 
-export default function Home() {
-  const { t } = useTranslation();
-  const [selectedProduct, setSelectedProduct] = useState(null);
+type Product = {
+  id: number
+  image: string
+  name: string
+  description: string
+}
 
-  const products = [
+export default function Home() {
+  const { t } = useTranslation()
+
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
+
+  const products: Product[] = [
     {
       id: 1,
       image: aboutProducts1,
@@ -51,7 +59,7 @@ export default function Home() {
         "Yuzani tayyorlash uchun primer. Mahsulotlarning yaxshi yopishishi uchun zarur."
       ),
     },
-  ];
+  ]
 
   return (
     <main className={styles.home}>
@@ -72,10 +80,12 @@ export default function Home() {
                   className={styles.gridImage}
                   loading="lazy"
                 />
+
                 <div className={styles.overlay}>
                   <span className={styles.overlayText}>
                     {t("home.about.product.title")}
                   </span>
+
                   <button className={styles.overlayButton}>
                     {t("home.about.more")}
                   </button>
@@ -143,18 +153,22 @@ export default function Home() {
               </div>
 
               <div className={styles.modalTextSide}>
-                <h3 className={styles.modalTitle}>{selectedProduct.name}ss</h3>
+                <h3 className={styles.modalTitle}>
+                  {selectedProduct.name}
+                </h3>
 
                 <p className={styles.modalDescription}>
                   {selectedProduct.description}
                 </p>
 
-                <button className={styles.modalContactBtn}>Bog‘lanish</button>
+                <button className={styles.modalContactBtn}>
+                  Bog‘lanish
+                </button>
               </div>
             </div>
           </div>
         </div>
       )}
     </main>
-  );
+  )
 }
