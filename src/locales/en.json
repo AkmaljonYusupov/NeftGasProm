@@ -1,21 +1,54 @@
 {
   "truckIconAlt": "Delivery truck",
-  "topBar": "Delivery service available",
+  "topBar": "Delivery service is also available",
   "nav": {
     "home": "Home",
     "products": "Products",
-    "about": "About us",
+    "about": "About Us",
     "contact": "Contact"
   },
   "hero": {
     "title": " — modern waterproofing solutions!",
     "patternAlt": "Waterproofing patterns",
     "leftImageAlt": "NeftGasProm construction site",
-    "button": "Place Order"
+    "button": "Order Now"
+  },
+  "home": {
+    "about": {
+      "title": "About Us",
+      "more": "More Details",
+      "description": "NeftGasProm is a local company registered in Tashkent, specializing in the production of waterproofing materials. We produce bitumen and bitumen-polymer based products, providing reliable protection of facilities from moisture and water. Thanks to modern technologies and strict quality control, we achieve stable results.",
+      "alt": {
+        "main": "About Us"
+      },
+      "product": {
+        "title": "Products"
+      }
+    },
+    "product1": {
+      "name": "MASTIC №1 BITUMEN",
+      "desc": "Professional waterproofing mastic. Available in 9 kg buckets. 100% protection against moisture and water."
+    },
+    "product2": {
+      "name": "POLYMER-BITUMEN MASTIC",
+      "desc": "High elasticity and heat resistance. Ideal for construction and roofing works."
+    },
+    "product3": {
+      "name": "WATERPROOF COATING",
+      "desc": "Waterproof coating. Specially designed for concrete and metal surfaces."
+    },
+    "product4": {
+      "name": "BITUMEN PRIMER",
+      "desc": "Surface preparation primer. Necessary for good adhesion of products."
+    }
   },
   "lang": {
     "uz": "O‘zbek",
     "ru": "Русский",
     "en": "English"
+  },
+  "common": {
+    "close": "Close",
+    "contact": "Contact Us"
   }
 }

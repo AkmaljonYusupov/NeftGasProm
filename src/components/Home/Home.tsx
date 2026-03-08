@@ -10,6 +10,7 @@ import aboutImgRight from "../../assets/images/hero-right.png"
 
 import styles from "./Home.module.scss"
 
+// Mahsulot tipi
 type Product = {
   id: number
   image: string
@@ -19,54 +20,51 @@ type Product = {
 
 export default function Home() {
   const { t } = useTranslation()
-
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
 
+  // Mahsulotlar ro'yxati — nom va tavsif tarjimadan olinadi
   const products: Product[] = [
     {
       id: 1,
       image: aboutProducts1,
-      name: "MASTIK №1 BITUMEN",
+      name: t("home.product1.name"),
       description: t(
-        "home.product1.desc",
-        "Professional gidroizolyatsiya mastikasi. 9 kg chelakda mavjud. Namlik va suvdan 100% himoya."
-      ),
+        "home.product1.desc"),
     },
     {
       id: 2,
       image: aboutProducts2,
-      name: "POLIMER-BITUM MASTIK",
+      name: t("home.product2.name"),
       description: t(
-        "home.product2.desc",
-        "Yuqori elastiklik va issiqlikka chidamli. Qurilish va tom yopish uchun ideal."
-      ),
+        "home.product2.desc"),
     },
     {
       id: 3,
       image: aboutProducts3,
-      name: "GIDROIZOLYATSION QOPLAMA",
+      name: t("home.product3.name"),
       description: t(
-        "home.product3.desc",
-        "Suv o'tkazmaydigan qoplama. Beton va metall yuzalar uchun maxsus."
+        "home.product3.desc"
       ),
     },
     {
       id: 4,
       image: aboutProducts4,
-      name: "BITUM-PRIMER",
+      name: t("home.product4.name", "BITUM-PRIMER"),
       description: t(
-        "home.product4.desc",
-        "Yuzani tayyorlash uchun primer. Mahsulotlarning yaxshi yopishishi uchun zarur."
+        "home.product4.desc"
       ),
     },
   ]
 
   return (
     <main className={styles.home}>
+      {/* About Section */}
       <section className={styles.aboutSection}>
         <div className={styles.container}>
+          {/* Sarlavha */}
           <h2 className={styles.mainTitle}>{t("home.about.title")}</h2>
 
+          {/* Mahsulotlar grid */}
           <div className={styles.imagesGrid}>
             {products.map((product) => (
               <div
@@ -94,6 +92,7 @@ export default function Home() {
             ))}
           </div>
 
+          {/* Chapda katta rasm + o'ngda matn */}
           <div className={styles.mainContent}>
             <div className={styles.leftImageBlock}>
               <img
@@ -112,7 +111,7 @@ export default function Home() {
               </p>
 
               <button className={styles.moreBtn}>
-                {t("home.about.more", "Batafsil")}
+                {t("home.about.more")}
               </button>
 
               <img
@@ -125,7 +124,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Modal */}
+      {/* Modal oynasi */}
       {selectedProduct && (
         <div
           className={styles.modalOverlay}
@@ -138,12 +137,13 @@ export default function Home() {
             <button
               className={styles.modalClose}
               onClick={() => setSelectedProduct(null)}
-              aria-label="Yopish"
+              aria-label={t("common.close")}
             >
               ×
             </button>
 
             <div className={styles.modalInner}>
+              {/* Rasm tarafi */}
               <div className={styles.modalImageSide}>
                 <img
                   src={selectedProduct.image}
@@ -152,6 +152,7 @@ export default function Home() {
                 />
               </div>
 
+              {/* Matn tarafi */}
               <div className={styles.modalTextSide}>
                 <h3 className={styles.modalTitle}>
                   {selectedProduct.name}
@@ -162,13 +163,14 @@ export default function Home() {
                 </p>
 
                 <button className={styles.modalContactBtn}>
-                  Bog‘lanish
+                  {t("common.contact")}
                 </button>
               </div>
             </div>
           </div>
         </div>
       )}
+
     </main>
   )
 }

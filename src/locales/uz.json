@@ -18,6 +18,7 @@
 			"title":"Biz haqimizda",
 			"more":"Batafsil",
 			"description":"NeftGasProm — Toshkentda ro‘yxatdan o‘tgan, gidroizolyatsiya materiallari ishlab chiqarishga ixtisoslashgan mahalliy kompaniya. Bitum va bitum-polimer asosidagi mahsulotlarni ishlab chiqarib, obyektlarni namlik va suv ta’siridan ishonchli himoya bilan ta’minlaydi.  Zamonaviy texnologiyalar va sifatga qat’iy rioya qilish orqali barqaror natijalarga erishib kelmoqdamiz.",
+			
 			"alt":{
 				"main":"Biz haqimizda"
 			},
@@ -25,11 +26,32 @@
 				"title":"Mahsulotlar"				
 			}
 
-		}
+		},
+		"product1": {
+    "name": "MASTIK №1 BITUMEN",
+    "desc": "Professional gidroizolyatsiya mastikasi. 9 kg chelakda mavjud. Namlik va suvdan 100% himoya."
+  },
+  "product2": {
+    "name": "POLIMER-BITUM MASTIK",
+    "desc": "Yuqori elastiklik va issiqlikka chidamli. Qurilish va tom yopish uchun ideal."
+  },
+  "product3": {
+    "name": "GIDROIZOLYATSION QOPLAMA",
+    "desc": "Suv o'tkazmaydigan qoplama. Beton va metall yuzalar uchun maxsus."
+  },
+  "product4": {
+    "name": "BITUM-PRIMER",
+    "desc": "Yuzani tayyorlash uchun primer. Mahsulotlarning yaxshi yopishishi uchun zarur."
+  }
+
 	},
 	"lang": {
 		"uz": "O‘zbek",
 		"ru": "Русский",
 		"en": "English"
-	}
+	},
+	"common": {
+  "close": "Yopish",
+  "contact": "Bog‘lanish"
+}
 }
