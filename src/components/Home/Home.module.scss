@@ -781,6 +781,7 @@
 @media (max-width: 768px) {
   .mapSection {
     padding: 16px 0 28px;
+    margin: auto;
   }
 
   .mapWrapper {
@@ -796,5 +797,9 @@
   .mapWrapper {
     height: 200px;
     border-radius: 16px;
+  }
+   .mapSection {
+    
+    margin: auto;
   }
 }

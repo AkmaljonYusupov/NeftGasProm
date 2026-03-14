@@ -327,7 +327,7 @@ export default function Home() {
           <div className={styles.mapWrapper}>
             <iframe
               className={styles.mapFrame}
-              src="https://maps.app.goo.gl/rmnDtijJxY3GLDii9"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d95927.8162321638!2d69.12541983396183!3d41.29267010432548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2s!4v1773486841222!5m2!1sru!2s"
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -339,3 +339,4 @@ export default function Home() {
     </main>
   )
 }
+
