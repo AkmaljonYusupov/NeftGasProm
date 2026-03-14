@@ -20,6 +20,22 @@
 		"partners": {
 			"title": "HAMKORLARIMIZ"
 		},
+		"testimonial": {
+			"title": "MIJOZLARIMIZ FIKRI",
+			"desc": "Biz bilan hamkorlik qilgan kompaniyalar va insonlar ishimiz sifatini hamda layoqatimizni yuqori baholaydilar.",
+			"client1":{
+				"name": "Qayumov Dilshod",
+				"text": "Mahsulot juda sifatli, jahon bozori talablariga ham bemalol javob beradi"
+			},
+			"client2":{
+				"name": "Hasanov Zafar",
+				"text": "Servis ham o‘z o‘rnida. Mahsulotlar yetib kelishida muammo bo‘lmadi."
+			},
+			"client3":{
+				"name": "Keldiyorov Samandar",
+				"text": "Barcha tanishlarimga bemalol tavsiya qilsam bo‘ladi. Ishonchli brend."
+			}
+		},
 		"about": {
 			"title": "Biz haqimizda",
 			"more": "Batafsil",

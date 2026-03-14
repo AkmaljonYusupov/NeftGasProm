@@ -280,6 +280,50 @@ export default function Home() {
   </div>
 </section>
 
+{/* MIJOZLARIMIZ FIKRI */}
+<section className={styles.testimonialSection}>
+  <div className={styles.container}>
+    <h2 className={styles.testimonialTitle}>
+      {t("home.testimonial.title")}
+    </h2>
+    <p className={styles.testimonialDesc}>
+      {t("home.testimonial.desc")}
+    </p>
+    <div className={styles.testimonialGrid}>
+      <div className={styles.testimonialCard}>
+        <div className={styles.stars}>★★★★★</div>
+        <h3 className={styles.clientName}>
+         {t("home.testimonial.client1.name")}
+        </h3>
+        <p className={styles.clientText}>
+          {t("home.testimonial.client1.text")}
+        </p>
+      </div>
+      <div className={styles.testimonialCard}>
+        <div className={styles.stars}>★★★★★</div>
+        <h3 className={styles.clientName}>
+          {t("home.testimonial.client2.name")}
+        </h3>
+        <p className={styles.clientText}>
+          {t("home.testimonial.client2.text")}
+        </p>
+      </div>
+      <div className={styles.testimonialCard}>
+        <div className={styles.stars}>★★★★★</div>
+        <h3 className={styles.clientName}>
+          {t("home.testimonial.client3.name")}
+        </h3>
+        <p className={styles.clientText}>
+          {t("home.testimonial.client3.text")}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
     </main>
   )
 }

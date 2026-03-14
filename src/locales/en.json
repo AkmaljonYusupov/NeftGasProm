@@ -20,6 +20,22 @@
     "partners": {
       "title": "OUR PARTNERS"
     },
+    "testimonial": {
+      "title": "OUR CLIENTS' FEEDBACK",
+      "desc": "Companies and individuals who have worked with us highly appreciate the quality of our work and our professionalism.",
+      "client1": {
+        "name": "Qayumov Dilshod",
+        "text": "The product is very high quality and fully meets the requirements of the global market."
+      },
+      "client2": {
+        "name": "Hasanov Zafar",
+        "text": "The service is excellent. There were no issues with product delivery."
+      },
+      "client3": {
+        "name": "Keldiyorov Samandar",
+        "text": "I can confidently recommend it to all my acquaintances. A reliable brand."
+      }
+    },
     "about": {
       "title": "About Us",
       "more": "More Details",
