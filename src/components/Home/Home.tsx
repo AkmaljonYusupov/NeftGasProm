@@ -321,6 +321,21 @@ export default function Home() {
   </div>
 </section>
 
+{/* Map */}
+<section className={styles.mapSection}>
+  <div className={styles.container}>
+    <div className={styles.mapWrapper}>
+      <iframe
+        className={styles.mapFrame}
+        src="https://www.google.com/maps?q=Tashkent&output=embed"
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        title={t("home.map.title")}
+      />
+    </div>
+  </div>
+</section>
+
 
 
 

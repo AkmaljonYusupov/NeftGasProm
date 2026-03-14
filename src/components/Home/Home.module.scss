@@ -750,6 +750,49 @@
   }
 }
 
+// Map
+.mapSection {
+  padding: 20px 0 34px;
+  background: $bg-white;
+}
+
+.mapWrapper {
+  width: 100%;
+  height: 325px;
+  border: 4px solid #f07a1f;
+  border-radius: 26px;
+  overflow: hidden;
+  background: #e9e9e9;
+}
+
+.mapFrame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+@media (max-width: 992px) {
+  .mapWrapper {
+    height: 280px;
+    border-radius: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mapSection {
+    padding: 16px 0 28px;
+  }
+
+  .mapWrapper {
+    height: 240px;
+    border-width: 3px;
+    border-radius: 18px;
+  }
+}
+
 @media (max-width: 480px) {
-  
+  .mapWrapper {
+    height: 200px;
+    border-radius: 16px;
+  }
 }
