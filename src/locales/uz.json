@@ -14,6 +14,9 @@
 		"button": "Buyurtma berish"
 	},
 	"home":{
+		"social": {
+  "title": "IJTIMOIY TARMOQDA BIZ"
+},
 		"about":{
 			"title":"Biz haqimizda",
 			"more":"Batafsil",

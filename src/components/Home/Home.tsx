@@ -7,7 +7,14 @@ import aboutProducts2 from "../../assets/images/about-products2.jpg"
 import aboutProducts3 from "../../assets/images/about-products3.jpg"
 import aboutProducts4 from "../../assets/images/about-products4.jpg"
 import aboutImgRight from "../../assets/images/hero-right.png"
+import social1 from "../../assets/images/social1.png"
+import social2 from "../../assets/images/social2.png"
+import social3 from "../../assets/images/social3.png"
+import social4 from "../../assets/images/social4.png"
+import social5 from "../../assets/images/social5.png"
 
+
+import { FiInstagram } from 'react-icons/fi'
 import styles from "./Home.module.scss"
 
 // Mahsulot tipi
@@ -170,6 +177,56 @@ export default function Home() {
           </div>
         </div>
       )}
+
+      
+      {/* Social media */}
+ <section className={styles.socialSection}>
+  <div className={styles.container}>
+    <h2 className={styles.socialTitle}>
+      {t("home.social.title")}
+    </h2>
+
+    <div className={styles.socialGrid}>
+      {/* katta rasm */}
+      <div className={`${styles.socialCard} ${styles.socialCardLarge}`}>
+        <img src={social1} alt="social 1" loading="lazy" />
+        <a href="#" className={styles.socialIcon}>
+          <FiInstagram />
+        </a>
+      </div>
+
+      {/* o‘ng yuqori */}
+      <div className={styles.socialCard}>
+        <img src={social2} alt="social 2" loading="lazy" />
+        <a href="#" className={styles.socialIcon}>
+          <FiInstagram />
+        </a>
+      </div>
+
+      <div className={styles.socialCard}>
+        <img src={social3} alt="social 3" loading="lazy" />
+        <a href="#" className={styles.socialIcon}>
+          <FiInstagram />
+        </a>
+      </div>
+
+      {/* pastki qator */}
+      <div className={styles.socialCard}>
+        <img src={social4} alt="social 4" loading="lazy" />
+        <a href="#" className={styles.socialIcon}>
+          <FiInstagram />
+        </a>
+      </div>
+
+      <div className={styles.socialCard}>
+        <img src={social5} alt="social 5" loading="lazy" />
+        <a href="#" className={styles.socialIcon}>
+          <FiInstagram />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
     </main>
   )
