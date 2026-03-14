@@ -13,6 +13,36 @@ import social3 from "../../assets/images/social3.png"
 import social4 from "../../assets/images/social4.png"
 import social5 from "../../assets/images/social5.png"
 
+// partner logolari
+import ACWApowerLogo from "../../assets/partner/ACWA_Power_logo.png"
+
+import BIgroup from "../../assets/partner/BIgroupTashkent.png"
+import ChinaConstructionBank from "../../assets/partner/China_Construction_Bank_Logo.png"
+import ClikerHolding from "../../assets/partner/Cliker-Holding-Color-Logo-New.png"
+import EnterEngineering from "../../assets/partner/EnterEngineering.png"
+import Epsilon from "../../assets/partner/epsilon-og-image.png"
+import KocConstruction from "../../assets/partner/KocConstruction.png"
+import NGMK from "../../assets/partner/NGMK.png"
+import UEDconstruction from "../../assets/partner/UEDconstruction.png"
+import UzbekGidroEnergo from "../../assets/partner/UzbekGidroEnergo.png"
+import UzbekistanTemirYollari from "../../assets/partner/Uzbekistantemiryollari.png"
+import Uzelectroapparat from "../../assets/partner/Uzelectroapparat.png"
+
+const partners = [
+  ACWApowerLogo,
+  BIgroup,
+  ClikerHolding,
+  ChinaConstructionBank,
+  EnterEngineering,
+  Epsilon,
+  KocConstruction,
+  NGMK,
+  UzbekGidroEnergo,
+  UEDconstruction,
+  UzbekistanTemirYollari,
+  Uzelectroapparat
+]
+
 
 import { FiInstagram } from 'react-icons/fi'
 import styles from "./Home.module.scss"
@@ -224,6 +254,28 @@ export default function Home() {
           <FiInstagram />
         </a>
       </div>
+    </div>
+  </div>
+</section>
+
+{/* Partnerlar bo'limi */}
+<section className={styles.partnersSection}>
+  <div className={styles.container}>
+    <h2 className={styles.partnersTitle}>
+      {t("home.partners.title")}
+    </h2>
+
+    <div className={styles.partnersGrid}>
+      {partners.map((logo, index) => (
+        <div key={index} className={styles.partnerCard}>
+          <img
+            src={logo}
+            alt={`partner-${index}`}
+            className={styles.partnerLogo}
+            loading="lazy"
+          />
+        </div>
+      ))}
     </div>
   </div>
 </section>
