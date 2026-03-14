@@ -208,137 +208,133 @@ export default function Home() {
         </div>
       )}
 
-      
+
       {/* Social media */}
- <section className={styles.socialSection}>
-  <div className={styles.container}>
-    <h2 className={styles.socialTitle}>
-      {t("home.social.title")}
-    </h2>
+      <section className={styles.socialSection}>
+        <div className={styles.container}>
+          <h2 className={styles.socialTitle}>
+            {t("home.social.title")}
+          </h2>
 
-    <div className={styles.socialGrid}>
-      {/* katta rasm */}
-      <div className={`${styles.socialCard} ${styles.socialCardLarge}`}>
-        <img src={social1} alt="social 1" loading="lazy" />
-        <a href="#" className={styles.socialIcon}>
-          <FiInstagram />
-        </a>
-      </div>
+          <div className={styles.socialGrid}>
+            {/* katta rasm */}
+            <div className={`${styles.socialCard} ${styles.socialCardLarge}`}>
+              <img src={social1} alt="social 1" loading="lazy" />
+              <a href="#" className={styles.socialIcon}>
+                <FiInstagram />
+              </a>
+            </div>
 
-      {/* o‘ng yuqori */}
-      <div className={styles.socialCard}>
-        <img src={social2} alt="social 2" loading="lazy" />
-        <a href="#" className={styles.socialIcon}>
-          <FiInstagram />
-        </a>
-      </div>
+            {/* o‘ng yuqori */}
+            <div className={styles.socialCard}>
+              <img src={social2} alt="social 2" loading="lazy" />
+              <a href="#" className={styles.socialIcon}>
+                <FiInstagram />
+              </a>
+            </div>
 
-      <div className={styles.socialCard}>
-        <img src={social3} alt="social 3" loading="lazy" />
-        <a href="#" className={styles.socialIcon}>
-          <FiInstagram />
-        </a>
-      </div>
+            <div className={styles.socialCard}>
+              <img src={social3} alt="social 3" loading="lazy" />
+              <a href="#" className={styles.socialIcon}>
+                <FiInstagram />
+              </a>
+            </div>
 
-      {/* pastki qator */}
-      <div className={styles.socialCard}>
-        <img src={social4} alt="social 4" loading="lazy" />
-        <a href="#" className={styles.socialIcon}>
-          <FiInstagram />
-        </a>
-      </div>
+            {/* pastki qator */}
+            <div className={styles.socialCard}>
+              <img src={social4} alt="social 4" loading="lazy" />
+              <a href="#" className={styles.socialIcon}>
+                <FiInstagram />
+              </a>
+            </div>
 
-      <div className={styles.socialCard}>
-        <img src={social5} alt="social 5" loading="lazy" />
-        <a href="#" className={styles.socialIcon}>
-          <FiInstagram />
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-{/* Partnerlar bo'limi */}
-<section className={styles.partnersSection}>
-  <div className={styles.container}>
-    <h2 className={styles.partnersTitle}>
-      {t("home.partners.title")}
-    </h2>
-
-    <div className={styles.partnersGrid}>
-      {partners.map((logo, index) => (
-        <div key={index} className={styles.partnerCard}>
-          <img
-            src={logo}
-            alt={`partner-${index}`}
-            className={styles.partnerLogo}
-            loading="lazy"
-          />
+            <div className={styles.socialCard}>
+              <img src={social5} alt="social 5" loading="lazy" />
+              <a href="#" className={styles.socialIcon}>
+                <FiInstagram />
+              </a>
+            </div>
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
-{/* MIJOZLARIMIZ FIKRI */}
-<section className={styles.testimonialSection}>
-  <div className={styles.container}>
-    <h2 className={styles.testimonialTitle}>
-      {t("home.testimonial.title")}
-    </h2>
-    <p className={styles.testimonialDesc}>
-      {t("home.testimonial.desc")}
-    </p>
-    <div className={styles.testimonialGrid}>
-      <div className={styles.testimonialCard}>
-        <div className={styles.stars}>★★★★★</div>
-        <h3 className={styles.clientName}>
-         {t("home.testimonial.client1.name")}
-        </h3>
-        <p className={styles.clientText}>
-          {t("home.testimonial.client1.text")}
-        </p>
-      </div>
-      <div className={styles.testimonialCard}>
-        <div className={styles.stars}>★★★★★</div>
-        <h3 className={styles.clientName}>
-          {t("home.testimonial.client2.name")}
-        </h3>
-        <p className={styles.clientText}>
-          {t("home.testimonial.client2.text")}
-        </p>
-      </div>
-      <div className={styles.testimonialCard}>
-        <div className={styles.stars}>★★★★★</div>
-        <h3 className={styles.clientName}>
-          {t("home.testimonial.client3.name")}
-        </h3>
-        <p className={styles.clientText}>
-          {t("home.testimonial.client3.text")}
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+      {/* Partnerlar bo'limi */}
+      <section className={styles.partnersSection}>
+        <div className={styles.container}>
+          <h2 className={styles.partnersTitle}>
+            {t("home.partners.title")}
+          </h2>
 
-{/* Map */}
-<section className={styles.mapSection}>
-  <div className={styles.container}>
-    <div className={styles.mapWrapper}>
-      <iframe
-        className={styles.mapFrame}
-        src="https://www.google.com/maps?q=Tashkent&output=embed"
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-        title={t("home.map.title")}
-      />
-    </div>
-  </div>
-</section>
+          <div className={styles.partnersGrid}>
+            {partners.map((logo, index) => (
+              <div key={index} className={styles.partnerCard}>
+                <img
+                  src={logo}
+                  alt={`partner-${index}`}
+                  className={styles.partnerLogo}
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
+      {/* MIJOZLARIMIZ FIKRI */}
+      <section className={styles.testimonialSection}>
+        <div className={styles.container}>
+          <h2 className={styles.testimonialTitle}>
+            {t("home.testimonial.title")}
+          </h2>
+          <p className={styles.testimonialDesc}>
+            {t("home.testimonial.desc")}
+          </p>
+          <div className={styles.testimonialGrid}>
+            <div className={styles.testimonialCard}>
+              <div className={styles.stars}>★★★★★</div>
+              <h3 className={styles.clientName}>
+                {t("home.testimonial.client1.name")}
+              </h3>
+              <p className={styles.clientText}>
+                {t("home.testimonial.client1.text")}
+              </p>
+            </div>
+            <div className={styles.testimonialCard}>
+              <div className={styles.stars}>★★★★★</div>
+              <h3 className={styles.clientName}>
+                {t("home.testimonial.client2.name")}
+              </h3>
+              <p className={styles.clientText}>
+                {t("home.testimonial.client2.text")}
+              </p>
+            </div>
+            <div className={styles.testimonialCard}>
+              <div className={styles.stars}>★★★★★</div>
+              <h3 className={styles.clientName}>
+                {t("home.testimonial.client3.name")}
+              </h3>
+              <p className={styles.clientText}>
+                {t("home.testimonial.client3.text")}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-
-
+      {/* Map */}
+      <section className={styles.mapSection}>
+        <div className={styles.container}>
+          <div className={styles.mapWrapper}>
+            <iframe
+              className={styles.mapFrame}
+              src="https://www.google.com/maps?q=Tashkent&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title={t("home.map.title")}
+            />
+          </div>
+        </div>
+      </section>
     </main>
   )
 }
