@@ -786,7 +786,9 @@
   .mapWrapper {
     height: 240px;
     border-width: 3px;
+    max-width: 98%;
     border-radius: 18px;
+    margin: auto;
   }
 }
 

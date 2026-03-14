@@ -75,5 +75,30 @@
   "common": {
     "close": "Close",
     "contact": "Contact Us"
+  },
+  "footer": {
+    "main": {
+      "title": "MAIN",
+      "home": "Home",
+      "about": "About",
+      "shop": "Shop by Product",
+      "blogs": "Blogs",
+      "contact": "Contact Us"
+    },
+    "service": {
+      "title": "SERVICE",
+      "signin": "Sign In/Register",
+      "shipping": "Shipping",
+      "returns": "Returns",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "social": {
+      "title": "Social Media"
+    },
+    "contact": {
+      "title": "CONTACT",
+      "address": "Tashkent city, Chorbog street, 1A"
+    }
   }
 }

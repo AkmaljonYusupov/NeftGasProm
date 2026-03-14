@@ -31,7 +31,7 @@
 }
 
 .logo {
-  width: 290px;
+  width: 350px;
   max-width: 100%;
   height: auto;
   display: block;
@@ -40,11 +40,12 @@
 
 .title {
   margin: 8px 0 18px;
-  font-size: 31px;
+  font-size: 28px;
   line-height: 1;
   font-weight: 500;
   color: #111;
   letter-spacing: 0.2px;
+	text-transform: uppercase;
 }
 
 .nav {
@@ -56,7 +57,7 @@
     width: fit-content;
     text-decoration: none;
     color: #111;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 1.25;
     font-weight: 400;
     transition: color 0.2s ease;
@@ -184,10 +185,7 @@
   margin-left: auto;
 	right: -100px;
 	bottom: -80px;
-	// margin-right: -100px;
-  // margin-top: -160px;
-	// transform: rotate(180deg);
-  width: 540px;
+	width: 540px;
   max-width: 42%;
   height: auto;
   object-fit: contain;
@@ -218,7 +216,7 @@
 
 @media (max-width: 992px) {
   .footer {
-    padding: 36px 0 14px;
+    padding: 36px 0 36px;
   }
 
   .footerTop {
@@ -242,13 +240,15 @@
 
   .bottomLine {
     margin-top: 24px;
+
   }
 
   .pattern {
     width: 360px;
     max-width: 56%;
-    margin-top: 8px;
-  }
+		right: 0;
+		bottom: -50px;
+	}
 }
 
 @media (max-width: 640px) {
@@ -296,7 +296,10 @@
   }
 
   .pattern {
-    width: 240px;
-    max-width: 70%;
+   display: none;
+  }
+	  .bottomLine {
+    display: none;
+		
   }
 }
