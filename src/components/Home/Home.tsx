@@ -327,7 +327,7 @@ export default function Home() {
           <div className={styles.mapWrapper}>
             <iframe
               className={styles.mapFrame}
-              src="https://www.google.com/maps?q=Tashkent&output=embed"
+              src="https://maps.app.goo.gl/rmnDtijJxY3GLDii9"
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
