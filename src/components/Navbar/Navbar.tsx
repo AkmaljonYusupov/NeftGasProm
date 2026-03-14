@@ -3,7 +3,6 @@ import { useState } from "react"
 import { useTranslation } from "react-i18next"
 import { NavLink } from "react-router-dom"
 import logoIcon from "../../assets/images/logo.png"; // ← logo.png ni shu yerga joylang
-import truckIcon from "../../assets/images/truck.png"
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher"
 import OffCanvas from "../OffCanvas/OffCanvas"
 import styles from "./Navbar.module.scss"
@@ -15,25 +14,7 @@ const Navbar = () => {
   return (
     <header className={styles.header}>
 
-      <div
-        className={styles.topBar}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "10px"
-        }}
-      >
-        <img
-          src={truckIcon}
-          alt={t("truckIconAlt")}
-          className="movingTruck"
-          width={28}
-          height={28}
-          title={t("topBar")}
-        />
-        {t("topBar")}
-      </div>
+     
 
 
       <div className={styles.header__inner}>
