@@ -2,7 +2,7 @@ import { Menu } from "lucide-react"
 import { useState } from "react"
 import { useTranslation } from "react-i18next"
 import { NavLink } from "react-router-dom"
-import logoIcon from "../../assets/images/logo.png"; // ← logo.png ni shu yerga joylang
+import logoIcon from "../../assets/images/logo.png"
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher"
 import OffCanvas from "../OffCanvas/OffCanvas"
 import styles from "./Navbar.module.scss"
@@ -13,23 +13,17 @@ const Navbar = () => {
 
   return (
     <header className={styles.header}>
-
-     
-
-
       <div className={styles.header__inner}>
         <nav className={styles.nav}>
-          {/* Yangi logo — faqat PNG rasm */}
           <NavLink to="/" className={styles.logo}>
             <img
               src={logoIcon}
               alt="NEFTGAZPROM"
-              width={200}        // biroz kengaytirildi
+              width={200}
               height={55}
             />
           </NavLink>
 
-          {/* Navigation links */}
           <NavLink
             to="/"
             className={({ isActive }) =>
@@ -66,12 +60,10 @@ const Navbar = () => {
             {t("nav.contact")}
           </NavLink>
 
-          {/* Language switcher */}
           <div className={styles.langWrapper}>
             <LanguageSwitcher />
           </div>
 
-          {/* Hamburger */}
           <button
             onClick={() => setOpen(true)}
             className={styles.hamburger}

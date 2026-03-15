@@ -97,5 +97,140 @@
     "title": "ALOQA",
     "address": "Toshkent shahri, Chorbog‘ ko‘chasi, 1A"
   }
-}
+},
+
+"contact": {
+  "label": "Biz bilan bog‘laning",
+  "title": "Aloqa o‘rnatish uchun qulay va tezkor sahifa",
+  "description": "Savollaringiz, tijoriy takliflaringiz yoki hamkorlik bo‘yicha murojaatlaringiz bo‘lsa, bizga yozing. Jamoamiz siz bilan imkon qadar tez bog‘lanadi.",
+  "breadcrumb": {
+    "home": "Bosh sahifa",
+    "current": "Bog‘lanish"
+  },
+  "backHome": "Bosh sahifaga qaytish",
+  "quick": {
+    "title": "Tezkor aloqa",
+    "subtitle": "Biz bilan qulay usulda bog‘laning",
+    "phone": "Telefon",
+    "email": "Email",
+    "address": "Manzil"
+  },
+  "cards": {
+    "address": {
+      "title": "Manzil",
+      "text": "Toshkent shahri, Chorbog‘ ko‘chasi, 1A"
+    },
+    "phone": {
+      "title": "Telefon"
+    },
+    "email": {
+      "title": "Email"
+    },
+    "time": {
+      "title": "Ish vaqti",
+      "text": "Dushanba - Shanba, 9:00 - 18:00"
+    }
+  },
+  "stats": {
+    "support": "Aloqa xizmati",
+    "reply": "Javob darajasi",
+    "office": "Ofis raqami"
+  },
+  "features": {
+    "fast": "Tezkor aloqa va tez javob",
+    "support": "Doimiy maslahat va qo‘llab-quvvatlash",
+    "cooperation": "Hamkorlik uchun ochiq takliflar"
+  },
+  "form": {
+    "smallTitle": "Aloqa formasi",
+    "title": "Bizga xabar yuboring",
+    "text": "Quyidagi formani to‘ldiring. Xabaringizni ko‘rib chiqib, tez orada siz bilan bog‘lanamiz.",
+    "formTitle": "Murojaat formasi",
+    "formDesc": "Ism, telefon, email va xabaringizni qoldiring. Biz sizga qisqa vaqt ichida javob beramiz.",
+    "fields": {
+      "fullName": "Ism",
+      "phone": "Telefon raqam",
+      "email": "Email",
+      "message": "Xabar"
+    },
+    "placeholders": {
+      "fullName": "Ismingizni kiriting",
+      "phone": "+998 90 123 45 67",
+      "email": "example@gmail.com",
+      "message": "Xabaringizni yozing..."
+    },
+    "send": "Xabar yuborish",
+    "success": "Xabaringiz muvaffaqiyatli yuborildi."
+  },
+  "mapCard": {
+    "title": "Bizning manzil"
+  },
+  "mapTitle": "Kompaniya joylashuvi"
+},
+
+  "aboutPage": {
+    "label": "Biz haqimizda",
+    "title": "Qurilishda tajriba, ishonch va zamonaviy yondashuv",
+    "description": "Kompaniyamiz yirik sanoat va infratuzilma loyihalarini sifatli, aniq reja asosida va zamonaviy texnologiyalar yordamida amalga oshirib kelmoqda. Har bir loyiha biz uchun mas’uliyat va ishonch timsolidir.",
+    "buttons": {
+      "contact": "Bog‘lanish",
+      "projects": "Loyihalarni ko‘rish"
+    },
+    "stats": {
+      "experience": "yillik tajriba",
+      "projects": "muvaffaqiyatli loyihalar",
+      "team": "malakali mutaxassislar"
+    },
+    "badge": {
+      "title": "Ishonchli hamkor",
+      "text": "Sifat va muddatni bir xil darajada qadrlaymiz"
+    },
+    "experience": {
+      "small": "Tajriba",
+      "title": "18 yildan ortiq amaliy tajriba"
+    },
+    "story": {
+      "label": "Bizning tarix",
+      "title": "Kompaniyamiz faoliyati va rivojlanish yo‘li",
+      "text1": "Biz o‘z faoliyatimiz davomida qurilish va montaj ishlari bo‘yicha ko‘plab muhim loyihalarni amalga oshirdik. Har bir ishda texnik aniqlik, xavfsizlik va sifat talablariga qat’iy rioya qilamiz.",
+      "text2": "Jamoamiz tajribali mutaxassislar, samarali boshqaruv va kuchli amaliy bazaga tayanadi. Shu sababli biz yirik obyektlarda ham ishonchli natija bera olamiz."
+    },
+    "advantageLabel": "Afzalliklarimiz",
+    "advantageTitle": "Nima uchun aynan bizni tanlashadi",
+    "advantages": {
+      "quality": {
+        "title": "Yuqori sifat",
+        "text": "Har bir loyiha zamonaviy standartlar va qat’iy nazorat asosida bajariladi."
+      },
+      "experience": {
+        "title": "Amaliy tajriba",
+        "text": "Ko‘p yillik tajriba va real yirik loyihalar bizning asosiy ustunligimizdir."
+      },
+      "approach": {
+        "title": "Tizimli yondashuv",
+        "text": "Rejalashtirishdan tortib topshirishgacha bo‘lgan barcha jarayonlar puxta boshqariladi."
+      }
+    },
+    "values": {
+      "label": "Qadriyatlarimiz",
+      "title": "Bizning ish tamoyillarimiz",
+      "text": "Biz faoliyatimizda halollik, mas’uliyat, sifat va doimiy rivojlanishni asosiy mezon sifatida qabul qilamiz.",
+      "items": {
+        "item1": "Har bir obyektga individual yondashuv",
+        "item2": "Muddat va sifatga qat’iy amal qilish",
+        "item3": "Buyurtmachi bilan ochiq va ishonchli aloqa",
+        "item4": "Zamonaviy texnika va samarali boshqaruv"
+      }
+    },
+    "miniCard": {
+      "title": "Bizning maqsad",
+      "text": "Qurilish sohasida ishonchli, zamonaviy va uzoq muddatli hamkor sifatida kuchli natijalarni taqdim etish."
+    },
+    "certificates": {
+      "label": "Sertifikatlar",
+      "title": "Rasmiy hujjatlar va sertifikatlar"
+    }
+  }
+
+
 }

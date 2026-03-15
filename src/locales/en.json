@@ -86,8 +86,6 @@
     },
     "service": {
       "title": "SERVICE",
-      "signin": "Sign In/Register",
-      "shipping": "Shipping",
       "returns": "Returns",
       "privacy": "Privacy Policy",
       "terms": "Terms of Service"
@@ -98,6 +96,120 @@
     "contact": {
       "title": "CONTACT",
       "address": "Tashkent city, Chorbog street, 1A"
+    }
+  },
+  "contact": {
+  "label": "Get in touch",
+  "title": "Contact Page",
+  "description": "Do you have any questions or want to start cooperation? Contact us. Our team will get back to you as soon as possible.",
+ "breadcrumb": {
+  "home": "Home",
+  "current": "Contact"
+},
+"backHome": "Back to home",
+  "cards": {
+    "address": {
+      "title": "Address",
+      "text": "Tashkent city, Chorbog street, 1A"
+    },
+    "phone": {
+      "title": "Phone"
+    },
+    "email": {
+      "title": "Email"
+    },
+    "time": {
+      "title": "Working hours",
+      "text": "Monday - Saturday, 9:00 - 18:00"
+    }
+  },
+  "form": {
+    "smallTitle": "Contact form",
+    "title": "Send us a message",
+    "text": "Fill out the form below. We will review your request and contact you as soon as possible.",
+    "fields": {
+      "fullName": "Full name",
+      "phone": "Phone number",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message"
+    },
+    "placeholders": {
+      "fullName": "Enter your name",
+      "phone": "+998 90 123 45 67",
+      "email": "example@gmail.com",
+      "subject": "Enter subject",
+      "message": "Write your message..."
+    },
+    "send": "Send message",
+    "success": "Your message has been sent successfully."
+  },
+  "mapCard": {
+    "title": "Company location"
+  },
+  "mapTitle": "Company location"
+},
+ "aboutPage": {
+    "label": "About us",
+    "title": "Experience, reliability, and a modern approach in construction",
+    "description": "Our company has been successfully delivering large industrial and infrastructure projects with high quality, precise planning, and modern technologies. Every project represents responsibility and trust for us.",
+    "buttons": {
+      "contact": "Contact us",
+      "projects": "View projects"
+    },
+    "stats": {
+      "experience": "years of experience",
+      "projects": "successful projects",
+      "team": "qualified specialists"
+    },
+    "badge": {
+      "title": "Trusted partner",
+      "text": "We value both quality and deadlines equally"
+    },
+    "experience": {
+      "small": "Experience",
+      "title": "More than 18 years of practical experience"
+    },
+    "story": {
+      "label": "Our story",
+      "title": "Our company’s journey and development",
+      "text1": "Throughout our activity, we have implemented many important construction and installation projects. In every project, we strictly follow technical accuracy, safety, and quality standards.",
+      "text2": "Our team is built on experienced specialists, effective management, and a strong practical foundation. That is why we can confidently deliver reliable results even on large-scale facilities."
+    },
+    "advantageLabel": "Our advantages",
+    "advantageTitle": "Why clients choose us",
+    "advantages": {
+      "quality": {
+        "title": "High quality",
+        "text": "Every project is carried out according to modern standards and strict control."
+      },
+      "experience": {
+        "title": "Practical experience",
+        "text": "Many years of experience and real large-scale projects are our key strengths."
+      },
+      "approach": {
+        "title": "Systematic approach",
+        "text": "All processes from planning to delivery are managed with precision."
+      }
+    },
+    "values": {
+      "label": "Our values",
+      "title": "The principles behind our work",
+      "text": "In our work, we consider honesty, responsibility, quality, and continuous development as the core principles.",
+      "items": {
+        "item1": "Individual approach to every project",
+        "item2": "Strict commitment to deadlines and quality",
+        "item3": "Open and reliable communication with clients",
+        "item4": "Modern equipment and efficient management"
+      }
+    },
+    "miniCard": {
+      "title": "Our mission",
+      "text": "To deliver strong results as a reliable, modern, and long-term partner in the construction industry."
+    },
+    "certificates": {
+      "label": "Certificates",
+      "title": "Official documents and certificates"
     }
   }
 }
