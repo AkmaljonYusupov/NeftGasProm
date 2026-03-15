@@ -512,6 +512,7 @@
 @media (max-width: 480px) {
   .heroActions {
     flex-direction: column;
+		width: fit-content;
   }
 
   .primaryBtn,
@@ -530,7 +531,7 @@
   .floatingBadge,
   .experienceCard {
     position: static;
-    width: 100%;
+    width: fit-content;
     margin-top: 14px;
   }
 
