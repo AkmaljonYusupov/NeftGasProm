@@ -1,4 +1,5 @@
 {
+	
 	"nav": {
 		"home": "Bosh sahifa",
 		"products": "Mahsulotlar",
@@ -75,28 +76,26 @@
 		"contact": "Bog‘lanish"
 	},
 	"footer": {
-		"main": {
-			"title": "ASOSIY",
-			"home": "Bosh sahifa",
-			"about": "Biz haqimizda",
-			"shop": "Mahsulotlar",
-			"blogs": "Bloglar",
-			"contact": "Biz bilan bog‘lanish"
-		},
-		"service": {
-			"title": "XIZMATLAR",
-			"signin": "Kirish / Ro‘yxatdan o‘tish",
-			"shipping": "Yetkazib berish",
-			"returns": "Qaytarish",
-			"privacy": "Maxfiylik siyosati",
-			"terms": "Foydalanish shartlari"
-		},
-		"social": {
-			"title": "Ijtimoiy tarmoqlar"
-		},
-		"contact": {
-			"title": "ALOQA",
-			"address": "Toshkent shahri, Chorbog‘ ko‘chasi, 1A"
-		}
-	}
+  "main": {
+    "title": "ASOSIY",
+    "home": "Bosh sahifa",
+    "about": "Biz haqimizda",
+    "shop": "Mahsulotlar",
+    "blogs": "Bloglar",
+    "contact": "Bog‘lanish"
+  },
+  "service": {
+    "title": "XIZMATLAR",
+    "returns": "Qaytarish",
+    "privacy": "Maxfiylik siyosati",
+    "terms": "Foydalanish shartlari"
+  },
+  "social": {
+    "title": "Ijtimoiy tarmoqlar"
+  },
+  "contact": {
+    "title": "ALOQA",
+    "address": "Toshkent shahri, Chorbog‘ ko‘chasi, 1A"
+  }
+}
 }
