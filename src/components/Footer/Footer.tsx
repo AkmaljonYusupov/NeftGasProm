@@ -1,15 +1,15 @@
 import { useTranslation } from "react-i18next"
 import {
-	FaFacebookF,
-	FaInstagram,
-	FaLinkedinIn,
-	FaTwitter,
-	FaYoutube,
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTwitter,
+  FaYoutube,
 } from "react-icons/fa"
 import {
-	FiMail,
-	FiMapPin,
-	FiPhone,
+  FiMail,
+  FiMapPin,
+  FiPhone,
 } from "react-icons/fi"
 import { Link } from "react-router-dom"
 
@@ -52,7 +52,6 @@ export default function Footer() {
             <h3 className={styles.title}>{t("footer.service.title")}</h3>
 
             <nav className={styles.nav}>
-              <Link to="/register">{t("footer.service.signin")}</Link>
               <Link to="/shipping">{t("footer.service.shipping")}</Link>
               <Link to="/returns">{t("footer.service.returns")}</Link>
               <Link to="/privacy">{t("footer.service.privacy")}</Link>
