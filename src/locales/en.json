@@ -185,6 +185,12 @@
     }
   },
   "aboutPage": {
+    "social": {
+      "title": "WE ARE ON SOCIAL MEDIA",
+      "subtitle": "Check out our latest videos and reels",
+      "rels": "Instagram Reel",
+      "fallback": "Open on Instagram"
+    },
     "label": "About Us",
     "title": "Experience, trust, and a modern approach in construction",
     "description": "Our company has been implementing major industrial and infrastructure projects with quality, clear planning, and modern technologies. Every project is a symbol of responsibility and trust for us.",

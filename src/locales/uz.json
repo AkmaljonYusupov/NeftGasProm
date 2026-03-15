@@ -184,6 +184,12 @@
 		}
 	},
 	"aboutPage": {
+		"social": {
+			"title": "IJTIMOIY TARMOQDA BIZ",
+			"subtitle": "So‘nggi video va reel’larimiz bilan tanishing",
+			"rels": "Instagram Reel",
+			"fallback": "Instagram’da ochish"
+		},
 		"label": "Biz haqimizda",
 		"title": "Qurilishda tajriba, ishonch va zamonaviy yondashuv",
 		"description": "Kompaniyamiz yirik sanoat va infratuzilma loyihalarini sifatli, aniq reja asosida va zamonaviy texnologiyalar yordamida amalga oshirib kelmoqda. Har bir loyiha biz uchun mas’uliyat va ishonch timsolidir.",

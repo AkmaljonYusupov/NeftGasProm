@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
 import {
-	FiArrowUpRight,
-	FiAward,
-	FiCheckCircle,
-	FiHome,
-	FiLayers,
-	FiShield,
-	FiTrendingUp,
+  FiArrowUpRight,
+  FiAward,
+  FiCheckCircle,
+  FiHome,
+  FiInstagram,
+  FiLayers,
+  FiShield,
+  FiTrendingUp,
 } from "react-icons/fi"
 import { Link } from "react-router-dom"
 
@@ -58,8 +59,45 @@ function CountUpNumber({
   )
 }
 
+declare global {
+  interface Window {
+    instgrm?: {
+      Embeds: {
+        process: () => void
+      }
+    }
+  }
+}
+
 export default function About() {
   const { t } = useTranslation()
+
+  useEffect(() => {
+    const processInstagramEmbeds = () => {
+      if (window.instgrm?.Embeds) {
+        window.instgrm.Embeds.process()
+      }
+    }
+
+    const existingScript = document.querySelector(
+      'script[src="https://www.instagram.com/embed.js"]'
+    )
+
+    if (existingScript) {
+      processInstagramEmbeds()
+      return
+    }
+
+    const script = document.createElement("script")
+    script.src = "https://www.instagram.com/embed.js"
+    script.async = true
+    script.onload = () => processInstagramEmbeds()
+    document.body.appendChild(script)
+
+    return () => {
+      script.onload = null
+    }
+  }, [])
 
   const advantages = [
     {
@@ -80,6 +118,17 @@ export default function About() {
   ]
 
   const certificates = [cert1, cert2, cert3]
+
+  const instagramPosts = [
+  "https://www.instagram.com/reel/DQW9hsdjHTK/",
+  "https://www.instagram.com/reel/DQhF3PUAr81/",
+  "https://www.instagram.com/reel/DQ19nqSAj7N/",
+  "https://www.instagram.com/reel/DQ1_15hApcH/",
+  "https://www.instagram.com/reel/DI-za_pCHp_/",
+  "https://www.instagram.com/reel/DQergA0AqKB/",
+  "https://www.instagram.com/reel/DQ1_sHzAkBJ/",
+  "https://www.instagram.com/reel/DQZMrLYgr6o/"
+  ]
 
   return (
     <main className={styles.aboutPage}>
@@ -246,6 +295,63 @@ export default function About() {
         </div>
       </section>
 
+   <section className={styles.socialSection}>
+        <div className={styles.container}>
+          <div className={styles.sectionHead}>
+            <span className={styles.sectionLabel}>
+              {t("aboutPage.social.label", "Instagram")}
+            </span>
+            <h2 className={styles.sectionTitle}>
+              {t("aboutPage.social.title", "Videolarimiz")}
+            </h2>
+          </div>
+
+          <div className={styles.socialGrid}>
+            {instagramPosts.map((postUrl, index) => (
+              <article
+                key={index}
+                className={`${styles.socialCard} ${
+                  index === 0 ? styles.socialCardFeatured : ""
+                }`}
+              >
+                <div className={styles.socialBadge}>
+                  <FiInstagram />
+                  <span>{t("aboutPage.social.rels")}</span>                  
+                </div>
+                
+
+                <div className={styles.socialEmbedWrap}>
+                  <blockquote
+                    className="instagram-media"
+                    data-instgrm-permalink={postUrl}
+                    data-instgrm-version="14"
+                    style={{
+                      background: "#fff",
+                      border: 0,
+                      borderRadius: "18px",
+                      margin: 0,
+                      minWidth: "100%",
+                      width: "100%",
+                    }}
+                  >
+                    <a
+                      href={postUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={styles.socialFallback}
+                      aria-label="Instagram post"
+                    >
+                      <FiInstagram />
+                      <span>{t("aboutPage.social.fallback")}</span>
+                    </a>
+                  </blockquote>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className={styles.certificateSection}>
         <div className={styles.container}>
           <div className={styles.sectionHead}>
@@ -266,6 +372,8 @@ export default function About() {
           </div>
         </div>
       </section>
+
+   
     </main>
   )
 }

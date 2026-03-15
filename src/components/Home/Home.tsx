@@ -48,9 +48,7 @@ const instagramPosts = [
   "https://www.instagram.com/reel/DI-za_pCHp_/",
   "https://www.instagram.com/reel/DQergA0AqKB/",
   "https://www.instagram.com/reel/DQ1_sHzAkBJ/",
-  "https://www.instagram.com/reel/DQZMrLYgr6o/",
-  "https://www.instagram.com/reel/DQcOQGNgi8F/"
-
+  "https://www.instagram.com/reel/DQZMrLYgr6o/"
 ]
 
 // Mahsulot tipi

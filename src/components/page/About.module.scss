@@ -539,3 +539,132 @@
     min-height: auto;
   }
 } 
+// Social media section
+.socialSection {
+  padding: 28px 0 40px;
+}
+
+.socialGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.socialCard {
+  position: relative;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #ececec;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.04);
+  transition: 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.07);
+  }
+}
+
+.socialCardFeatured {
+  grid-column: span 1;
+}
+
+.socialBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(225, 48, 108, 0.08);
+  color: #c13584;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.socialBadge svg {
+  font-size: 13px;
+}
+
+.socialEmbedWrap {
+  overflow: hidden;
+  border-radius: 16px;
+  background: #fff;
+  min-height: 180px;
+  max-height: 220px;
+  border: 1px solid rgba(17, 24, 39, 0.05);
+}
+
+.socialCardFeatured .socialEmbedWrap {
+  min-height: 180px;
+  max-height: 220px;
+}
+
+.socialCard :global(.instagram-media) {
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+.socialFallback {
+  min-height: 180px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #e1306c;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@media (max-width: 1100px) {
+  .socialGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .socialCardFeatured {
+    grid-column: span 1;
+  }
+
+  .socialEmbedWrap,
+  .socialCardFeatured .socialEmbedWrap {
+    min-height: 170px;
+    max-height: 210px;
+  }
+
+  .socialFallback {
+    min-height: 170px;
+  }
+}
+
+@media (max-width: 768px) {
+  .socialGrid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .socialCard,
+  .socialCardFeatured {
+    grid-column: span 1;
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .socialEmbedWrap,
+  .socialCardFeatured .socialEmbedWrap {
+    min-height: 190px;
+    max-height: 230px;
+  }
+
+  .socialFallback {
+    min-height: 190px;
+    font-size: 14px;
+  }
+}
+// social media section end
