@@ -1,3 +1,106 @@
+// notification boshlandi
+.notification {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 9999;
+  min-width: 320px;
+  max-width: 420px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(10px);
+  animation: slideInRight 0.35s ease;
+}
+
+.notificationSuccess {
+  background: linear-gradient(135deg, #1f8b4c, #22a55a);
+}
+
+.notificationError {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+}
+
+.notificationIcon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.16);
+  font-size: 20px;
+}
+
+.fieldError {
+  margin-top: -2px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #dc2626;
+  font-weight: 700;
+  padding-left: 2px;
+}
+
+.inputError {
+  border-color: #ef4444 !important;
+  background: #fff !important;
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.08) !important;
+}
+
+.submitBtn:disabled {
+  opacity: 0.9;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.submitBtnLoading {
+  pointer-events: none;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(24px) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .notification {
+    top: 16px;
+    right: 16px;
+    left: 16px;
+    min-width: unset;
+    max-width: unset;
+  }
+}
+// Notification tugadi
+
 .contactPage {
   background:
     radial-gradient(circle at top left, rgba(232, 118, 31, 0.06), transparent 20%),

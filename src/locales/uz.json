@@ -40,7 +40,7 @@
 		"about": {
 			"title": "Biz haqimizda",
 			"more": "Batafsil",
-			"description": "NeftGasProm — Toshkentda ro‘yxatdan o‘tgan, gidroizolyatsiya materiallari ishlab chiqarishga ixtisoslashgan mahalliy kompaniya. Bitum va bitum-polimer asosidagi mahsulotlarni ishlab chiqarib, obyektlarni namlik va suv ta’siridan ishonchli himoya bilan ta’minlaydi.  Zamonaviy texnologiyalar va sifatga qat’iy rioya qilish orqali barqaror natijalarga erishib kelmoqdamiz.",
+			"description": "NeftGasProm — Toshkentda ro‘yxatdan o‘tgan, gidroizolyatsiya materiallari ishlab chiqarishga ixtisoslashgan mahalliy kompaniya. Bitum va bitum-polimer asosidagi mahsulotlarni ishlab chiqarib, obyektlarni namlik va suv ta’siridan ishonchli himoya bilan ta’minlaydi. Zamonaviy texnologiyalar va sifatga qat’iy rioya qilish orqali barqaror natijalarga erishib kelmoqdamiz.",
 			"alt": {
 				"main": "Biz haqimizda"
 			},
@@ -144,21 +144,40 @@
 			"title": "Bizga xabar yuboring",
 			"text": "Quyidagi formani to‘ldiring. Xabaringizni ko‘rib chiqib, tez orada siz bilan bog‘lanamiz.",
 			"formTitle": "Murojaat formasi",
-			"formDesc": "Ism, telefon, email va xabaringizni qoldiring. Biz sizga qisqa vaqt ichida javob beramiz.",
+			"formDesc": "Ism, telefon raqam va xabaringizni qoldiring. Biz sizga qisqa vaqt ichida javob beramiz.",
 			"fields": {
 				"fullName": "Ism",
 				"phone": "Telefon raqam",
-				"email": "Email",
 				"message": "Xabar"
 			},
 			"placeholders": {
 				"fullName": "Ismingizni kiriting",
 				"phone": "+998 90 123 45 67",
-				"email": "example@gmail.com",
 				"message": "Xabaringizni yozing..."
 			},
 			"send": "Xabar yuborish",
-			"success": "Xabaringiz muvaffaqiyatli yuborildi."
+			"sending": "Yuborilmoqda...",
+			"success": "Xabaringiz muvaffaqiyatli yuborildi.",
+			"error": "Xabar yuborishda xatolik yuz berdi.",
+			"validation": {
+				"fullNameRequired": "Iltimos, ismingizni kiriting",
+				"fullNameMin": "Ism kamida 3 ta belgidan iborat bo‘lishi kerak",
+				"phoneRequired": "Iltimos, telefon raqamingizni kiriting",
+				"phoneInvalid": "Telefon raqam noto‘g‘ri kiritildi",
+				"messageRequired": "Iltimos, xabaringizni kiriting",
+				"messageMin": "Xabar kamida 10 ta belgidan iborat bo‘lishi kerak"
+			}
+		},
+		"telegram": {
+			"title": "YANGI MUROJAAT",
+			"client": "Mijoz",
+			"phone": "Telefon",
+			"message": "Xabar",
+			"date": "Sana",
+			"time": "Vaqt",
+			"page": "Sahifa",
+			"status": "Holat",
+			"new": "Yangi xabar qabul qilindi"
 		}
 	},
 	"aboutPage": {

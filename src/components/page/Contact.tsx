@@ -1,4 +1,4 @@
-import { useState, type ChangeEvent, type FormEvent } from "react"
+import { useEffect, useRef, useState, type ChangeEvent, type FormEvent } from "react"
 import { useTranslation } from "react-i18next"
 import {
   FiArrowUpRight,
@@ -9,6 +9,7 @@ import {
   FiMapPin,
   FiPhone,
   FiSend,
+  FiXCircle,
 } from "react-icons/fi"
 import { Link } from "react-router-dom"
 
@@ -17,21 +18,96 @@ import styles from "./Contact.module.scss"
 type FormData = {
   fullName: string
   phone: string
-  email: string
+  message: string
+}
+
+type FormErrors = {
+  fullName?: string
+  phone?: string
+  message?: string
+}
+
+type NotificationState = {
+  show: boolean
+  type: "success" | "error"
   message: string
 }
 
 export default function Contact() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const hideNotificationTimeout = useRef<number | null>(null)
 
   const [formData, setFormData] = useState<FormData>({
     fullName: "",
     phone: "",
-    email: "",
     message: "",
   })
 
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [errors, setErrors] = useState<FormErrors>({})
+  const [isLoading, setIsLoading] = useState(false)
+
+  const [notification, setNotification] = useState<NotificationState>({
+    show: false,
+    type: "success",
+    message: "",
+  })
+
+  useEffect(() => {
+    return () => {
+      if (hideNotificationTimeout.current) {
+        window.clearTimeout(hideNotificationTimeout.current)
+      }
+    }
+  }, [])
+
+  const showNotification = (type: "success" | "error", message: string) => {
+    if (hideNotificationTimeout.current) {
+      window.clearTimeout(hideNotificationTimeout.current)
+    }
+
+    setNotification({
+      show: true,
+      type,
+      message,
+    })
+
+    hideNotificationTimeout.current = window.setTimeout(() => {
+      setNotification((prev) => ({
+        ...prev,
+        show: false,
+      }))
+    }, 3500)
+  }
+
+  const validateForm = () => {
+    const newErrors: FormErrors = {}
+
+    if (!formData.fullName.trim()) {
+      newErrors.fullName = t("contact.form.validation.fullNameRequired")
+    } else if (formData.fullName.trim().length < 3) {
+      newErrors.fullName = t("contact.form.validation.fullNameMin")
+    }
+
+    if (!formData.phone.trim()) {
+      newErrors.phone = t("contact.form.validation.phoneRequired")
+    } else {
+      const cleanedPhone = formData.phone.replace(/[^\d+]/g, "")
+      const phoneRegex = /^\+?\d{9,15}$/
+
+      if (!phoneRegex.test(cleanedPhone)) {
+        newErrors.phone = t("contact.form.validation.phoneInvalid")
+      }
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = t("contact.form.validation.messageRequired")
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = t("contact.form.validation.messageMin")
+    }
+
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -42,29 +118,119 @@ export default function Contact() {
       ...prev,
       [name]: value,
     }))
+
+    setErrors((prev) => ({
+      ...prev,
+      [name]: "",
+    }))
   }
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    console.log("Contact form:", formData)
+    if (!validateForm()) return
 
-    setIsSubmitted(true)
+    try {
+      setIsLoading(true)
 
-    setFormData({
-      fullName: "",
-      phone: "",
-      email: "",
-      message: "",
-    })
+      const botToken = import.meta.env.VITE_TELEGRAM_BOT_TOKEN
+      const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID
 
-    setTimeout(() => {
-      setIsSubmitted(false)
-    }, 3000)
+      if (!botToken || !chatId) {
+        throw new Error("Telegram sozlamalari topilmadi")
+      }
+
+      const now = new Date()
+
+      const formattedDate = new Intl.DateTimeFormat(i18n.language, {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+      }).format(now)
+
+      const formattedTime = new Intl.DateTimeFormat(i18n.language, {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false,
+      }).format(now)
+
+      const text = `
+<b>━━━━━━━━━━━━━━━</b>
+<b>📩 ${t("contact.telegram.title")}</b>
+<b>━━━━━━━━━━━━━━━</b>
+
+<b>👤 ${t("contact.telegram.client")}:</b>
+${formData.fullName}
+
+<b>📞 ${t("contact.telegram.phone")}:</b>
+${formData.phone}
+
+<b>💬 ${t("contact.telegram.message")}:</b>
+${formData.message}
+
+<b>📅 ${t("contact.telegram.date")}:</b> ${formattedDate}
+<b>🕒 ${t("contact.telegram.time")}:</b> ${formattedTime}
+
+<b>🌐 ${t("contact.telegram.page")}:</b> ${t("contact.breadcrumb.current")}
+<b>✅ ${t("contact.telegram.status")}:</b> ${t("contact.telegram.new")}
+      `.trim()
+
+      const response = await fetch(
+        `https://api.telegram.org/bot${botToken}/sendMessage`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            chat_id: chatId,
+            text,
+            parse_mode: "HTML",
+          }),
+        }
+      )
+
+      const result = await response.json()
+
+      if (!response.ok || !result.ok) {
+        throw new Error(result?.description || "Xabar yuborilmadi")
+      }
+
+      setFormData({
+        fullName: "",
+        phone: "",
+        message: "",
+      })
+
+      setErrors({})
+
+      showNotification("success", t("contact.form.success"))
+    } catch (error) {
+      console.error("Telegram send error:", error)
+      showNotification("error", t("contact.form.error"))
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
     <main className={styles.contactPage}>
+      {notification.show && (
+        <div
+          className={`${styles.notification} ${
+            notification.type === "success"
+              ? styles.notificationSuccess
+              : styles.notificationError
+          }`}
+        >
+          <div className={styles.notificationIcon}>
+            {notification.type === "success" ? <FiCheckCircle /> : <FiXCircle />}
+          </div>
+          <span>{notification.message}</span>
+        </div>
+      )}
+
       <section className={styles.heroSection}>
         <div className={styles.container}>
           <div className={styles.heroWrapper}>
@@ -275,8 +441,11 @@ export default function Contact() {
                       value={formData.fullName}
                       onChange={handleChange}
                       placeholder={t("contact.form.placeholders.fullName")}
-                      required
+                      className={errors.fullName ? styles.inputError : ""}
                     />
+                    {errors.fullName && (
+                      <span className={styles.fieldError}>{errors.fullName}</span>
+                    )}
                   </div>
 
                   <div className={styles.inputGroup}>
@@ -290,23 +459,11 @@ export default function Contact() {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder={t("contact.form.placeholders.phone")}
-                      required
+                      className={errors.phone ? styles.inputError : ""}
                     />
-                  </div>
-
-                  <div className={styles.inputGroup}>
-                    <label htmlFor="email">
-                      {t("contact.form.fields.email")}
-                    </label>
-                    <input
-                      id="email"
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder={t("contact.form.placeholders.email")}
-                      required
-                    />
+                    {errors.phone && (
+                      <span className={styles.fieldError}>{errors.phone}</span>
+                    )}
                   </div>
 
                   <div className={`${styles.inputGroup} ${styles.messageGroup}`}>
@@ -320,15 +477,33 @@ export default function Contact() {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder={t("contact.form.placeholders.message")}
-                      required
+                      className={errors.message ? styles.inputError : ""}
                     />
+                    {errors.message && (
+                      <span className={styles.fieldError}>{errors.message}</span>
+                    )}
                   </div>
                 </div>
 
                 <div className={styles.formActions}>
-                  <button type="submit" className={styles.submitBtn}>
-                    <FiSend />
-                    <span>{t("contact.form.send")}</span>
+                  <button
+                    type="submit"
+                    className={`${styles.submitBtn} ${
+                      isLoading ? styles.submitBtnLoading : ""
+                    }`}
+                    disabled={isLoading}
+                  >
+                    {isLoading ? (
+                      <>
+                        <span className={styles.spinner} />
+                        <span>{t("contact.form.sending")}</span>
+                      </>
+                    ) : (
+                      <>
+                        <FiSend />
+                        <span>{t("contact.form.send")}</span>
+                      </>
+                    )}
                   </button>
 
                   <div className={styles.formHint}>
@@ -336,13 +511,6 @@ export default function Contact() {
                     <span>{t("contact.features.fast")}</span>
                   </div>
                 </div>
-
-                {isSubmitted && (
-                  <div className={styles.successMessage}>
-                    <FiCheckCircle />
-                    <span>{t("contact.form.success")}</span>
-                  </div>
-                )}
               </form>
             </div>
           </div>

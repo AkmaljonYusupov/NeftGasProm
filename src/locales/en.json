@@ -1,5 +1,4 @@
 {
-
   "nav": {
     "home": "Home",
     "products": "Products",
@@ -10,7 +9,7 @@
     "title": " — modern waterproofing solutions!",
     "patternAlt": "Waterproofing patterns",
     "leftImageAlt": "NeftGasProm construction site",
-    "button": "Order Now"
+    "button": "Place an Order"
   },
   "home": {
     "social": {
@@ -20,15 +19,15 @@
       "title": "OUR PARTNERS"
     },
     "testimonial": {
-      "title": "OUR CLIENTS' FEEDBACK",
+      "title": "WHAT OUR CLIENTS SAY",
       "desc": "Companies and individuals who have worked with us highly appreciate the quality of our work and our professionalism.",
       "client1": {
         "name": "Qayumov Dilshod",
-        "text": "The product is very high quality and fully meets the requirements of the global market."
+        "text": "The product is very high quality and easily meets global market requirements."
       },
       "client2": {
         "name": "Hasanov Zafar",
-        "text": "The service is excellent. There were no issues with product delivery."
+        "text": "The service is also excellent. There were no issues with product delivery."
       },
       "client3": {
         "name": "Keldiyorov Samandar",
@@ -36,12 +35,12 @@
       }
     },
     "map": {
-      "title": "Company location"
+      "title": "Company Location"
     },
     "about": {
       "title": "About Us",
-      "more": "More Details",
-      "description": "NeftGasProm is a local company registered in Tashkent, specializing in the production of waterproofing materials. We produce bitumen and bitumen-polymer based products, providing reliable protection of facilities from moisture and water. Thanks to modern technologies and strict quality control, we achieve stable results.",
+      "more": "Learn More",
+      "description": "NeftGasProm is a local company registered in Tashkent, specializing in the production of waterproofing materials. It manufactures bitumen and bitumen-polymer based products, providing reliable protection of structures against moisture and water exposure. Through modern technologies and strict quality standards, we continue to achieve stable results.",
       "alt": {
         "main": "About Us"
       },
@@ -50,20 +49,20 @@
       }
     },
     "product1": {
-      "name": "MASTIC №1 BITUMEN",
-      "desc": "Professional waterproofing mastic. Available in 9 kg buckets. 100% protection against moisture and water."
+      "name": "BITUMEN MASTIC №1",
+      "desc": "Professional waterproofing mastic. Available in 9 kg buckets. 100% protection from moisture and water."
     },
     "product2": {
       "name": "POLYMER-BITUMEN MASTIC",
-      "desc": "High elasticity and heat resistance. Ideal for construction and roofing works."
+      "desc": "Highly elastic and heat-resistant. Ideal for construction and roofing."
     },
     "product3": {
       "name": "WATERPROOF COATING",
-      "desc": "Waterproof coating. Specially designed for concrete and metal surfaces."
+      "desc": "Water-resistant coating. Specially designed for concrete and metal surfaces."
     },
     "product4": {
       "name": "BITUMEN PRIMER",
-      "desc": "Surface preparation primer. Necessary for good adhesion of products."
+      "desc": "Surface preparation primer. Essential for better adhesion of materials."
     }
   },
   "lang": {
@@ -73,85 +72,121 @@
   },
   "common": {
     "close": "Close",
-    "contact": "Contact Us"
+    "contact": "Contact"
   },
   "footer": {
     "main": {
       "title": "MAIN",
       "home": "Home",
-      "about": "About",
-      "shop": "Shop by Product",
+      "about": "About Us",
+      "shop": "Products",
       "blogs": "Blogs",
-      "contact": "Contact Us"
+      "contact": "Contact"
     },
     "service": {
-      "title": "SERVICE",
+      "title": "SERVICES",
       "returns": "Returns",
       "privacy": "Privacy Policy",
-      "terms": "Terms of Service"
+      "terms": "Terms of Use"
     },
     "social": {
       "title": "Social Media"
     },
     "contact": {
       "title": "CONTACT",
-      "address": "Tashkent city, Chorbog street, 1A"
+      "address": "1A Chorbog Street, Tashkent"
     }
   },
   "contact": {
-  "label": "Get in touch",
-  "title": "Contact Page",
-  "description": "Do you have any questions or want to start cooperation? Contact us. Our team will get back to you as soon as possible.",
- "breadcrumb": {
-  "home": "Home",
-  "current": "Contact"
-},
-"backHome": "Back to home",
-  "cards": {
-    "address": {
-      "title": "Address",
-      "text": "Tashkent city, Chorbog street, 1A"
+    "label": "Get in Touch",
+    "title": "A convenient and fast page for communication",
+    "description": "If you have questions, commercial offers, or cooperation requests, write to us. Our team will contact you as soon as possible.",
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Contact"
     },
-    "phone": {
-      "title": "Phone"
+    "backHome": "Back to Home",
+    "quick": {
+      "title": "Quick Contact",
+      "subtitle": "Contact us in a convenient way",
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address"
     },
-    "email": {
-      "title": "Email"
+    "cards": {
+      "address": {
+        "title": "Address",
+        "text": "1A Chorbog Street, Tashkent"
+      },
+      "phone": {
+        "title": "Phone"
+      },
+      "email": {
+        "title": "Email"
+      },
+      "time": {
+        "title": "Working Hours",
+        "text": "Monday - Saturday, 9:00 AM - 6:00 PM"
+      }
     },
-    "time": {
-      "title": "Working hours",
-      "text": "Monday - Saturday, 9:00 - 18:00"
+    "stats": {
+      "support": "Support service",
+      "reply": "Response rate",
+      "office": "Office number"
+    },
+    "features": {
+      "fast": "Fast contact and quick response",
+      "support": "Continuous consultation and support",
+      "cooperation": "Open offers for cooperation"
+    },
+    "form": {
+      "smallTitle": "Get in Touch",
+      "title": "Send Us a Message",
+      "text": "Fill out the form below. We will review your message and contact you shortly.",
+      "formTitle": "Contact Form",
+      "formDesc": "Leave your name, phone number, and message. We will respond to you as soon as possible.",
+      "fields": {
+        "fullName": "Name",
+        "phone": "Phone Number",
+        "message": "Message"
+      },
+      "placeholders": {
+        "fullName": "Enter your name",
+        "phone": "+998 90 123 45 67",
+        "message": "Write your message..."
+      },
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Your message has been sent successfully.",
+      "error": "An error occurred while sending the message.",
+      "validation": {
+        "fullNameRequired": "Please enter your name",
+        "fullNameMin": "Name must be at least 3 characters long",
+        "phoneRequired": "Please enter your phone number",
+        "phoneInvalid": "Phone number is invalid",
+        "messageRequired": "Please enter your message",
+        "messageMin": "Message must be at least 10 characters long"
+      }
+    },
+    "telegram": {
+      "title": "NEW MESSAGE",
+      "client": "Client",
+      "phone": "Phone",
+      "message": "Message",
+      "date": "Date",
+      "time": "Time",
+      "page": "Page",
+      "status": "Status",
+      "new": "New message received"
     }
   },
-  "form": {
-    "smallTitle": "Contact us",
-    "title": "Send us a message",
-    "text": "Fill out the form below. We will review your request and contact you as soon as possible.",
-    "fields": {
-      "fullName": "Full name",
-      "phone": "Phone number",
-      "email": "Email",
-      "subject": "Subject",
-      "message": "Message"
-    },
-    "placeholders": {
-      "fullName": "Enter your name",
-      "phone": "+998 90 123 45 67",
-      "email": "example@gmail.com",
-      "subject": "Enter subject",
-      "message": "Write your message..."
-    },
-    "send": "Send message",
-    "success": "Your message has been sent successfully."
-  }
-},
- "aboutPage": {
-    "label": "About us",
-    "title": "Experience, reliability, and a modern approach in construction",
-    "description": "Our company has been successfully delivering large industrial and infrastructure projects with high quality, precise planning, and modern technologies. Every project represents responsibility and trust for us.",
+  "aboutPage": {
+    "label": "About Us",
+    "title": "Experience, trust, and a modern approach in construction",
+    "description": "Our company has been implementing major industrial and infrastructure projects with quality, clear planning, and modern technologies. Every project is a symbol of responsibility and trust for us.",
     "buttons": {
-      "contact": "Contact us",
-      "projects": "View projects"
+      "contact": "Contact",
+      "projects": "View Projects"
     },
     "stats": {
       "experience": "years of experience",
@@ -159,49 +194,49 @@
       "team": "qualified specialists"
     },
     "badge": {
-      "title": "Trusted partner",
-      "text": "We value both quality and deadlines equally"
+      "title": "Reliable Partner",
+      "text": "We value quality and deadlines equally"
     },
     "experience": {
       "small": "Experience",
       "title": "More than 18 years of practical experience"
     },
     "story": {
-      "label": "Our story",
-      "title": "Our company’s journey and development",
-      "text1": "Throughout our activity, we have implemented many important construction and installation projects. In every project, we strictly follow technical accuracy, safety, and quality standards.",
-      "text2": "Our team is built on experienced specialists, effective management, and a strong practical foundation. That is why we can confidently deliver reliable results even on large-scale facilities."
+      "label": "Our History",
+      "title": "Our company’s activity and development path",
+      "text1": "Throughout our activity, we have completed many important construction and installation projects. In every project, we strictly follow technical accuracy, safety, and quality requirements.",
+      "text2": "Our team relies on experienced specialists, effective management, and a strong practical base. That is why we can deliver reliable results even on large-scale facilities."
     },
-    "advantageLabel": "Our advantages",
+    "advantageLabel": "Our Advantages",
     "advantageTitle": "Why clients choose us",
     "advantages": {
       "quality": {
-        "title": "High quality",
+        "title": "High Quality",
         "text": "Every project is carried out according to modern standards and strict control."
       },
       "experience": {
-        "title": "Practical experience",
-        "text": "Many years of experience and real large-scale projects are our key strengths."
+        "title": "Practical Experience",
+        "text": "Many years of experience and real large-scale projects are our main advantage."
       },
       "approach": {
-        "title": "Systematic approach",
-        "text": "All processes from planning to delivery are managed with precision."
+        "title": "Systematic Approach",
+        "text": "All processes, from planning to delivery, are carefully managed."
       }
     },
     "values": {
-      "label": "Our values",
-      "title": "The principles behind our work",
-      "text": "In our work, we consider honesty, responsibility, quality, and continuous development as the core principles.",
+      "label": "Our Values",
+      "title": "Our Work Principles",
+      "text": "In our activities, we consider honesty, responsibility, quality, and continuous development as the main criteria.",
       "items": {
-        "item1": "Individual approach to every project",
-        "item2": "Strict commitment to deadlines and quality",
-        "item3": "Open and reliable communication with clients",
-        "item4": "Modern equipment and efficient management"
+        "item1": "Individual approach to every facility",
+        "item2": "Strict adherence to deadlines and quality",
+        "item3": "Open and reliable communication with the client",
+        "item4": "Modern equipment and effective management"
       }
     },
     "miniCard": {
-      "title": "Our mission",
-      "text": "To deliver strong results as a reliable, modern, and long-term partner in the construction industry."
+      "title": "Our Goal",
+      "text": "To deliver strong results in the construction industry as a reliable, modern, and long-term partner."
     },
     "certificates": {
       "label": "Certificates",
@@ -209,7 +244,7 @@
     },
     "breadcrumb": {
       "home": "Home",
-      "current": "About us"   
+      "current": "About Us"
     }
   }
 }
