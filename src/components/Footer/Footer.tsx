@@ -62,13 +62,13 @@ export default function Footer() {
             <h3 className={styles.title}>{t("footer.social.title")}</h3>
 
             <div className={styles.socials}>
-              <a href="#" aria-label="Facebook" className={styles.socialItem}>
+              <a href="https://www.facebook.com/people/Neftgazprom/61573455981228/?ref=NONE_xav_ig_profile_page_web#"  target='_blank' aria-label="Facebook" className={styles.socialItem}>
                 <FaFacebookF />
               </a>
               <a href="#" aria-label="Twitter" className={styles.socialItem}>
                 <FaTwitter />
               </a>
-              <a href="#" aria-label="Instagram" className={styles.socialItem}>
+              <a href="https://www.instagram.com/neftgasprom/" target='_blank' aria-label="Instagram" className={styles.socialItem}>
                 <FaInstagram />
               </a>
               <a href="#" aria-label="LinkedIn" className={styles.socialItem}>

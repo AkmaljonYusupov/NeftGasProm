@@ -13,7 +13,10 @@
   },
   "home": {
     "social": {
-      "title": "МЫ В СОЦИАЛЬНЫХ СЕТЯХ"
+      "title": "МЫ В СОЦИАЛЬНЫХ СЕТЯХ",
+      "subtitle": "Ознакомьтесь с нашими последними видео и рилами",
+      "rels": "Instagram Reel",
+      "fallback": "Открыть в Instagram"
     },
     "partners": {
       "title": "НАШИ ПАРТНЁРЫ"

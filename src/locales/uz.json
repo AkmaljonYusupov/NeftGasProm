@@ -13,7 +13,10 @@
 	},
 	"home": {
 		"social": {
-			"title": "IJTIMOIY TARMOQDA BIZ"
+			"title": "IJTIMOIY TARMOQDA BIZ",
+			"subtitle": "So‘nggi video va reel’larimiz bilan tanishing",
+			"rels": "Instagram Reel",
+			"fallback": "Instagram’da ochish"
 		},
 		"partners": {
 			"title": "HAMKORLARIMIZ"

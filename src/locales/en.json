@@ -13,7 +13,11 @@
   },
   "home": {
     "social": {
-      "title": "WE ARE ON SOCIAL MEDIA"
+      "title": "WE ARE ON SOCIAL MEDIA",
+      "subtitle": "Check out our latest videos and reels",
+      "rels": "Instagram Reel",
+      "fallback": "Open on Instagram"
+
     },
     "partners": {
       "title": "OUR PARTNERS"

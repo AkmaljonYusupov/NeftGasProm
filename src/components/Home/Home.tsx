@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
 
 import aboutMainImage from "../../assets/images/about-main.jpg"
@@ -7,15 +7,9 @@ import aboutProducts2 from "../../assets/images/about-products2.jpg"
 import aboutProducts3 from "../../assets/images/about-products3.jpg"
 import aboutProducts4 from "../../assets/images/about-products4.jpg"
 import aboutImgRight from "../../assets/images/hero-right.png"
-import social1 from "../../assets/images/social1.png"
-import social2 from "../../assets/images/social2.png"
-import social3 from "../../assets/images/social3.png"
-import social4 from "../../assets/images/social4.png"
-import social5 from "../../assets/images/social5.png"
 
 // partner logolari
 import ACWApowerLogo from "../../assets/partner/ACWA_Power_logo.png"
-
 import BIgroup from "../../assets/partner/BIgroupTashkent.png"
 import ChinaConstructionBank from "../../assets/partner/China_Construction_Bank_Logo.png"
 import ClikerHolding from "../../assets/partner/Cliker-Holding-Color-Logo-New.png"
@@ -27,6 +21,9 @@ import UEDconstruction from "../../assets/partner/UEDconstruction.png"
 import UzbekGidroEnergo from "../../assets/partner/UzbekGidroEnergo.png"
 import UzbekistanTemirYollari from "../../assets/partner/Uzbekistantemiryollari.png"
 import Uzelectroapparat from "../../assets/partner/Uzelectroapparat.png"
+
+import { FiInstagram } from "react-icons/fi"
+import styles from "./Home.module.scss"
 
 const partners = [
   ACWApowerLogo,
@@ -40,12 +37,21 @@ const partners = [
   UzbekGidroEnergo,
   UEDconstruction,
   UzbekistanTemirYollari,
-  Uzelectroapparat
+  Uzelectroapparat,
 ]
 
+const instagramPosts = [
+  "https://www.instagram.com/reel/DQW9hsdjHTK/",
+  "https://www.instagram.com/reel/DQhF3PUAr81/",
+  "https://www.instagram.com/reel/DQ19nqSAj7N/",
+  "https://www.instagram.com/reel/DQ1_15hApcH/",
+  "https://www.instagram.com/reel/DI-za_pCHp_/",
+  "https://www.instagram.com/reel/DQergA0AqKB/",
+  "https://www.instagram.com/reel/DQ1_sHzAkBJ/",
+  "https://www.instagram.com/reel/DQZMrLYgr6o/",
+  "https://www.instagram.com/reel/DQcOQGNgi8F/"
 
-import { FiInstagram } from 'react-icons/fi'
-import styles from "./Home.module.scss"
+]
 
 // Mahsulot tipi
 type Product = {
@@ -55,41 +61,71 @@ type Product = {
   description: string
 }
 
+declare global {
+  interface Window {
+    instgrm?: {
+      Embeds: {
+        process: () => void
+      }
+    }
+  }
+}
+
 export default function Home() {
   const { t } = useTranslation()
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
 
-  // Mahsulotlar ro'yxati — nom va tavsif tarjimadan olinadi
+  useEffect(() => {
+    const processInstagramEmbeds = () => {
+      if (window.instgrm?.Embeds) {
+        window.instgrm.Embeds.process()
+      }
+    }
+
+    const existingScript = document.querySelector(
+      'script[src="https://www.instagram.com/embed.js"]'
+    )
+
+    if (existingScript) {
+      processInstagramEmbeds()
+      return
+    }
+
+    const script = document.createElement("script")
+    script.src = "https://www.instagram.com/embed.js"
+    script.async = true
+    script.onload = () => processInstagramEmbeds()
+    document.body.appendChild(script)
+
+    return () => {
+      script.onload = null
+    }
+  }, [])
+
   const products: Product[] = [
     {
       id: 1,
       image: aboutProducts1,
       name: t("home.product1.name"),
-      description: t(
-        "home.product1.desc"),
+      description: t("home.product1.desc"),
     },
     {
       id: 2,
       image: aboutProducts2,
       name: t("home.product2.name"),
-      description: t(
-        "home.product2.desc"),
+      description: t("home.product2.desc"),
     },
     {
       id: 3,
       image: aboutProducts3,
       name: t("home.product3.name"),
-      description: t(
-        "home.product3.desc"
-      ),
+      description: t("home.product3.desc"),
     },
     {
       id: 4,
       image: aboutProducts4,
       name: t("home.product4.name", "BITUM-PRIMER"),
-      description: t(
-        "home.product4.desc"
-      ),
+      description: t("home.product4.desc"),
     },
   ]
 
@@ -98,10 +134,8 @@ export default function Home() {
       {/* About Section */}
       <section className={styles.aboutSection}>
         <div className={styles.container}>
-          {/* Sarlavha */}
           <h2 className={styles.mainTitle}>{t("home.about.title")}</h2>
 
-          {/* Mahsulotlar grid */}
           <div className={styles.imagesGrid}>
             {products.map((product) => (
               <div
@@ -129,7 +163,6 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Chapda katta rasm + o'ngda matn */}
           <div className={styles.mainContent}>
             <div className={styles.leftImageBlock}>
               <img
@@ -180,7 +213,6 @@ export default function Home() {
             </button>
 
             <div className={styles.modalInner}>
-              {/* Rasm tarafi */}
               <div className={styles.modalImageSide}>
                 <img
                   src={selectedProduct.image}
@@ -189,11 +221,8 @@ export default function Home() {
                 />
               </div>
 
-              {/* Matn tarafi */}
               <div className={styles.modalTextSide}>
-                <h3 className={styles.modalTitle}>
-                  {selectedProduct.name}
-                </h3>
+                <h3 className={styles.modalTitle}>{selectedProduct.name}</h3>
 
                 <p className={styles.modalDescription}>
                   {selectedProduct.description}
@@ -208,55 +237,64 @@ export default function Home() {
         </div>
       )}
 
+    {/* Social media */}
+<section className={styles.socialSection}>
+  <div className={styles.container}>
+    <div className={styles.socialHeader}>
+      <h2 className={styles.socialTitle}>{t("home.social.title")}</h2>
+      <p className={styles.socialSubtitle}>{t("home.social.subtitle")}</p>
+    </div>
 
-      {/* Social media */}
-      <section className={styles.socialSection}>
-        <div className={styles.container}>
-          <h2 className={styles.socialTitle}>
-            {t("home.social.title")}
-          </h2>
-
-          <div className={styles.socialGrid}>
-            {/* katta rasm */}
-            <div className={`${styles.socialCard} ${styles.socialCardLarge}`}>
-              <img src={social1} alt="social 1" loading="lazy" />
-              <a href="#" className={styles.socialIcon}>
-                <FiInstagram />
-              </a>
+    <div className={styles.socialGrid}>
+      {instagramPosts.map((postUrl, index) => (
+        <article key={index} className={styles.socialCard}>
+          <div className={styles.socialTop}>
+            <div className={styles.socialBadge}>
+              <FiInstagram />
+              <span>{t("home.social.rels")}</span>
             </div>
 
-            {/* o‘ng yuqori */}
-            <div className={styles.socialCard}>
-              <img src={social2} alt="social 2" loading="lazy" />
-              <a href="#" className={styles.socialIcon}>
-                <FiInstagram />
-              </a>
-            </div>
-
-            <div className={styles.socialCard}>
-              <img src={social3} alt="social 3" loading="lazy" />
-              <a href="#" className={styles.socialIcon}>
-                <FiInstagram />
-              </a>
-            </div>
-
-            {/* pastki qator */}
-            <div className={styles.socialCard}>
-              <img src={social4} alt="social 4" loading="lazy" />
-              <a href="#" className={styles.socialIcon}>
-                <FiInstagram />
-              </a>
-            </div>
-
-            <div className={styles.socialCard}>
-              <img src={social5} alt="social 5" loading="lazy" />
-              <a href="#" className={styles.socialIcon}>
-                <FiInstagram />
-              </a>
-            </div>
+            <a
+              href={postUrl}
+              target="_blank"
+              rel="noreferrer"
+              className={styles.socialLink}
+            >
+              {t("home.social.fallback")}
+            </a>
           </div>
-        </div>
-      </section>
+
+          <div className={styles.socialEmbedWrap}>
+            <blockquote
+              className="instagram-media"
+              data-instgrm-permalink={postUrl}
+              data-instgrm-version="14"
+              style={{
+                background: "#fff",
+                border: 0,
+                borderRadius: "16px",
+                margin: 0,
+                minWidth: "100%",
+                width: "100%",
+              }}
+            >
+              <a
+                href={postUrl}
+                target="_blank"
+                rel="noreferrer"
+                className={styles.socialFallback}
+                aria-label="Instagram post"
+              >
+                <FiInstagram />
+                <span>{t("home.social.fallback")}</span>
+              </a>
+            </blockquote>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Partnerlar bo'limi */}
       <section className={styles.partnersSection}>
@@ -289,6 +327,7 @@ export default function Home() {
           <p className={styles.testimonialDesc}>
             {t("home.testimonial.desc")}
           </p>
+
           <div className={styles.testimonialGrid}>
             <div className={styles.testimonialCard}>
               <div className={styles.stars}>★★★★★</div>
@@ -299,6 +338,7 @@ export default function Home() {
                 {t("home.testimonial.client1.text")}
               </p>
             </div>
+
             <div className={styles.testimonialCard}>
               <div className={styles.stars}>★★★★★</div>
               <h3 className={styles.clientName}>
@@ -308,6 +348,7 @@ export default function Home() {
                 {t("home.testimonial.client2.text")}
               </p>
             </div>
+
             <div className={styles.testimonialCard}>
               <div className={styles.stars}>★★★★★</div>
               <h3 className={styles.clientName}>
@@ -339,4 +380,3 @@ export default function Home() {
     </main>
   )
 }
-
