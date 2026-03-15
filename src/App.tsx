@@ -3,13 +3,14 @@ import Footer from "./components/Footer/Footer"
 import Hero from "./components/Hero/Hero"
 import Home from "./components/Home/Home"
 import Navbar from "./components/Navbar/Navbar"
-import About from './components/page/About'
-import Contact from './components/page/Contact'
-
+import About from "./components/page/About"
+import Contact from "./components/page/Contact"
+import ScrollToTop from "./components/ScrollToTop"
 
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Navbar />
 
       <Routes>
