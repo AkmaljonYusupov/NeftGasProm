@@ -52,7 +52,6 @@ export default function Footer() {
             <h3 className={styles.title}>{t("footer.service.title")}</h3>
 
             <nav className={styles.nav}>
-              <Link to="/shipping">{t("footer.service.shipping")}</Link>
               <Link to="/returns">{t("footer.service.returns")}</Link>
               <Link to="/privacy">{t("footer.service.privacy")}</Link>
               <Link to="/terms">{t("footer.service.terms")}</Link>
