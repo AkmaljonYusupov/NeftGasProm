@@ -23,6 +23,15 @@
 
 .heroContent {
   max-width: 700px;
+  min-width: 0;
+}
+
+.heroTop {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 18px;
 }
 
 .heroLabel,
@@ -37,6 +46,49 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.7px;
+}
+
+.heroLabel {
+  margin: 0;
+}
+
+.breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(17, 17, 17, 0.06);
+  backdrop-filter: blur(12px);
+  max-width: 100%;
+}
+
+.breadcrumbLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #e8761f;
+  font-size: 14px;
+  font-weight: 700;
+  transition: 0.25s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.breadcrumbDivider {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.breadcrumbCurrent {
+  color: #4b5563;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .heroTitle {
@@ -134,6 +186,7 @@
 .heroVisual {
   display: flex;
   justify-content: flex-end;
+  min-width: 0;
 }
 
 .imageStack {
@@ -484,4 +537,4 @@
   .imageStack {
     min-height: auto;
   }
-}
+} 

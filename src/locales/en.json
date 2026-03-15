@@ -124,7 +124,7 @@
     }
   },
   "form": {
-    "smallTitle": "Contact form",
+    "smallTitle": "Contact us",
     "title": "Send us a message",
     "text": "Fill out the form below. We will review your request and contact you as soon as possible.",
     "fields": {
@@ -143,11 +143,7 @@
     },
     "send": "Send message",
     "success": "Your message has been sent successfully."
-  },
-  "mapCard": {
-    "title": "Company location"
-  },
-  "mapTitle": "Company location"
+  }
 },
  "aboutPage": {
     "label": "About us",
@@ -210,6 +206,10 @@
     "certificates": {
       "label": "Certificates",
       "title": "Official documents and certificates"
+    },
+    "breadcrumb": {
+      "home": "Home",
+      "current": "About us"   
     }
   }
 }

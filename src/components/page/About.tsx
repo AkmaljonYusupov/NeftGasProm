@@ -1,5 +1,14 @@
+import { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
-import { FiArrowUpRight, FiAward, FiCheckCircle, FiLayers, FiShield, FiTrendingUp } from "react-icons/fi"
+import {
+	FiArrowUpRight,
+	FiAward,
+	FiCheckCircle,
+	FiHome,
+	FiLayers,
+	FiShield,
+	FiTrendingUp,
+} from "react-icons/fi"
 import { Link } from "react-router-dom"
 
 import aboutImg from "../../assets/images/about-products1.jpg"
@@ -8,6 +17,46 @@ import cert2 from "../../assets/images/certificate/certificate2.png"
 import cert3 from "../../assets/images/certificate/certificate3.png"
 
 import styles from "./About.module.scss"
+
+type CountUpNumberProps = {
+  end: number
+  duration?: number
+  suffix?: string
+}
+
+function CountUpNumber({
+  end,
+  duration = 1600,
+  suffix = "",
+}: CountUpNumberProps) {
+  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    let startTimestamp: number | null = null
+
+    const step = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp
+
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1)
+      const current = Math.floor(progress * end)
+
+      setCount(current)
+
+      if (progress < 1) {
+        requestAnimationFrame(step)
+      }
+    }
+
+    requestAnimationFrame(step)
+  }, [end, duration])
+
+  return (
+    <strong>
+      {count}
+      {suffix}
+    </strong>
+  )
+}
 
 export default function About() {
   const { t } = useTranslation()
@@ -38,7 +87,22 @@ export default function About() {
         <div className={styles.container}>
           <div className={styles.heroGrid}>
             <div className={styles.heroContent}>
-              <span className={styles.heroLabel}>{t("aboutPage.label")}</span>
+              <div className={styles.heroTop}>
+                <span className={styles.heroLabel}>{t("aboutPage.label")}</span>
+
+                <div className={styles.breadcrumb}>
+                  <Link to="/" className={styles.breadcrumbLink}>
+                    <FiHome />
+                    <span>{t("aboutPage.breadcrumb.home")}</span>
+                  </Link>
+
+                  <span className={styles.breadcrumbDivider}>/</span>
+
+                  <span className={styles.breadcrumbCurrent}>
+                    {t("aboutPage.breadcrumb.current")}
+                  </span>
+                </div>
+              </div>
 
               <h1 className={styles.heroTitle}>{t("aboutPage.title")}</h1>
 
@@ -57,17 +121,17 @@ export default function About() {
 
               <div className={styles.heroStats}>
                 <div className={styles.statCard}>
-                  <strong>18+</strong>
+                  <CountUpNumber end={18} suffix="+" />
                   <span>{t("aboutPage.stats.experience")}</span>
                 </div>
 
                 <div className={styles.statCard}>
-                  <strong>120+</strong>
+                  <CountUpNumber end={120} suffix="+" />
                   <span>{t("aboutPage.stats.projects")}</span>
                 </div>
 
                 <div className={styles.statCard}>
-                  <strong>50+</strong>
+                  <CountUpNumber end={50} suffix="+" />
                   <span>{t("aboutPage.stats.team")}</span>
                 </div>
               </div>
@@ -101,8 +165,12 @@ export default function About() {
         <div className={styles.container}>
           <div className={styles.storyWrapper}>
             <div className={styles.storyLeft}>
-              <span className={styles.sectionLabel}>{t("aboutPage.story.label")}</span>
-              <h2 className={styles.sectionTitle}>{t("aboutPage.story.title")}</h2>
+              <span className={styles.sectionLabel}>
+                {t("aboutPage.story.label")}
+              </span>
+              <h2 className={styles.sectionTitle}>
+                {t("aboutPage.story.title")}
+              </h2>
             </div>
 
             <div className={styles.storyRight}>
@@ -116,8 +184,12 @@ export default function About() {
       <section className={styles.advantagesSection}>
         <div className={styles.container}>
           <div className={styles.sectionHead}>
-            <span className={styles.sectionLabel}>{t("aboutPage.advantageLabel")}</span>
-            <h2 className={styles.sectionTitle}>{t("aboutPage.advantageTitle")}</h2>
+            <span className={styles.sectionLabel}>
+              {t("aboutPage.advantageLabel")}
+            </span>
+            <h2 className={styles.sectionTitle}>
+              {t("aboutPage.advantageTitle")}
+            </h2>
           </div>
 
           <div className={styles.advantagesGrid}>
@@ -136,8 +208,12 @@ export default function About() {
         <div className={styles.container}>
           <div className={styles.valuesLayout}>
             <div className={styles.valuesContent}>
-              <span className={styles.sectionLabel}>{t("aboutPage.values.label")}</span>
-              <h2 className={styles.sectionTitle}>{t("aboutPage.values.title")}</h2>
+              <span className={styles.sectionLabel}>
+                {t("aboutPage.values.label")}
+              </span>
+              <h2 className={styles.sectionTitle}>
+                {t("aboutPage.values.title")}
+              </h2>
               <p className={styles.valuesText}>{t("aboutPage.values.text")}</p>
 
               <div className={styles.checkList}>
@@ -173,8 +249,12 @@ export default function About() {
       <section className={styles.certificateSection}>
         <div className={styles.container}>
           <div className={styles.sectionHead}>
-            <span className={styles.sectionLabel}>{t("aboutPage.certificates.label")}</span>
-            <h2 className={styles.sectionTitle}>{t("aboutPage.certificates.title")}</h2>
+            <span className={styles.sectionLabel}>
+              {t("aboutPage.certificates.label")}
+            </span>
+            <h2 className={styles.sectionTitle}>
+              {t("aboutPage.certificates.title")}
+            </h2>
           </div>
 
           <div className={styles.certificateGrid}>
