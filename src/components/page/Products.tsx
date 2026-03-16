@@ -10,6 +10,7 @@ import {
 	FiHome,
 	FiLayers,
 	FiList,
+	FiMail,
 	FiPackage,
 	FiRefreshCcw,
 	FiSearch,
@@ -1050,6 +1051,17 @@ export default function Products() {
                     </span>
                   ))}
                 </div>
+
+                <div className={styles.modalQuickActions}>
+                  <Link to="/contact" className={styles.productBtn} onClick={closeProductModal}>
+                    <FiMail />
+                    <span>{t("productsPage.modal.contact", "Bog‘lanish")}</span>
+                  </Link>
+
+                  <button type="button" className={styles.secondaryBtn} onClick={closeProductModal}>
+                    {t("productsPage.modal.close", "Yopish")}
+                  </button>
+                </div>
               </div>
             </div>
 
@@ -1080,6 +1092,11 @@ export default function Products() {
               </div>
 
               <div className={styles.modalActions}>
+                <Link to="/contact" className={styles.ctaBtn} onClick={closeProductModal}>
+                  <FiMail />
+                  <span>{t("productsPage.modal.order", "Ushbu mahsulot bo‘yicha bog‘lanish")}</span>
+                </Link>
+
                 <button type="button" className={styles.secondaryBtn} onClick={closeProductModal}>
                   {t("productsPage.modal.close", "Yopish")}
                 </button>
