@@ -255,5 +255,358 @@
 			"home": "Bosh sahifa",
 			"current": "Biz haqimizda"
 		}
-	}
+	},
+	
+  "productsPage": {
+    "breadcrumb": {
+      "home": "Bosh sahifa",
+      "current": "Mahsulotlar"
+    },
+    "hero": {
+      "label": "Mahsulotlar",
+      "title": "Zamonaviy va texnik ma’lumotlarga boy product page",
+      "text": "Har bir mahsulot uchun alohida texnik xarakteristikalar, modal ichida katta rasm va tafsilotli jadval mavjud.",
+      "view": "Mahsulotlarni ko‘rish",
+      "backHome": "Bosh sahifaga qaytish",
+      "badge": "Sifat va standart",
+      "imageAlt": "Mahsulot rasmi",
+      "cardTitle": "Professional yechimlar",
+      "cardText": "Mahsulot ustiga bosish orqali texnik ko‘rsatkichlar jadvalini to‘liq ko‘rish mumkin.",
+      "highlights": {
+        "0": "Detail modal",
+        "1": "Texnik jadval",
+        "2": "Qulay filter"
+      }
+    },
+    "stats": {
+      "0": "Mahsulot",
+      "1": "Texnik jadval mavjud",
+      "2": "Ko‘rib chiqish qulayligi"
+    },
+    "featured": {
+      "label": "Tavsiya etiladi",
+      "button": "Batafsil ko‘rish"
+    },
+    "benefitsLabel": "Afzalliklar",
+    "benefitsTitle": "Nega bu sahifa qulay",
+    "benefits": {
+      "0": {
+        "title": "Ishonchli himoya",
+        "text": "Mahsulotlar namlik, tashqi ta’sir va eskirishga qarshi barqaror himoya beradi."
+      },
+      "1": {
+        "title": "Texnik ma’lumotlar aniq",
+        "text": "Har bir mahsulot uchun alohida xarakteristika jadvali ko‘rsatiladi."
+      },
+      "2": {
+        "title": "Qulay tanlash",
+        "text": "Filter, qidiruv va modal orqali kerakli mahsulotni tez topish mumkin."
+      },
+      "3": {
+        "title": "Professional yechim",
+        "text": "Qurilish va gidroizolyatsiya ehtiyojlari uchun mos tanlovlar."
+      }
+    },
+    "catalog": {
+      "label": "Katalog",
+      "title": "Mahsulotlar ro‘yxati"
+    },
+    "filters": {
+      "all": "Barchasi",
+      "primer": "Primer",
+      "mastic": "Mastika",
+      "roofBitumen": "Krovlya bitum",
+      "sealant": "Germetik"
+    },
+    "sort": {
+      "default": "Standart",
+      "nameAsc": "Nomi A-Z",
+      "nameDesc": "Nomi Z-A"
+    },
+    "searchPlaceholder": "Mahsulot qidirish...",
+    "reset": "Tozalash",
+    "meta": {
+      "found": "Topilgan mahsulotlar",
+      "saved": "Saqlanganlar",
+      "hint": "Mahsulot ustiga bosilganda to‘liq texnik jadval ochiladi"
+    },
+    "more": "Batafsil",
+    "empty": {
+      "title": "Mahsulot topilmadi",
+      "text": "Qidiruv so‘zini o‘zgartirib ko‘ring yoki boshqa filter tanlang.",
+      "reset": "Filterni tozalash"
+    },
+    "loadMore": "Yana ko‘rsatish",
+    "cta": {
+      "label": "Hamkorlik",
+      "title": "Loyihangiz uchun mos mahsulotni tanlang",
+      "text": "Istalgan mahsulotni tanlab, uning texnik ma’lumotlarini batafsil ko‘rishingiz mumkin.",
+      "button": "Mahsulotlarni ko‘rish",
+      "contact": "Bog‘lanish"
+    },
+    "table": {
+      "headers": {
+        "characteristic": "Xarakteristika",
+        "value": "Ko‘rsatkich",
+        "unit": "O‘lchov birligi",
+        "method": "Sinov usuli / GOST"
+      }
+    },
+    "modal": {
+      "close": "Yopish"
+    },
+    "items": {
+      "0": {
+        "badge": "Primer",
+        "title": "Битумный Праймер №1",
+        "shortDesc": "Gidroizolyatsiya va bitum materiallarini surtishdan oldin asosni tayyorlash uchun yuzaviy praymer.",
+        "features": {
+          "0": "Tez quriydi",
+          "1": "Yopishishni yaxshilaydi",
+          "2": "Professional qo‘llash uchun"
+        },
+        "usage": {
+          "0": "Prymerlash",
+          "1": "Poydevor",
+          "2": "Tom qismi"
+        },
+        "facts": {
+          "0": "Qulay surtiladi",
+          "1": "Barqaror adgeziya",
+          "2": "Asosni tayyorlaydi"
+        },
+        "techTitle": "Texnik xarakteristikalar",
+        "techRows": {
+          "0": {
+            "characteristic": "Uchuvchan bo‘lmagan moddalarning massa ulushi"
+          },
+          "1": {
+            "characteristic": "+20 °C dagi qurish vaqti",
+            "value": "12 soatdan ko‘p emas",
+            "unit": "soat"
+          },
+          "2": {
+            "characteristic": "Yumshash harorati",
+            "value": "70 dan past emas"
+          },
+          "3": {
+            "characteristic": "Shartli qovushqoqlik (VZ-246, d=4 mm)",
+            "unit": "sek"
+          },
+          "4": {
+            "characteristic": "Bir qatlam uchun sarf"
+          },
+          "5": {
+            "characteristic": "Qo‘llash harorati diapazoni",
+            "value": "-20 dan +40 gacha"
+          },
+          "6": {
+            "characteristic": "Asos bilan yopishish mustahkamligi",
+            "value": "1 balldan kam emas",
+            "unit": "ball"
+          },
+          "7": {
+            "characteristic": "Surtiladigan qatlam qalinligi"
+          },
+          "8": {
+            "characteristic": "Suv miqdori",
+            "value": "Izlarga ruxsat beriladi"
+          }
+        }
+      },
+      "1": {
+        "badge": "Mastika",
+        "title": "Битумная Мастика №1",
+        "shortDesc": "Gidroizolyatsiya, konstruksiyalarni himoya qilish va tom qismlarida ishlatish uchun universal bitum mastika.",
+        "features": {
+          "0": "Elastik qoplama",
+          "1": "Yuqori suvga chidamlilik",
+          "2": "Asosni ishonchli himoya qiladi"
+        },
+        "usage": {
+          "0": "Tom qismi",
+          "1": "Beton",
+          "2": "Metall"
+        },
+        "facts": {
+          "0": "Universal qo‘llash",
+          "1": "Kuchli yopishish",
+          "2": "Namlikka chidamli"
+        },
+        "techTitle": "Texnik xarakteristikalar",
+        "techRows": {
+          "0": {
+            "characteristic": "Uchuvchan bo‘lmagan moddalarning massa ulushi (quruq qoldiq)"
+          },
+          "1": {
+            "characteristic": "+20 °C dagi qurish vaqti (1 mm qalinlikda)",
+            "value": "24 soatdan ko‘p emas",
+            "unit": "soat"
+          },
+          "2": {
+            "characteristic": "Yumshash harorati ('Halqa va shar' usuli)",
+            "value": "70–100 dan past emas"
+          },
+          "3": {
+            "characteristic": "Past haroratdagi egiluvchanlik (diametri 5–40 mm sterjenda, -10...-15 °C da)",
+            "value": "Yoriqsiz"
+          },
+          "4": {
+            "characteristic": "Asos bilan yopishish mustahkamligi (adgeziya)",
+            "value": "0,2–0,5 dan kam emas"
+          },
+          "5": {
+            "characteristic": "Suv shimuvchanligi (24 soatda)",
+            "value": "0,5–1 dan ko‘p emas"
+          },
+          "6": {
+            "characteristic": "Bir qatlam uchun sarf (gidroizolyatsiya uchun)"
+          },
+          "7": {
+            "characteristic": "Qo‘llash harorati diapazoni",
+            "value": "-10 dan +40 gacha"
+          },
+          "8": {
+            "characteristic": "Issiqlikka chidamlilik (5 soat davomida)",
+            "value": "70–100 dan kam emas"
+          },
+          "9": {
+            "characteristic": "Suv miqdori",
+            "value": "0,5 dan ko‘p emas (yoki izlar)"
+          }
+        }
+      },
+      "2": {
+        "badge": "Tom bitumi",
+        "title": "Битум кровельный №1",
+        "shortDesc": "Tom tizimlarini qurish va ta’mirlash uchun neft asosidagi tom bitumi, barqaror ekspluatatsion xususiyatlarga ega.",
+        "features": {
+          "0": "Tom ishlari uchun",
+          "1": "Qora bir xil tarkib",
+          "2": "GOST ga mos"
+        },
+        "usage": {
+          "0": "Tom",
+          "1": "Ta’mirlash",
+          "2": "Gidroizolyatsiya"
+        },
+        "facts": {
+          "0": "Yuqori eruvchanlik",
+          "1": "Suvsiz tarkib",
+          "2": "Barqaror qizdirish"
+        },
+        "techTitle": "Neft tom bitumi (BNK) texnik xarakteristikalari",
+        "techRows": {
+          "0": {
+            "characteristic": "Halqa va shar bo‘yicha yumshash harorati"
+          },
+          "1": {
+            "characteristic": "25 °C dagi igna kirib borish chuqurligi"
+          },
+          "2": {
+            "characteristic": "25 °C dagi cho‘ziluvchanlik",
+            "value": "kamida 3,0",
+            "unit": "sm"
+          },
+          "3": {
+            "characteristic": "Mo‘rtlashish harorati",
+            "value": "-5 dan yuqori emas"
+          },
+          "4": {
+            "characteristic": "Qizdirilgandagi massa yo‘qotilishi",
+            "value": "0,8 dan ko‘p emas"
+          },
+          "5": {
+            "characteristic": "Qizdirilgandan keyin yumshash haroratining o‘zgarishi",
+            "value": "+5 dan ko‘p emas"
+          },
+          "6": {
+            "characteristic": "Suv miqdori",
+            "value": "Mavjud emas"
+          },
+          "7": {
+            "characteristic": "Toluildagi eruvchanligi",
+            "value": "kamida 99,0"
+          },
+          "8": {
+            "characteristic": "Kul miqdori",
+            "value": "0,5 dan ko‘p emas"
+          },
+          "9": {
+            "characteristic": "Bir xilligi",
+            "value": "Begona qo‘shimchalarsiz",
+            "method": "Vizual"
+          },
+          "10": {
+            "characteristic": "Rangi",
+            "value": "Qora",
+            "method": "Vizual"
+          }
+        }
+      },
+      "3": {
+        "badge": "Germetik",
+        "title": "Битумно Полимерная дорожная герметика БПГ №1",
+        "shortDesc": "Yo‘l choklarini ishonchli germetizatsiya qilish uchun bitum-polimer yo‘l germetigi, deformatsiya va past haroratga chidamli.",
+        "features": {
+          "0": "Yuqori bardoshlilik",
+          "1": "Yo‘l choklari uchun",
+          "2": "Betonga barqaror yopishish"
+        },
+        "usage": {
+          "0": "Yo‘l choklari",
+          "1": "Beton",
+          "2": "Infratuzilma"
+        },
+        "facts": {
+          "0": "Past haroratda egiluvchan",
+          "1": "Yuqori deformatsiya bardoshligi",
+          "2": "Yuqori yuklama uchun"
+        },
+        "techTitle": "Texnik xarakteristikalar",
+        "techRows": {
+          "0": {
+            "characteristic": "Yumshash harorati (halqa va shar bo‘yicha)",
+            "value": "90 / 90 / 80 dan past emas"
+          },
+          "1": {
+            "characteristic": "Egiluvchanlik harorati (Ø 10–20 mm sterjenda, yoriqsiz)",
+            "value": "-25 / -35 / -50 dan yuqori emas"
+          },
+          "2": {
+            "characteristic": "-20 °C dagi nisbiy cho‘zilish",
+            "value": "75 / 75 / 75 dan kam emas"
+          },
+          "3": {
+            "characteristic": "Yopishqoqlik harorati",
+            "value": "50 / 50 / 50 dan past emas"
+          },
+          "4": {
+            "characteristic": "Bardoshlilik (deformatsiya sikllari)",
+            "value": "30000 / 30000 / 30000 dan kam emas",
+            "unit": "sikl"
+          },
+          "5": {
+            "characteristic": "Zichlik"
+          },
+          "6": {
+            "characteristic": "Qizdirish ishchi harorati",
+            "value": "170–195 (210 dan yuqori emas)"
+          },
+          "7": {
+            "characteristic": "Qo‘llash harorati (atrof-muhit)",
+            "value": "-10 dan past emas"
+          },
+          "8": {
+            "characteristic": "Sarf (20×40 mm chok uchun)"
+          },
+          "9": {
+            "characteristic": "Adgeziya (beton bilan yopishish mustahkamligi)",
+            "value": "0,1–0,2 dan kam emas"
+          }
+        }
+      }
+    }
+  }
+
 }

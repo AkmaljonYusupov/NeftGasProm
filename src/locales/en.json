@@ -256,5 +256,356 @@
       "home": "Home",
       "current": "About Us"
     }
+  },
+   "productsPage": {
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Products"
+    },
+    "hero": {
+      "label": "Products",
+      "title": "Modern product page with technical information",
+      "text": "Each product includes separate technical specifications, a large image inside a modal, and a detailed table.",
+      "view": "View products",
+      "backHome": "Back to home",
+      "badge": "Quality and standard",
+      "imageAlt": "Product image",
+      "cardTitle": "Professional solutions",
+      "cardText": "Click on a product to view the full technical specification table.",
+      "highlights": {
+        "0": "Detail modal",
+        "1": "Technical table",
+        "2": "Easy filters"
+      }
+    },
+    "stats": {
+      "0": "Products",
+      "1": "Technical tables available",
+      "2": "Viewing convenience"
+    },
+    "featured": {
+      "label": "Recommended",
+      "button": "View details"
+    },
+    "benefitsLabel": "Benefits",
+    "benefitsTitle": "Why this page is convenient",
+    "benefits": {
+      "0": {
+        "title": "Reliable protection",
+        "text": "The products provide stable protection against moisture, external impact, and wear."
+      },
+      "1": {
+        "title": "Clear technical data",
+        "text": "A separate specification table is shown for each product."
+      },
+      "2": {
+        "title": "Easy selection",
+        "text": "Filters, search, and modal view help users quickly find the needed product."
+      },
+      "3": {
+        "title": "Professional solution",
+        "text": "Suitable options for construction and waterproofing needs."
+      }
+    },
+    "catalog": {
+      "label": "Catalog",
+      "title": "Product list"
+    },
+    "filters": {
+      "all": "All",
+      "primer": "Primer",
+      "mastic": "Mastic",
+      "roofBitumen": "Roof bitumen",
+      "sealant": "Sealant"
+    },
+    "sort": {
+      "default": "Default",
+      "nameAsc": "Name A-Z",
+      "nameDesc": "Name Z-A"
+    },
+    "searchPlaceholder": "Search product...",
+    "reset": "Reset",
+    "meta": {
+      "found": "Found products",
+      "saved": "Saved",
+      "hint": "Clicking a product opens the full technical specification table"
+    },
+    "more": "More details",
+    "empty": {
+      "title": "No product found",
+      "text": "Try changing the search term or choose another filter.",
+      "reset": "Clear filters"
+    },
+    "loadMore": "Show more",
+    "cta": {
+      "label": "Cooperation",
+      "title": "Choose the right product for your project",
+      "text": "You can select any product and view its technical information in detail.",
+      "button": "View products",
+      "contact": "Contact us"
+    },
+    "table": {
+      "headers": {
+        "characteristic": "Characteristic",
+        "value": "Value",
+        "unit": "Unit",
+        "method": "Test method / GOST"
+      }
+    },
+    "modal": {
+      "close": "Close"
+    },
+    "items": {
+      "0": {
+        "badge": "Primer",
+        "title": "Битумный Праймер №1",
+        "shortDesc": "Surface primer for preparing the base before applying waterproofing and bitumen materials.",
+        "features": {
+          "0": "Fast drying",
+          "1": "Improves adhesion",
+          "2": "For professional use"
+        },
+        "usage": {
+          "0": "Priming",
+          "1": "Foundation",
+          "2": "Roof"
+        },
+        "facts": {
+          "0": "Easy application",
+          "1": "Stable adhesion",
+          "2": "Base preparation"
+        },
+        "techTitle": "Technical specifications",
+        "techRows": {
+          "0": {
+            "characteristic": "Mass fraction of non-volatile substances"
+          },
+          "1": {
+            "characteristic": "Drying time (at +20 °C)",
+            "value": "No more than 12",
+            "unit": "h"
+          },
+          "2": {
+            "characteristic": "Softening temperature",
+            "value": "Not lower than 70"
+          },
+          "3": {
+            "characteristic": "Conditional viscosity (VZ-246, d=4 mm)",
+            "unit": "s"
+          },
+          "4": {
+            "characteristic": "Consumption per layer"
+          },
+          "5": {
+            "characteristic": "Application temperature range",
+            "value": "From -20 to +40"
+          },
+          "6": {
+            "characteristic": "Adhesion strength to the base",
+            "value": "Not less than 1",
+            "unit": "point"
+          },
+          "7": {
+            "characteristic": "Applied layer thickness"
+          },
+          "8": {
+            "characteristic": "Water content",
+            "value": "Traces allowed"
+          }
+        }
+      },
+      "1": {
+        "badge": "Mastic",
+        "title": "Битумная Мастика №1",
+        "shortDesc": "Universal bitumen mastic for waterproofing, structural protection, and roofing systems.",
+        "features": {
+          "0": "Elastic coating",
+          "1": "High water resistance",
+          "2": "Reliable substrate protection"
+        },
+        "usage": {
+          "0": "Roof",
+          "1": "Concrete",
+          "2": "Metal"
+        },
+        "facts": {
+          "0": "Universal use",
+          "1": "Strong adhesion",
+          "2": "Moisture resistant"
+        },
+        "techTitle": "Technical specifications",
+        "techRows": {
+          "0": {
+            "characteristic": "Mass fraction of non-volatile substances (dry residue)"
+          },
+          "1": {
+            "characteristic": "Drying time (at +20 °C, 1 mm thickness)",
+            "value": "No more than 24",
+            "unit": "h"
+          },
+          "2": {
+            "characteristic": "Softening temperature (Ring and Ball method)",
+            "value": "Not lower than 70–100"
+          },
+          "3": {
+            "characteristic": "Flexibility at low temperatures (on a 5–40 mm rod, at -10...-15 °C)",
+            "value": "No cracks"
+          },
+          "4": {
+            "characteristic": "Adhesion strength to the base",
+            "value": "Not less than 0.2–0.5"
+          },
+          "5": {
+            "characteristic": "Water absorption (24 h)",
+            "value": "No more than 0.5–1"
+          },
+          "6": {
+            "characteristic": "Consumption per layer (for waterproofing)"
+          },
+          "7": {
+            "characteristic": "Application temperature range",
+            "value": "From -10 to +40"
+          },
+          "8": {
+            "characteristic": "Heat resistance (for 5 h)",
+            "value": "Not less than 70–100"
+          },
+          "9": {
+            "characteristic": "Water content",
+            "value": "No more than 0.5 (or traces)"
+          }
+        }
+      },
+      "2": {
+        "badge": "Roof bitumen",
+        "title": "Битум кровельный №1",
+        "shortDesc": "Petroleum roofing bitumen for installation and repair of roofing systems with stable performance properties.",
+        "features": {
+          "0": "For roofing works",
+          "1": "Black uniform composition",
+          "2": "GOST compliant"
+        },
+        "usage": {
+          "0": "Roofing",
+          "1": "Repair",
+          "2": "Waterproofing"
+        },
+        "facts": {
+          "0": "High solubility",
+          "1": "No water content",
+          "2": "Stable heating"
+        },
+        "techTitle": "Technical characteristics of petroleum roofing bitumen (BNK)",
+        "techRows": {
+          "0": {
+            "characteristic": "Softening temperature by Ring and Ball"
+          },
+          "1": {
+            "characteristic": "Needle penetration depth at 25 °C"
+          },
+          "2": {
+            "characteristic": "Ductility at 25 °C",
+            "value": "not less than 3.0",
+            "unit": "cm"
+          },
+          "3": {
+            "characteristic": "Brittleness temperature",
+            "value": "not higher than -5"
+          },
+          "4": {
+            "characteristic": "Mass loss during heating",
+            "value": "not more than 0.8"
+          },
+          "5": {
+            "characteristic": "Change in softening temperature after heating",
+            "value": "not more than +5"
+          },
+          "6": {
+            "characteristic": "Water content",
+            "value": "Absent"
+          },
+          "7": {
+            "characteristic": "Solubility in toluene",
+            "value": "not less than 99.0"
+          },
+          "8": {
+            "characteristic": "Ash content",
+            "value": "not more than 0.5"
+          },
+          "9": {
+            "characteristic": "Uniformity",
+            "value": "Without foreign inclusions",
+            "method": "Visual"
+          },
+          "10": {
+            "characteristic": "Color",
+            "value": "Black",
+            "method": "Visual"
+          }
+        }
+      },
+      "3": {
+        "badge": "Sealant",
+        "title": "Битумно Полимерная дорожная герметика БПГ №1",
+        "shortDesc": "Bitumen-polymer road sealant for reliable joint sealing, resistant to deformation and low temperatures.",
+        "features": {
+          "0": "High endurance",
+          "1": "For road joints",
+          "2": "Stable adhesion to concrete"
+        },
+        "usage": {
+          "0": "Road joints",
+          "1": "Concrete",
+          "2": "Infrastructure"
+        },
+        "facts": {
+          "0": "Low-temperature flexibility",
+          "1": "High deformation resistance",
+          "2": "For heavy loads"
+        },
+        "techTitle": "Technical specifications",
+        "techRows": {
+          "0": {
+            "characteristic": "Softening temperature (Ring and Ball)",
+            "value": "Not lower than 90 / 90 / 80"
+          },
+          "1": {
+            "characteristic": "Flexibility temperature (on Ø 10–20 mm rod, without cracks)",
+            "value": "Not higher than -25 / -35 / -50"
+          },
+          "2": {
+            "characteristic": "Relative elongation at break (at -20 °C)",
+            "value": "Not less than 75 / 75 / 75"
+          },
+          "3": {
+            "characteristic": "Stickiness temperature",
+            "value": "Not lower than 50 / 50 / 50"
+          },
+          "4": {
+            "characteristic": "Endurance (deformation cycles)",
+            "value": "Not less than 30000 / 30000 / 30000",
+            "unit": "cycles"
+          },
+          "5": {
+            "characteristic": "Density"
+          },
+          "6": {
+            "characteristic": "Working heating temperature",
+            "value": "170–195 (not above 210)"
+          },
+          "7": {
+            "characteristic": "Application temperature (ambient)",
+            "value": "Not lower than -10"
+          },
+          "8": {
+            "characteristic": "Consumption (for 20×40 mm joint)"
+          },
+          "9": {
+            "characteristic": "Adhesion (bond strength to concrete)",
+            "value": "Not less than 0.1–0.2"
+          }
+        }
+      }
+    }
   }
 }

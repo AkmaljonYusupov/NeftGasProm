@@ -1,10 +1,8 @@
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import { useTranslation } from "react-i18next"
 import {
 	FiArrowRight,
 	FiCheckCircle,
-	FiChevronDown,
-	FiDownload,
 	FiDroplet,
 	FiFilter,
 	FiGrid,
@@ -58,88 +56,137 @@ type ProductItem = {
   techRows: TechRow[]
 }
 
+type AnimatedCounterProps = {
+  end: number
+  suffix?: string
+  duration?: number
+}
+
+function AnimatedCounter({ end, suffix = "", duration = 1600 }: AnimatedCounterProps) {
+  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    let startTime: number | null = null
+    let frameId = 0
+
+    const animate = (timestamp: number) => {
+      if (!startTime) startTime = timestamp
+      const progress = Math.min((timestamp - startTime) / duration, 1)
+      const current = Math.floor(progress * end)
+      setCount(current)
+
+      if (progress < 1) {
+        frameId = window.requestAnimationFrame(animate)
+      }
+    }
+
+    frameId = window.requestAnimationFrame(animate)
+
+    return () => {
+      window.cancelAnimationFrame(frameId)
+    }
+  }, [duration, end])
+
+  return (
+    <strong>
+      {count}
+      {suffix}
+    </strong>
+  )
+}
+
 export default function Products() {
   const { t } = useTranslation()
-
   const [search, setSearch] = useState("")
   const [activeCategory, setActiveCategory] = useState<ProductCategory>("all")
   const [sortType, setSortType] = useState<SortType>("default")
   const [viewMode, setViewMode] = useState<ViewMode>("grid")
   const [visibleCount, setVisibleCount] = useState(4)
   const [favorites, setFavorites] = useState<number[]>([])
-  const [openFaq, setOpenFaq] = useState<number | null>(0)
   const [selectedProduct, setSelectedProduct] = useState<ProductItem | null>(null)
+
+  const modalContentRef = useRef<HTMLDivElement | null>(null)
 
   const products: ProductItem[] = [
     {
       id: 1,
       image: productImg1,
-      badge: "Primer",
-      title: "Битумный Праймер №1",
-      shortDesc:
-        "Поверхностный праймер для подготовки основания перед нанесением гидроизоляционных и битумных материалов.",
+      badge: t("productsPage.items.0.badge", "Primer"),
+      title: t("productsPage.items.0.title", "Битумный Праймер №1"),
+      shortDesc: t(
+        "productsPage.items.0.shortDesc",
+        "Поверхностный праймер для подготовки основания перед нанесением гидроизоляционных и битумных материалов."
+      ),
       features: [
-        "Быстрое высыхание",
-        "Улучшает сцепление",
-        "Для профессионального применения",
+        t("productsPage.items.0.features.0", "Быстрое высыхание"),
+        t("productsPage.items.0.features.1", "Улучшает сцепление"),
+        t("productsPage.items.0.features.2", "Для профессионального применения"),
       ],
-      usage: ["Праймирование", "Фундамент", "Кровля"],
-      facts: ["Удобное нанесение", "Стабильная адгезия", "Подготовка основания"],
+      usage: [
+        t("productsPage.items.0.usage.0", "Праймирование"),
+        t("productsPage.items.0.usage.1", "Фундамент"),
+        t("productsPage.items.0.usage.2", "Кровля"),
+      ],
+      facts: [
+        t("productsPage.items.0.facts.0", "Удобное нанесение"),
+        t("productsPage.items.0.facts.1", "Стабильная адгезия"),
+        t("productsPage.items.0.facts.2", "Подготовка основания"),
+      ],
       category: "primer",
       featured: true,
-      techTitle: "Технические характеристики",
+      techTitle: t("productsPage.items.0.techTitle", "Технические характеристики"),
       techRows: [
         {
-          characteristic: "Массовая доля нелетучих веществ",
+          characteristic: t("productsPage.items.0.techRows.0.characteristic", "Массовая доля нелетучих веществ"),
           value: "45–55",
           unit: "%",
           method: "ГОСТ 31939-2022",
         },
         {
-          characteristic: "Время высыхания (при +20 °C)",
-          value: "Не более 12",
-          unit: "ч",
+          characteristic: t("productsPage.items.0.techRows.1.characteristic", "Время высыхания (при +20 °C)"),
+          value: t("productsPage.items.0.techRows.1.value", "Не более 12"),
+          unit: t("productsPage.items.0.techRows.1.unit", "ч"),
           method: "ГОСТ 19007-2023",
         },
         {
-          characteristic: "Температура размягчения",
-          value: "Не ниже 70",
+          characteristic: t("productsPage.items.0.techRows.2.characteristic", "Температура размягчения"),
+          value: t("productsPage.items.0.techRows.2.value", "Не ниже 70"),
           unit: "°C",
           method: "ГОСТ 11506-73",
         },
         {
-          characteristic: "Условная вязкость (по ВЗ-246, d=4 мм)",
+          characteristic: t("productsPage.items.0.techRows.3.characteristic", "Условная вязкость (по ВЗ-246, d=4 мм)"),
           value: "15–40",
-          unit: "с",
+          unit: t("productsPage.items.0.techRows.3.unit", "с"),
           method: "ГОСТ 8420-2022",
         },
         {
-          characteristic: "Расход на один слой",
+          characteristic: t("productsPage.items.0.techRows.4.characteristic", "Расход на один слой"),
           value: "0,2–0,3",
           unit: "л/м²",
           method: "-",
         },
         {
-          characteristic: "Диапазон температур применения",
-          value: "От -20 до +40",
+          characteristic: t("productsPage.items.0.techRows.5.characteristic", "Диапазон температур применения"),
+          value: t("productsPage.items.0.techRows.5.value", "От -20 до +40"),
           unit: "°C",
           method: "-",
         },
         {
-          characteristic: "Прочность сцепления с основанием",
-          value: "Не менее 1",
-          unit: "балл",
+          characteristic: t("productsPage.items.0.techRows.6.characteristic", "Прочность сцепления с основанием"),
+          value: t("productsPage.items.0.techRows.6.value", "Не менее 1"),
+          unit: t("productsPage.items.0.techRows.6.unit", "балл"),
           method: "-",
         },
         {
-          characteristic: "Толщина слоя нанесения",
+          characteristic: t("productsPage.items.0.techRows.7.characteristic", "Толщина слоя нанесения"),
           value: "0,2",
           unit: "мм",
           method: "-",
         },
         {
-          characteristic: "Содержание воды",
-          value: "Допускаются следы",
+          characteristic: t("productsPage.items.0.techRows.8.characteristic", "Содержание воды"),
+          value: t("productsPage.items.0.techRows.8.value", "Допускаются следы"),
           unit: "-",
           method: "-",
         },
@@ -148,78 +195,87 @@ export default function Products() {
     {
       id: 2,
       image: productImg2,
-      badge: "Mastika",
-      title: "Битумная Мастика №1",
-      shortDesc:
-        "Универсальная битумная мастика для гидроизоляции, защиты конструкций и устройства кровельных узлов.",
+      badge: t("productsPage.items.1.badge", "Mastika"),
+      title: t("productsPage.items.1.title", "Битумная Мастика №1"),
+      shortDesc: t(
+        "productsPage.items.1.shortDesc",
+        "Универсальная битумная мастика для гидроизоляции, защиты конструкций и устройства кровельных узлов."
+      ),
       features: [
-        "Эластичное покрытие",
-        "Высокая водостойкость",
-        "Надёжная защита основания",
+        t("productsPage.items.1.features.0", "Эластичное покрытие"),
+        t("productsPage.items.1.features.1", "Высокая водостойкость"),
+        t("productsPage.items.1.features.2", "Надёжная защита основания"),
       ],
-      usage: ["Кровля", "Бетон", "Металл"],
-      facts: ["Универсальное применение", "Сильная адгезия", "Устойчивость к влаге"],
+      usage: [
+        t("productsPage.items.1.usage.0", "Кровля"),
+        t("productsPage.items.1.usage.1", "Бетон"),
+        t("productsPage.items.1.usage.2", "Металл"),
+      ],
+      facts: [
+        t("productsPage.items.1.facts.0", "Универсальное применение"),
+        t("productsPage.items.1.facts.1", "Сильная адгезия"),
+        t("productsPage.items.1.facts.2", "Устойчивость к влаге"),
+      ],
       category: "mastic",
-      techTitle: "Технические характеристики",
+      techTitle: t("productsPage.items.1.techTitle", "Технические характеристики"),
       techRows: [
         {
-          characteristic: "Массовая доля нелетучих веществ (сухой остаток)",
+          characteristic: t("productsPage.items.1.techRows.0.characteristic", "Массовая доля нелетучих веществ (сухой остаток)"),
           value: "50–80 ±5",
           unit: "%",
           method: "ГОСТ 31939",
         },
         {
-          characteristic: "Время высыхания (при +20 °C, толщина 1 мм)",
-          value: "Не более 24",
-          unit: "ч",
+          characteristic: t("productsPage.items.1.techRows.1.characteristic", "Время высыхания (при +20 °C, толщина 1 мм)"),
+          value: t("productsPage.items.1.techRows.1.value", "Не более 24"),
+          unit: t("productsPage.items.1.techRows.1.unit", "ч"),
           method: "ГОСТ 19007",
         },
         {
-          characteristic: "Температура размягчения (по методу 'Кольцо и шар')",
-          value: "Не ниже 70–100",
+          characteristic: t("productsPage.items.1.techRows.2.characteristic", "Температура размягчения (по методу 'Кольцо и шар')"),
+          value: t("productsPage.items.1.techRows.2.value", "Не ниже 70–100"),
           unit: "°C",
           method: "ГОСТ 11506",
         },
         {
-          characteristic:
-            "Гибкость при низких температурах (на стержне диаметром 5–40 мм, при -10...-15 °C)",
-          value: "Без трещин",
+          characteristic: t("productsPage.items.1.techRows.3.characteristic", "Гибкость при низких температурах (на стержне диаметром 5–40 мм, при -10...-15 °C)"),
+          value: t("productsPage.items.1.techRows.3.value", "Без трещин"),
           unit: "-",
           method: "ГОСТ 2678",
         },
         {
-          characteristic: "Прочность сцепления с основанием (адгезия)",
-          value: "Не менее 0,2–0,5",
+          characteristic: t("productsPage.items.1.techRows.4.characteristic", "Прочность сцепления с основанием (адгезия)"),
+          value: t("productsPage.items.1.techRows.4.value", "Не менее 0,2–0,5"),
           unit: "МПа",
           method: "ГОСТ 26589",
         },
         {
-          characteristic: "Водопоглощение (за 24 ч)",
-          value: "Не более 0,5–1",
+          characteristic: t("productsPage.items.1.techRows.5.characteristic", "Водопоглощение (за 24 ч)"),
+          value: t("productsPage.items.1.techRows.5.value", "Не более 0,5–1"),
           unit: "%",
           method: "ГОСТ 25945",
         },
         {
-          characteristic: "Расход на один слой (для гидроизоляции)",
+          characteristic: t("productsPage.items.1.techRows.6.characteristic", "Расход на один слой (для гидроизоляции)"),
           value: "1–3",
           unit: "кг/м²",
           method: "-",
         },
         {
-          characteristic: "Диапазон температур применения",
-          value: "От -10 до +40",
+          characteristic: t("productsPage.items.1.techRows.7.characteristic", "Диапазон температур применения"),
+          value: t("productsPage.items.1.techRows.7.value", "От -10 до +40"),
           unit: "°C",
           method: "-",
         },
         {
-          characteristic: "Теплостойкость (в течение 5 ч)",
-          value: "Не менее 70–100",
+          characteristic: t("productsPage.items.1.techRows.8.characteristic", "Теплостойкость (в течение 5 ч)"),
+          value: t("productsPage.items.1.techRows.8.value", "Не менее 70–100"),
           unit: "°C",
           method: "ГОСТ 11508",
         },
         {
-          characteristic: "Содержание воды",
-          value: "Не более 0,5 (или следы)",
+          characteristic: t("productsPage.items.1.techRows.9.characteristic", "Содержание воды"),
+          value: t("productsPage.items.1.techRows.9.value", "Не более 0,5 (или следы)"),
           unit: "%",
           method: "ГОСТ 2477",
         },
@@ -228,162 +284,182 @@ export default function Products() {
     {
       id: 3,
       image: productImg3,
-      badge: "Roof Bitumen",
-      title: "Битум кровельный №1",
-      shortDesc:
-        "Нефтяной кровельный битум для устройства и ремонта кровельных систем, обладающий стабильными эксплуатационными характеристиками.",
+      badge: t("productsPage.items.2.badge", "Roof Bitumen"),
+      title: t("productsPage.items.2.title", "Битум кровельный №1"),
+      shortDesc: t(
+        "productsPage.items.2.shortDesc",
+        "Нефтяной кровельный битум для устройства и ремонта кровельных систем, обладающий стабильными эксплуатационными характеристиками."
+      ),
       features: [
-        "Для кровельных работ",
-        "Чёрный однородный состав",
-        "Соответствие ГОСТ",
+        t("productsPage.items.2.features.0", "Для кровельных работ"),
+        t("productsPage.items.2.features.1", "Чёрный однородный состав"),
+        t("productsPage.items.2.features.2", "Соответствие ГОСТ"),
       ],
-      usage: ["Кровля", "Ремонт", "Гидроизоляция"],
-      facts: ["Высокая растворимость", "Отсутствие воды", "Стабильный нагрев"],
+      usage: [
+        t("productsPage.items.2.usage.0", "Кровля"),
+        t("productsPage.items.2.usage.1", "Ремонт"),
+        t("productsPage.items.2.usage.2", "Гидроизоляция"),
+      ],
+      facts: [
+        t("productsPage.items.2.facts.0", "Высокая растворимость"),
+        t("productsPage.items.2.facts.1", "Отсутствие воды"),
+        t("productsPage.items.2.facts.2", "Стабильный нагрев"),
+      ],
       category: "roof-bitumen",
-      techTitle: "Технические характеристики Битум нефтяной кровельный (БНК)",
+      techTitle: t("productsPage.items.2.techTitle", "Технические характеристики Битум нефтяной кровельный (БНК)"),
       techRows: [
         {
-          characteristic: "Температура размягчения по кольцу и шару",
+          characteristic: t("productsPage.items.2.techRows.0.characteristic", "Температура размягчения по кольцу и шару"),
           value: "70–90",
           unit: "°C",
           method: "ГОСТ 11506",
         },
         {
-          characteristic: "Глубина проникания иглы при 25 °C",
+          characteristic: t("productsPage.items.2.techRows.1.characteristic", "Глубина проникания иглы при 25 °C"),
           value: "20–40",
           unit: "0,1 мм",
           method: "ГОСТ 11501",
         },
         {
-          characteristic: "Растяжимость при 25 °C",
-          value: "не менее 3,0",
-          unit: "см",
+          characteristic: t("productsPage.items.2.techRows.2.characteristic", "Растяжимость при 25 °C"),
+          value: t("productsPage.items.2.techRows.2.value", "не менее 3,0"),
+          unit: t("productsPage.items.2.techRows.2.unit", "см"),
           method: "ГОСТ 11505",
         },
         {
-          characteristic: "Температура хрупкости",
-          value: "не выше –5",
+          characteristic: t("productsPage.items.2.techRows.3.characteristic", "Температура хрупкости"),
+          value: t("productsPage.items.2.techRows.3.value", "не выше –5"),
           unit: "°C",
           method: "ГОСТ 11507",
         },
         {
-          characteristic: "Потеря массы при нагревании",
-          value: "не более 0,8",
+          characteristic: t("productsPage.items.2.techRows.4.characteristic", "Потеря массы при нагревании"),
+          value: t("productsPage.items.2.techRows.4.value", "не более 0,8"),
           unit: "%",
           method: "ГОСТ 18180",
         },
         {
-          characteristic: "Изменение температуры размягчения после прогрева",
-          value: "не более +5",
+          characteristic: t("productsPage.items.2.techRows.5.characteristic", "Изменение температуры размягчения после прогрева"),
+          value: t("productsPage.items.2.techRows.5.value", "не более +5"),
           unit: "°C",
           method: "ГОСТ 18180",
         },
         {
-          characteristic: "Содержание воды",
-          value: "Отсутствует",
+          characteristic: t("productsPage.items.2.techRows.6.characteristic", "Содержание воды"),
+          value: t("productsPage.items.2.techRows.6.value", "Отсутствует"),
           unit: "-",
           method: "ГОСТ 2477",
         },
         {
-          characteristic: "Растворимость в толуоле",
-          value: "не менее 99,0",
+          characteristic: t("productsPage.items.2.techRows.7.characteristic", "Растворимость в толуоле"),
+          value: t("productsPage.items.2.techRows.7.value", "не менее 99,0"),
           unit: "%",
           method: "ГОСТ 20739",
         },
         {
-          characteristic: "Зольность",
-          value: "не более 0,5",
+          characteristic: t("productsPage.items.2.techRows.8.characteristic", "Зольность"),
+          value: t("productsPage.items.2.techRows.8.value", "не более 0,5"),
           unit: "%",
           method: "ГОСТ 1461",
         },
         {
-          characteristic: "Однородность",
-          value: "Без посторонних включений",
+          characteristic: t("productsPage.items.2.techRows.9.characteristic", "Однородность"),
+          value: t("productsPage.items.2.techRows.9.value", "Без посторонних включений"),
           unit: "-",
-          method: "Визуально",
+          method: t("productsPage.items.2.techRows.9.method", "Визуально"),
         },
         {
-          characteristic: "Цвет",
-          value: "Чёрный",
+          characteristic: t("productsPage.items.2.techRows.10.characteristic", "Цвет"),
+          value: t("productsPage.items.2.techRows.10.value", "Чёрный"),
           unit: "-",
-          method: "Визуально",
+          method: t("productsPage.items.2.techRows.10.method", "Визуально"),
         },
       ],
     },
     {
       id: 4,
       image: productImg4,
-      badge: "Герметик",
-      title: "Битумно Полимерная дорожная герметика БПГ №1",
-      shortDesc:
-        "Битумно-полимерный дорожный герметик для надёжной герметизации швов, устойчивый к деформациям и низким температурам.",
+      badge: t("productsPage.items.3.badge", "Sealant"),
+      title: t("productsPage.items.3.title", "Битумно Полимерная дорожная герметика БПГ №1"),
+      shortDesc: t(
+        "productsPage.items.3.shortDesc",
+        "Битумно-полимерный дорожный герметик для надёжной герметизации швов, устойчивый к деформациям и низким температурам."
+      ),
       features: [
-        "Высокая выносливость",
-        "Для дорожных швов",
-        "Стабильная адгезия к бетону",
+        t("productsPage.items.3.features.0", "Высокая выносливость"),
+        t("productsPage.items.3.features.1", "Для дорожных швов"),
+        t("productsPage.items.3.features.2", "Стабильная адгезия к бетону"),
       ],
-      usage: ["Дорожные швы", "Бетон", "Инфраструктура"],
-      facts: ["Низкотемпературная гибкость", "Высокая деформационная стойкость", "Для интенсивной нагрузки"],
+      usage: [
+        t("productsPage.items.3.usage.0", "Дорожные швы"),
+        t("productsPage.items.3.usage.1", "Бетон"),
+        t("productsPage.items.3.usage.2", "Инфраструктура"),
+      ],
+      facts: [
+        t("productsPage.items.3.facts.0", "Низкотемпературная гибкость"),
+        t("productsPage.items.3.facts.1", "Высокая деформационная стойкость"),
+        t("productsPage.items.3.facts.2", "Для интенсивной нагрузки"),
+      ],
       category: "sealant",
-      techTitle: "Технические характеристики",
+      techTitle: t("productsPage.items.3.techTitle", "Технические характеристики"),
       techRows: [
         {
-          characteristic: "Температура размягчения (по кольцу и шару)",
-          value: "Не ниже 90 / 90 / 80",
+          characteristic: t("productsPage.items.3.techRows.0.characteristic", "Температура размягчения (по кольцу и шару)"),
+          value: t("productsPage.items.3.techRows.0.value", "Не ниже 90 / 90 / 80"),
           unit: "°C",
           method: "ГОСТ 11506-73",
         },
         {
-          characteristic: "Температура гибкости (на стержне Ø 10–20 мм, без трещин)",
-          value: "Не выше -25 / -35 / -50",
+          characteristic: t("productsPage.items.3.techRows.1.characteristic", "Температура гибкости (на стержне Ø 10–20 мм, без трещин)"),
+          value: t("productsPage.items.3.techRows.1.value", "Не выше -25 / -35 / -50"),
           unit: "°C",
           method: "ГОСТ 30740-2000",
         },
         {
-          characteristic: "Относительное удлинение при разрыве (при -20 °C)",
-          value: "Не менее 75 / 75 / 75",
+          characteristic: t("productsPage.items.3.techRows.2.characteristic", "Относительное удлинение при разрыве (при -20 °C)"),
+          value: t("productsPage.items.3.techRows.2.value", "Не менее 75 / 75 / 75"),
           unit: "%",
           method: "ГОСТ 30740-2000",
         },
         {
-          characteristic: "Температура липкости",
-          value: "Не ниже 50 / 50 / 50",
+          characteristic: t("productsPage.items.3.techRows.3.characteristic", "Температура липкости"),
+          value: t("productsPage.items.3.techRows.3.value", "Не ниже 50 / 50 / 50"),
           unit: "°C",
           method: "ГОСТ 30740-2000",
         },
         {
-          characteristic: "Выносливость (циклы деформации)",
-          value: "Не менее 30000 / 30000 / 30000",
-          unit: "циклы",
+          characteristic: t("productsPage.items.3.techRows.4.characteristic", "Выносливость (циклы деформации)"),
+          value: t("productsPage.items.3.techRows.4.value", "Не менее 30000 / 30000 / 30000"),
+          unit: t("productsPage.items.3.techRows.4.unit", "циклы"),
           method: "ГОСТ 30740-2000",
         },
         {
-          characteristic: "Плотность",
+          characteristic: t("productsPage.items.3.techRows.5.characteristic", "Плотность"),
           value: "1100–1200",
           unit: "кг/м³",
           method: "-",
         },
         {
-          characteristic: "Рабочая температура разогрева",
-          value: "170–195 (не выше 210)",
+          characteristic: t("productsPage.items.3.techRows.6.characteristic", "Рабочая температура разогрева"),
+          value: t("productsPage.items.3.techRows.6.value", "170–195 (не выше 210)"),
           unit: "°C",
           method: "-",
         },
         {
-          characteristic: "Температура применения (окружающая)",
-          value: "Не ниже -10",
+          characteristic: t("productsPage.items.3.techRows.7.characteristic", "Температура применения (окружающая)"),
+          value: t("productsPage.items.3.techRows.7.value", "Не ниже -10"),
           unit: "°C",
           method: "-",
         },
         {
-          characteristic: "Расход (для шва 20×40 мм)",
+          characteristic: t("productsPage.items.3.techRows.8.characteristic", "Расход (для шва 20×40 мм)"),
           value: "0,85–0,9",
           unit: "кг/п.м",
           method: "-",
         },
         {
-          characteristic: "Адгезия (прочность сцепления с бетоном)",
-          value: "Не менее 0,1–0,2",
+          characteristic: t("productsPage.items.3.techRows.9.characteristic", "Адгезия (прочность сцепления с бетоном)"),
+          value: t("productsPage.items.3.techRows.9.value", "Не менее 0,1–0,2"),
           unit: "МПа",
           method: "ГОСТ 30740-2000",
         },
@@ -392,55 +468,67 @@ export default function Products() {
   ]
 
   const stats = [
-    { icon: <FiPackage />, value: "4", label: "Mahsulot" },
-    { icon: <FiStar />, value: "100%", label: "Texnik jadval mavjud" },
-    { icon: <FiTrendingUp />, value: "24/7", label: "Ko‘rib chiqish qulayligi" },
+    {
+      icon: <FiPackage />,
+      value: 4,
+      suffix: "",
+      label: t("productsPage.stats.0", "Mahsulot"),
+    },
+    {
+      icon: <FiStar />,
+      value: 100,
+      suffix: "%",
+      label: t("productsPage.stats.1", "Texnik jadval mavjud"),
+    },
+    {
+      icon: <FiTrendingUp />,
+      value: 24,
+      suffix: "/7",
+      label: t("productsPage.stats.2", "Ko‘rib chiqish qulayligi"),
+    },
   ]
 
   const benefits = [
     {
       icon: <FiShield />,
-      title: "Ishonchli himoya",
-      text: "Mahsulotlar namlik, tashqi ta’sir va eskirishga qarshi barqaror himoya beradi.",
+      title: t("productsPage.benefits.0.title", "Ishonchli himoya"),
+      text: t(
+        "productsPage.benefits.0.text",
+        "Mahsulotlar namlik, tashqi ta’sir va eskirishga qarshi barqaror himoya beradi."
+      ),
     },
     {
       icon: <FiLayers />,
-      title: "Texnik ma’lumotlar aniq",
-      text: "Har bir mahsulot uchun alohida xarakteristika jadvali ko‘rsatiladi.",
+      title: t("productsPage.benefits.1.title", "Texnik ma’lumotlar aniq"),
+      text: t(
+        "productsPage.benefits.1.text",
+        "Har bir mahsulot uchun alohida xarakteristika jadvali ko‘rsatiladi."
+      ),
     },
     {
       icon: <FiTool />,
-      title: "Qulay tanlash",
-      text: "Filter, qidiruv va modal orqali kerakli mahsulotni tez topish mumkin.",
+      title: t("productsPage.benefits.2.title", "Qulay tanlash"),
+      text: t(
+        "productsPage.benefits.2.text",
+        "Filter, qidiruv va modal orqali kerakli mahsulotni tez topish mumkin."
+      ),
     },
     {
       icon: <FiDroplet />,
-      title: "Professional yechim",
-      text: "Qurilish va gidroizolyatsiya ehtiyojlari uchun mos tanlovlar.",
+      title: t("productsPage.benefits.3.title", "Professional yechim"),
+      text: t(
+        "productsPage.benefits.3.text",
+        "Qurilish va gidroizolyatsiya ehtiyojlari uchun mos tanlovlar."
+      ),
     },
   ]
 
   const categories = [
-    { key: "all" as ProductCategory, label: "Barchasi" },
-    { key: "primer" as ProductCategory, label: "Primer" },
-    { key: "mastic" as ProductCategory, label: "Mastika" },
-    { key: "roof-bitumen" as ProductCategory, label: "Krovlya bitum" },
-    { key: "sealant" as ProductCategory, label: "Germetik" },
-  ]
-
-  const faqs = [
-    {
-      question: "Har bir mahsulot uchun texnik jadval bormi?",
-      answer: "Ha, har bir mahsulot card ustiga bosilganda uning to‘liq texnik xarakteristikasi modal ichida chiqadi.",
-    },
-    {
-      question: "Catalog yuklab olish mumkinmi?",
-      answer: "Ha, sahifada download catalog tugmasi qo‘shilgan. Uni o‘zingdagi PDF yoki faylga ulab ishlatishing mumkin.",
-    },
-    {
-      question: "Modal ichida rasm ham chiqadimi?",
-      answer: "Ha, modal ichida mahsulot rasmi, nomi, tavsifi va texnik jadvali birga ko‘rsatiladi.",
-    },
+    { key: "all" as ProductCategory, label: t("productsPage.filters.all", "Barchasi") },
+    { key: "primer" as ProductCategory, label: t("productsPage.filters.primer", "Primer") },
+    { key: "mastic" as ProductCategory, label: t("productsPage.filters.mastic", "Mastika") },
+    { key: "roof-bitumen" as ProductCategory, label: t("productsPage.filters.roofBitumen", "Krovlya bitum") },
+    { key: "sealant" as ProductCategory, label: t("productsPage.filters.sealant", "Germetik") },
   ]
 
   const filteredProducts = useMemo(() => {
@@ -511,56 +599,59 @@ export default function Products() {
     <main className={styles.productsPage}>
       <section className={styles.heroSection}>
         <div className={styles.container}>
-          <div className={styles.breadcrumb}>
-            <Link to="/" className={styles.breadcrumbLink}>
-              <FiHome />
-              <span>{t("productsPage.breadcrumb.home", "Bosh sahifa")}</span>
-            </Link>
-            <span className={styles.breadcrumbDivider}>/</span>
-            <span className={styles.breadcrumbCurrent}>
-              {t("productsPage.breadcrumb.current", "Mahsulotlar")}
+          <div className={styles.heroTop}>
+            <span className={styles.heroLabel}>
+              {t("productsPage.hero.label", "Mahsulotlar")}
             </span>
+
+            <div className={styles.breadcrumb}>
+              <Link to="/" className={styles.breadcrumbLink}>
+                <FiHome />
+                <span>{t("productsPage.breadcrumb.home", "Bosh sahifa")}</span>
+              </Link>
+              <span className={styles.breadcrumbDivider}>/</span>
+              <span className={styles.breadcrumbCurrent}>
+                {t("productsPage.breadcrumb.current", "Mahsulotlar")}
+              </span>
+            </div>
           </div>
 
           <div className={styles.heroGrid}>
             <div className={styles.heroContent}>
-              <span className={styles.heroLabel}>Mahsulotlar</span>
-
-              <h1 className={styles.heroTitle}>Zamonaviy va texnik ma’lumotlarga boy product page</h1>
+              <h1 className={styles.heroTitle}>
+                {t("productsPage.hero.title", "Zamonaviy va texnik ma’lumotlarga boy product page")}
+              </h1>
 
               <p className={styles.heroText}>
-                Har bir mahsulot uchun alohida texnik xarakteristikalar, modal ichida katta rasm,
-                tafsilotli jadval va katalogni yuklab olish imkoniyati mavjud.
+                {t(
+                  "productsPage.hero.text",
+                  "Har bir mahsulot uchun alohida texnik xarakteristikalar, modal ichida katta rasm va tafsilotli jadval mavjud."
+                )}
               </p>
 
               <div className={styles.heroHighlights}>
                 <div className={styles.heroHighlightItem}>
                   <FiZap />
-                  <span>Detail modal</span>
+                  <span>{t("productsPage.hero.highlights.0", "Detail modal")}</span>
                 </div>
                 <div className={styles.heroHighlightItem}>
                   <FiShield />
-                  <span>Texnik jadval</span>
+                  <span>{t("productsPage.hero.highlights.1", "Texnik jadval")}</span>
                 </div>
                 <div className={styles.heroHighlightItem}>
-                  <FiDownload />
-                  <span>Download catalog</span>
+                  <FiLayers />
+                  <span>{t("productsPage.hero.highlights.2", "Qulay filter")}</span>
                 </div>
               </div>
 
               <div className={styles.heroActions}>
                 <a href="#products-list" className={styles.primaryBtn}>
-                  Mahsulotlarni ko‘rish
-                </a>
-
-                <a href="/catalog.pdf" download className={styles.secondaryBtn}>
-                  <FiDownload />
-                  <span>Download catalog</span>
+                  {t("productsPage.hero.view", "Mahsulotlarni ko‘rish")}
                 </a>
 
                 <Link to="/" className={styles.ghostBtn}>
                   <FiHome />
-                  <span>Bosh sahifaga qaytish</span>
+                  <span>{t("productsPage.hero.backHome", "Bosh sahifaga qaytish")}</span>
                 </Link>
               </div>
 
@@ -569,7 +660,7 @@ export default function Products() {
                   <div key={index} className={styles.statCard}>
                     <div className={styles.statIcon}>{item.icon}</div>
                     <div>
-                      <strong>{item.value}</strong>
+                      <AnimatedCounter end={item.value} suffix={item.suffix} />
                       <span>{item.label}</span>
                     </div>
                   </div>
@@ -582,18 +673,25 @@ export default function Products() {
                 <div className={styles.heroVisualTop}>
                   <span className={styles.heroMiniBadge}>
                     <FiShield />
-                    Sifat va standart
+                    {t("productsPage.hero.badge", "Sifat va standart")}
                   </span>
                 </div>
 
                 <div className={styles.heroVisualImageWrap}>
-                  <img src={productImg1} alt="Product preview" className={styles.heroVisualImage} />
+                  <img
+                    src={productImg1}
+                    alt={t("productsPage.hero.imageAlt", "Product preview")}
+                    className={styles.heroVisualImage}
+                  />
                 </div>
 
                 <div className={styles.heroVisualInfo}>
-                  <h3>Professional yechimlar</h3>
+                  <h3>{t("productsPage.hero.cardTitle", "Professional yechimlar")}</h3>
                   <p>
-                    Mahsulot ustiga bosish orqali texnik ko‘rsatkichlar jadvalini to‘liq ko‘rish mumkin.
+                    {t(
+                      "productsPage.hero.cardText",
+                      "Mahsulot ustiga bosish orqali texnik ko‘rsatkichlar jadvalini to‘liq ko‘rish mumkin."
+                    )}
                   </p>
                 </div>
               </div>
@@ -615,7 +713,9 @@ export default function Products() {
               </div>
 
               <div className={styles.featuredContent}>
-                <span className={styles.sectionLabel}>Tavsiya etiladi</span>
+                <span className={styles.sectionLabel}>
+                  {t("productsPage.featured.label", "Tavsiya etiladi")}
+                </span>
                 <h2 className={styles.featuredTitle}>{featuredProduct.title}</h2>
                 <p className={styles.featuredText}>{featuredProduct.shortDesc}</p>
 
@@ -634,7 +734,7 @@ export default function Products() {
                     className={styles.primaryBtn}
                     onClick={() => openProductModal(featuredProduct)}
                   >
-                    Batafsil ko‘rish
+                    {t("productsPage.featured.button", "Batafsil ko‘rish")}
                   </button>
                 </div>
               </div>
@@ -646,8 +746,12 @@ export default function Products() {
       <section className={styles.benefitsSection}>
         <div className={styles.container}>
           <div className={styles.sectionHead}>
-            <span className={styles.sectionLabel}>Afzalliklar</span>
-            <h2 className={styles.sectionTitle}>Nega bu sahifa qulay</h2>
+            <span className={styles.sectionLabel}>
+              {t("productsPage.benefitsLabel", "Afzalliklar")}
+            </span>
+            <h2 className={styles.sectionTitle}>
+              {t("productsPage.benefitsTitle", "Nega bu sahifa qulay")}
+            </h2>
           </div>
 
           <div className={styles.benefitsGrid}>
@@ -666,8 +770,12 @@ export default function Products() {
         <div className={styles.container}>
           <div className={styles.stickyTools}>
             <div className={styles.sectionHead}>
-              <span className={styles.sectionLabel}>Katalog</span>
-              <h2 className={styles.sectionTitle}>Mahsulotlar ro‘yxati</h2>
+              <span className={styles.sectionLabel}>
+                {t("productsPage.catalog.label", "Katalog")}
+              </span>
+              <h2 className={styles.sectionTitle}>
+                {t("productsPage.catalog.title", "Mahsulotlar ro‘yxati")}
+              </h2>
             </div>
 
             <div className={styles.toolsPanel}>
@@ -675,7 +783,7 @@ export default function Products() {
                 <FiSearch />
                 <input
                   type="text"
-                  placeholder="Mahsulot qidirish..."
+                  placeholder={t("productsPage.searchPlaceholder", "Mahsulot qidirish...")}
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                 />
@@ -707,9 +815,9 @@ export default function Products() {
                     value={sortType}
                     onChange={(e) => setSortType(e.target.value as SortType)}
                   >
-                    <option value="default">Standart</option>
-                    <option value="name-asc">Nomi A-Z</option>
-                    <option value="name-desc">Nomi Z-A</option>
+                    <option value="default">{t("productsPage.sort.default", "Standart")}</option>
+                    <option value="name-asc">{t("productsPage.sort.nameAsc", "Nomi A-Z")}</option>
+                    <option value="name-desc">{t("productsPage.sort.nameDesc", "Nomi Z-A")}</option>
                   </select>
                 </div>
 
@@ -718,6 +826,7 @@ export default function Products() {
                     type="button"
                     className={`${styles.viewBtn} ${viewMode === "grid" ? styles.viewBtnActive : ""}`}
                     onClick={() => setViewMode("grid")}
+                    aria-label="grid view"
                   >
                     <FiGrid />
                   </button>
@@ -725,6 +834,7 @@ export default function Products() {
                     type="button"
                     className={`${styles.viewBtn} ${viewMode === "compact" ? styles.viewBtnActive : ""}`}
                     onClick={() => setViewMode("compact")}
+                    aria-label="compact view"
                   >
                     <FiList />
                   </button>
@@ -732,7 +842,7 @@ export default function Products() {
 
                 <button type="button" className={styles.resetBtn} onClick={handleResetFilters}>
                   <FiRefreshCcw />
-                  <span>Tozalash</span>
+                  <span>{t("productsPage.reset", "Tozalash")}</span>
                 </button>
               </div>
             </div>
@@ -742,20 +852,26 @@ export default function Products() {
             <div className={styles.catalogMetaItem}>
               <FiGrid />
               <span>
-                Topilgan mahsulotlar: <strong>{filteredProducts.length}</strong>
+                {t("productsPage.meta.found", "Topilgan mahsulotlar")}:{" "}
+                <strong>{filteredProducts.length}</strong>
               </span>
             </div>
 
             <div className={styles.catalogMetaItem}>
               <FiHeart />
               <span>
-                Saqlanganlar: <strong>{favorites.length}</strong>
+                {t("productsPage.meta.saved", "Saqlanganlar")}: <strong>{favorites.length}</strong>
               </span>
             </div>
 
             <div className={styles.catalogMetaItem}>
               <FiLayers />
-              <span>Mahsulot ustiga bosilganda to‘liq texnik jadval ochiladi</span>
+              <span>
+                {t(
+                  "productsPage.meta.hint",
+                  "Mahsulot ustiga bosilganda to‘liq texnik jadval ochiladi"
+                )}
+              </span>
             </div>
           </div>
 
@@ -829,7 +945,7 @@ export default function Products() {
                           openProductModal(product)
                         }}
                       >
-                        <span>Batafsil</span>
+                        <span>{t("productsPage.more", "Batafsil")}</span>
                         <FiArrowRight />
                       </button>
                     </div>
@@ -842,12 +958,17 @@ export default function Products() {
           {filteredProducts.length === 0 && (
             <div className={styles.emptyState}>
               <FiPackage />
-              <h3>Mahsulot topilmadi</h3>
-              <p>Qidiruv so‘zini o‘zgartirib ko‘ring yoki boshqa filter tanlang.</p>
+              <h3>{t("productsPage.empty.title", "Mahsulot topilmadi")}</h3>
+              <p>
+                {t(
+                  "productsPage.empty.text",
+                  "Qidiruv so‘zini o‘zgartirib ko‘ring yoki boshqa filter tanlang."
+                )}
+              </p>
 
               <button type="button" className={styles.resetBtn} onClick={handleResetFilters}>
                 <FiRefreshCcw />
-                <span>Filterni tozalash</span>
+                <span>{t("productsPage.empty.reset", "Filterni tozalash")}</span>
               </button>
             </div>
           )}
@@ -859,40 +980,10 @@ export default function Products() {
                 className={styles.secondaryBtn}
                 onClick={() => setVisibleCount((prev) => prev + 4)}
               >
-                Yana ko‘rsatish
+                {t("productsPage.loadMore", "Yana ko‘rsatish")}
               </button>
             </div>
           )}
-        </div>
-      </section>
-
-      <section className={styles.faqSection}>
-        <div className={styles.container}>
-          <div className={styles.sectionHead}>
-            <span className={styles.sectionLabel}>Savollar</span>
-            <h2 className={styles.sectionTitle}>Ko‘p beriladigan savollar</h2>
-          </div>
-
-          <div className={styles.faqList}>
-            {faqs.map((item, index) => {
-              const isOpen = openFaq === index
-
-              return (
-                <div key={index} className={`${styles.faqItem} ${isOpen ? styles.faqItemOpen : ""}`}>
-                  <button
-                    type="button"
-                    className={styles.faqQuestion}
-                    onClick={() => setOpenFaq(isOpen ? null : index)}
-                  >
-                    <span>{item.question}</span>
-                    <FiChevronDown />
-                  </button>
-
-                  {isOpen && <div className={styles.faqAnswer}>{item.answer}</div>}
-                </div>
-              )
-            })}
-          </div>
         </div>
       </section>
 
@@ -900,22 +991,28 @@ export default function Products() {
         <div className={styles.container}>
           <div className={styles.ctaCard}>
             <div className={styles.ctaContent}>
-              <span className={styles.sectionLabel}>Hamkorlik</span>
-              <h2 className={styles.ctaTitle}>Loyihangiz uchun mos mahsulotni tanlang</h2>
+              <span className={styles.sectionLabel}>
+                {t("productsPage.cta.label", "Hamkorlik")}
+              </span>
+              <h2 className={styles.ctaTitle}>
+                {t("productsPage.cta.title", "Loyihangiz uchun mos mahsulotni tanlang")}
+              </h2>
               <p className={styles.ctaText}>
-                Katalogni yuklab olishingiz yoki istalgan mahsulotni ustiga bosib, uning texnik ma’lumotlarini ko‘rishingiz mumkin.
+                {t(
+                  "productsPage.cta.text",
+                  "Istalgan mahsulotni tanlab, uning texnik ma’lumotlarini batafsil ko‘rishingiz mumkin."
+                )}
               </p>
             </div>
 
             <div className={styles.ctaActions}>
-              <a href="/catalog.pdf" download className={styles.ctaBtn}>
-                <FiDownload />
-                <span>Download catalog</span>
+              <a href="#products-list" className={styles.ctaBtn}>
+                {t("productsPage.cta.button", "Mahsulotlarni ko‘rish")}
               </a>
 
-              <a href="#products-list" className={styles.secondaryBtn}>
-                Mahsulotlarni ko‘rish
-              </a>
+              <Link to="/contact" className={styles.secondaryBtn}>
+                {t("productsPage.cta.contact", "Bog‘lanish")}
+              </Link>
             </div>
           </div>
         </div>
@@ -923,7 +1020,11 @@ export default function Products() {
 
       {selectedProduct && (
         <div className={styles.modalOverlay} onClick={closeProductModal}>
-          <div className={styles.modalCard} onClick={(e) => e.stopPropagation()}>
+          <div
+            className={styles.modalCard}
+            onClick={(e) => e.stopPropagation()}
+            ref={modalContentRef}
+          >
             <button type="button" className={styles.modalClose} onClick={closeProductModal}>
               <FiX />
             </button>
@@ -959,10 +1060,10 @@ export default function Products() {
                 <table className={styles.techTable}>
                   <thead>
                     <tr>
-                      <th>Характеристика</th>
-                      <th>Показатель</th>
-                      <th>Единица измерения</th>
-                      <th>Метод испытания / ГОСТ</th>
+                      <th>{t("productsPage.table.headers.characteristic", "Характеристика")}</th>
+                      <th>{t("productsPage.table.headers.value", "Показатель")}</th>
+                      <th>{t("productsPage.table.headers.unit", "Единица измерения")}</th>
+                      <th>{t("productsPage.table.headers.method", "Метод испытания / ГОСТ")}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -979,13 +1080,8 @@ export default function Products() {
               </div>
 
               <div className={styles.modalActions}>
-                <a href="/catalog.pdf" download className={styles.primaryBtn}>
-                  <FiDownload />
-                  <span>Download catalog</span>
-                </a>
-
                 <button type="button" className={styles.secondaryBtn} onClick={closeProductModal}>
-                  Yopish
+                  {t("productsPage.modal.close", "Yopish")}
                 </button>
               </div>
             </div>
