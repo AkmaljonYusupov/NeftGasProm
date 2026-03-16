@@ -342,7 +342,8 @@
       "title": "Choose the right product for your project",
       "text": "You can select any product and view its technical information in detail.",
       "button": "View products",
-      "contact": "Contact us"
+      "contact": "Contact us",
+      "order":"Send Request"
     },
     "table": {
       "headers": {

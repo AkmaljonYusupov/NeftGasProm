@@ -258,6 +258,7 @@
 	},
 	
   "productsPage": {
+
     "breadcrumb": {
       "home": "Bosh sahifa",
       "current": "Mahsulotlar"
@@ -342,7 +343,8 @@
       "title": "Loyihangiz uchun mos mahsulotni tanlang",
       "text": "Istalgan mahsulotni tanlab, uning texnik ma’lumotlarini batafsil ko‘rishingiz mumkin.",
       "button": "Mahsulotlarni ko‘rish",
-      "contact": "Bog‘lanish"
+      "contact": "Bog‘lanish",
+			"order":"So‘rov yuborish"
     },
     "table": {
       "headers": {

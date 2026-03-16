@@ -1055,7 +1055,7 @@ export default function Products() {
                 <div className={styles.modalQuickActions}>
                   <Link to="/contact" className={styles.productBtn} onClick={closeProductModal}>
                     <FiMail />
-                    <span>{t("productsPage.modal.contact", "Bog‘lanish")}</span>
+                    <span>{t("productsPage.cta.contact", "Bog‘lanish")}</span>
                   </Link>
 
                   <button type="button" className={styles.secondaryBtn} onClick={closeProductModal}>
@@ -1094,7 +1094,7 @@ export default function Products() {
               <div className={styles.modalActions}>
                 <Link to="/contact" className={styles.ctaBtn} onClick={closeProductModal}>
                   <FiMail />
-                  <span>{t("productsPage.modal.order", "Ushbu mahsulot bo‘yicha bog‘lanish")}</span>
+                  <span>{t("productsPage.cta.order", "Ushbu mahsulot bo‘yicha bog‘lanish")}</span>
                 </Link>
 
                 <button type="button" className={styles.secondaryBtn} onClick={closeProductModal}>
