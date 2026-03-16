@@ -11,6 +11,7 @@ import {
   FiTrendingUp,
 } from "react-icons/fi"
 import { Link } from "react-router-dom"
+import FloatingActions from "../../components/FloatingActions/FloatingActions"
 
 import aboutImg from "../../assets/images/about-products1.jpg"
 import cert1 from "../../assets/images/certificate/certificate1.png"
@@ -132,6 +133,7 @@ export default function About() {
 
   return (
     <main className={styles.aboutPage}>
+      <FloatingActions />
       <section className={styles.heroSection}>
         <div className={styles.container}>
           <div className={styles.heroGrid}>

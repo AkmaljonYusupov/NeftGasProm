@@ -12,6 +12,7 @@ import {
   FiXCircle,
 } from "react-icons/fi"
 import { Link } from "react-router-dom"
+import FloatingActions from "../../components/FloatingActions/FloatingActions"
 
 import styles from "./Contact.module.scss"
 
@@ -216,6 +217,7 @@ ${formData.message}
 
   return (
     <main className={styles.contactPage}>
+      <FloatingActions />
       {notification.show && (
         <div
           className={`${styles.notification} ${

@@ -1,0 +1,414 @@
+.contactFloat,
+.scrollTop {
+  position: fixed;
+  width: 64px;
+  height: 64px;
+  border: none;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1200;
+  overflow: visible;
+  isolation: isolate;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+
+  svg {
+    position: relative;
+    z-index: 6;
+    font-size: 24px;
+    transition: transform 0.35s ease;
+  }
+
+  &:hover {
+    transform: translateY(-7px) scale(1.08);
+
+    svg {
+      transform: scale(1.08);
+    }
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+/* LEFT: CONTACT */
+.contactFloat {
+  left: 22px;
+  bottom: 22px;
+  color: #fff;
+  background:
+    linear-gradient(145deg, rgba(255, 157, 66, 0.96), rgba(240, 124, 34, 0.98));
+  box-shadow:
+    0 20px 40px rgba(240, 124, 34, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    inset 0 -10px 20px rgba(0, 0, 0, 0.12);
+  animation: contactLevitate 3.8s ease-in-out infinite;
+}
+
+.contactCore,
+.scrollCore {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.contactCore {
+  background:
+    radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.38), transparent 32%),
+    radial-gradient(circle at 70% 75%, rgba(255, 255, 255, 0.08), transparent 30%);
+}
+
+.contactAura,
+.scrollAura {
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  z-index: 0;
+  filter: blur(16px);
+}
+
+.contactAura {
+  background: radial-gradient(circle, rgba(255, 149, 57, 0.42), transparent 68%);
+  animation: auraPulse 2.8s ease-in-out infinite;
+}
+
+.contactRing,
+.contactRingDelay {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.8px solid rgba(255, 180, 120, 0.45);
+  z-index: -1;
+}
+
+.contactRing {
+  animation: ringWave 2.8s linear infinite;
+}
+
+.contactRingDelay {
+  animation: ringWave 2.8s linear infinite 1.4s;
+}
+
+.contactShine,
+.scrollShine {
+  position: absolute;
+  top: -25%;
+  left: -70%;
+  width: 56%;
+  height: 180%;
+  transform: rotate(20deg);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.contactShine {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.42),
+    transparent
+  );
+  animation: shineMove 3.4s ease-in-out infinite;
+}
+
+.contactFloat::after {
+  content: "Bog‘lanish";
+  position: absolute;
+  left: 76px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-8px);
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(12, 18, 30, 0.92);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  transition:
+    opacity 0.28s ease,
+    transform 0.28s ease;
+}
+
+.contactFloat:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* RIGHT: SCROLL TOP */
+.scrollTop {
+  right: 22px;
+  bottom: 22px;
+  color: #fff;
+  background:
+    linear-gradient(145deg, rgba(17, 24, 39, 0.94), rgba(31, 41, 55, 0.96));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    0 18px 40px rgba(2, 8, 23, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -10px 20px rgba(0, 0, 0, 0.14);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px) scale(0.88);
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  animation: scrollLevitate 3.4s ease-in-out infinite;
+}
+
+.scrollCore {
+  background:
+    radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.16), transparent 28%),
+    radial-gradient(circle at 70% 75%, rgba(255, 255, 255, 0.05), transparent 32%);
+}
+
+.scrollAura {
+  background: radial-gradient(circle, rgba(64, 137, 255, 0.22), transparent 72%);
+  animation: auraPulseBlue 3s ease-in-out infinite;
+}
+
+.scrollOrbit {
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+  z-index: 2;
+  background:
+    conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      rgba(255, 255, 255, 0.04) 45deg,
+      rgba(59, 130, 246, 0.55) 95deg,
+      transparent 135deg,
+      transparent 360deg
+    );
+  filter: blur(4px);
+  animation: orbitSpin 4.8s linear infinite;
+}
+
+.scrollShine {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shineMove 4s ease-in-out infinite;
+}
+
+.scrollTop::after {
+  content: "Yuqoriga";
+  position: absolute;
+  right: 76px;
+  top: 50%;
+  transform: translateY(-50%) translateX(8px);
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(12, 18, 30, 0.92);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  transition:
+    opacity 0.28s ease,
+    transform 0.28s ease;
+}
+
+.scrollTop:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* EXTRA HOVER GLOW */
+.contactFloat:hover {
+  box-shadow:
+    0 26px 46px rgba(240, 124, 34, 0.42),
+    0 0 26px rgba(255, 169, 82, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.32);
+}
+
+.scrollTop:hover {
+  box-shadow:
+    0 24px 44px rgba(2, 8, 23, 0.34),
+    0 0 20px rgba(59, 130, 246, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+/* ANIMATIONS */
+@keyframes ringWave {
+  0% {
+    transform: scale(1);
+    opacity: 0.65;
+  }
+  70% {
+    transform: scale(1.72);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.72);
+    opacity: 0;
+  }
+}
+
+@keyframes shineMove {
+  0% {
+    left: -72%;
+    opacity: 0;
+  }
+  14% {
+    opacity: 1;
+  }
+  42% {
+    left: 125%;
+    opacity: 0.95;
+  }
+  100% {
+    left: 125%;
+    opacity: 0;
+  }
+}
+
+@keyframes orbitSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes auraPulse {
+  0%,
+  100% {
+    transform: scale(0.95);
+    opacity: 0.42;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 0.78;
+  }
+}
+
+@keyframes auraPulseBlue {
+  0%,
+  100% {
+    transform: scale(0.96);
+    opacity: 0.26;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 0.56;
+  }
+}
+
+@keyframes contactLevitate {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes scrollLevitate {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.025);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .contactFloat,
+  .scrollTop {
+    width: 56px;
+    height: 56px;
+    bottom: 16px;
+
+    svg {
+      font-size: 21px;
+    }
+  }
+
+  .contactFloat {
+    left: 16px;
+  }
+
+  .scrollTop {
+    right: 16px;
+  }
+
+  .contactFloat::after,
+  .scrollTop::after {
+    display: none;
+  }
+}
+
+.tooltipLeft,
+.tooltipRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(12, 18, 30, 0.94);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.28s ease,
+    transform 0.28s ease;
+  z-index: 20;
+}
+
+.tooltipLeft {
+  left: 76px;
+  transform: translateY(-50%) translateX(-8px);
+}
+
+.tooltipRight {
+  right: 76px;
+  transform: translateY(-50%) translateX(8px);
+}
+
+.contactFloat:hover .tooltipLeft {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.scrollTop:hover .tooltipRight {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+@media (max-width: 768px) {
+  .tooltipLeft,
+  .tooltipRight {
+    display: none;
+  }
+}

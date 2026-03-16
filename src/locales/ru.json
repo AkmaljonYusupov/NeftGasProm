@@ -1,4 +1,8 @@
 {
+"floating": {
+  "contact": "Связаться",
+  "toTop": "Наверх"
+},
   "nav": {
     "home": "Главная",
     "products": "Продукты",

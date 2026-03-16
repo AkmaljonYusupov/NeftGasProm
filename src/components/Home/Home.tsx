@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router-dom"
+import FloatingActions from "../../components/FloatingActions/FloatingActions"
 
 import aboutMainImage from "../../assets/images/about-main.jpg"
 import aboutProducts1 from "../../assets/images/about-products1.jpg"
@@ -130,6 +131,7 @@ export default function Home() {
 
   return (
     <main className={styles.home}>
+      <FloatingActions />
       {/* Product section start */}
       <section className={styles.productsSection}>
         <div className={styles.container}>

@@ -1,28 +1,29 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 import { useTranslation } from "react-i18next"
 import {
-	FiArrowRight,
-	FiCheckCircle,
-	FiDroplet,
-	FiFilter,
-	FiGrid,
-	FiHeart,
-	FiHome,
-	FiLayers,
-	FiList,
-	FiMail,
-	FiPackage,
-	FiRefreshCcw,
-	FiSearch,
-	FiShield,
-	FiSliders,
-	FiStar,
-	FiTool,
-	FiTrendingUp,
-	FiX,
-	FiZap,
+  FiArrowRight,
+  FiCheckCircle,
+  FiDroplet,
+  FiFilter,
+  FiGrid,
+  FiHeart,
+  FiHome,
+  FiLayers,
+  FiList,
+  FiMail,
+  FiPackage,
+  FiRefreshCcw,
+  FiSearch,
+  FiShield,
+  FiSliders,
+  FiStar,
+  FiTool,
+  FiTrendingUp,
+  FiX,
+  FiZap,
 } from "react-icons/fi"
 import { Link } from "react-router-dom"
+import FloatingActions from "../../components/FloatingActions/FloatingActions"
 
 import productImg1 from "../../assets/images/about-products1.jpg"
 import productImg2 from "../../assets/images/about-products2.jpg"
@@ -598,6 +599,7 @@ export default function Products() {
 
   return (
     <main className={styles.productsPage}>
+      <FloatingActions />
       <section className={styles.heroSection}>
         <div className={styles.container}>
           <div className={styles.heroTop}>
