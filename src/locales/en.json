@@ -5,11 +5,50 @@
     "about": "About Us",
     "contact": "Contact"
   },
-  "hero": {
-    "title": " — modern waterproofing solutions!",
-    "patternAlt": "Waterproofing patterns",
-    "leftImageAlt": "NeftGasProm construction site",
-    "button": "Place an Order"
+ "hero": {
+    "kicker": "MODERN PRODUCTS",
+    "description": "We provide modern solutions in construction and waterproofing by combining reliability, technology, and a professional approach.",
+    "button": "Contact Us",
+    "patternAlt": "Decorative pattern",
+    "floatingText": "Professional approach and high quality standards.",
+    "stats": {
+      "experienceValue": "15+",
+      "experienceLabel": "Years of experience",
+      "qualityValue": "100%",
+      "qualityLabel": "Quality control"
+    },
+    "features": [
+      {
+        "title": "Reliability",
+        "text": "Stable results"
+      },
+      {
+        "title": "Efficiency",
+        "text": "Modern approach"
+      },
+      {
+        "title": "System solution",
+        "text": "Professional management"
+      }
+    ],
+    "slides": [
+      {
+        "product": "Bitumen Primer No.1",
+        "tag": "High-quality primer"
+      },
+      {
+        "product": "Bitumen Mastic No.1",
+        "tag": "Reliable protection"
+      },
+      {
+        "product": "Roofing Bitumen No.1",
+        "tag": "Durable coating"
+      },
+      {
+        "product": "Bitumen-Polymer Road Sealant BPG No.1",
+        "tag": "Modern road solution"
+      }
+    ]
   },
   "home": {
     "social": {

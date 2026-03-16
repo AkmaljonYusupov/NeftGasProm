@@ -5,12 +5,52 @@
 		"about": "Biz haqimizda",
 		"contact": "Bog‘lanish"
 	},
-	"hero": {
-		"title": " — zamonaviy gidroizolyatsiya yechimlari!",
-		"patternAlt": "Gidroizolyatsiya naqshlari",
-		"leftImageAlt": "NeftGasProm qurilish maydonchasi",
-		"button": "Buyurtma berish"
-	},
+	
+  "hero": {
+    "kicker": "ZAMONAVIY MAHSULOTLAR",
+    "description": "Ishonchlilik, texnologiya va professional yondashuv asosida qurilish va gidroizolyatsiya yo‘nalishlarida zamonaviy yechimlarni taqdim etamiz.",
+    "button": "Bog‘lanish",
+    "patternAlt": "Dekorativ naqsh",
+    "floatingText": "Professional yondashuv va yuqori sifat standarti.",
+    "stats": {
+      "experienceValue": "15+",
+      "experienceLabel": "Yillik tajriba",
+      "qualityValue": "100%",
+      "qualityLabel": "Sifat nazorati"
+    },
+    "features": [
+      {
+        "title": "Ishonchlilik",
+        "text": "Barqaror natija"
+      },
+      {
+        "title": "Samaradorlik",
+        "text": "Zamonaviy yondashuv"
+      },
+      {
+        "title": "Tizimli yechim",
+        "text": "Professional boshqaruv"
+      }
+    ],
+    "slides": [
+      {
+        "product": "Bitumli Praymer №1",
+        "tag": "Sifatli primer"
+      },
+      {
+        "product": "Bitumli Mastika №1",
+        "tag": "Ishonchli himoya"
+      },
+      {
+        "product": "Tom yopish uchun bitum №1",
+        "tag": "Mustahkam qoplama"
+      },
+      {
+        "product": "Bitum-polimer yo‘l germetigi BPG №1",
+        "tag": "Zamonaviy yo‘l yechimi"
+      }
+    ]
+  },
 	"home": {
 		"social": {
 			"title": "IJTIMOIY TARMOQDA BIZ",
