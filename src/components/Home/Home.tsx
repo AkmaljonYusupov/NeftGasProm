@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
+import { useNavigate } from "react-router-dom"
 
 import aboutMainImage from "../../assets/images/about-main.jpg"
 import aboutProducts1 from "../../assets/images/about-products1.jpg"
@@ -48,10 +49,9 @@ const instagramPosts = [
   "https://www.instagram.com/reel/DI-za_pCHp_/",
   "https://www.instagram.com/reel/DQergA0AqKB/",
   "https://www.instagram.com/reel/DQ1_sHzAkBJ/",
-  "https://www.instagram.com/reel/DQZMrLYgr6o/"
+  "https://www.instagram.com/reel/DQZMrLYgr6o/",
 ]
 
-// Mahsulot tipi
 type Product = {
   id: number
   image: string
@@ -71,6 +71,7 @@ declare global {
 
 export default function Home() {
   const { t } = useTranslation()
+  const navigate = useNavigate()
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
 
   useEffect(() => {
@@ -130,69 +131,69 @@ export default function Home() {
   return (
     <main className={styles.home}>
       {/* Product section start */}
-<section className={styles.productsSection}>
-  <div className={styles.container}>
-    <div className={styles.productsHeader}>
-      <h2 className={styles.productsTitle}>
-        {t("home.products.title", "Bizning mahsulotlarimiz")}
-      </h2>
+      <section className={styles.productsSection}>
+        <div className={styles.container}>
+          <div className={styles.productsHeader}>
+            <h2 className={styles.productsTitle}>
+              {t("home.products.title", "Bizning mahsulotlarimiz")}
+            </h2>
 
-      <p className={styles.productsSubtitle}>
-        {t(
-          "home.products.subtitle",
-          "Sifatli va ishonchli gidroizolyatsiya mahsulotlari bilan tanishing"
-        )}
-      </p>
-    </div>
-
-    <div className={styles.productsGrid}>
-      {products.map((product) => (
-        <article
-          key={product.id}
-          className={styles.productCard}
-          onClick={() => setSelectedProduct(product)}
-        >
-          <div className={styles.productImageWrap}>
-            <img
-              src={product.image}
-              alt={product.name}
-              className={styles.productImage}
-              loading="lazy"
-            />
-
-            <div className={styles.productImageOverlay} />
-
-            <span className={styles.productFloatingTag}>
-              {t("home.products.cardTag", "Premium")}
-            </span>
-          </div>
-
-          <div className={styles.productBody}>
-            <h3 className={styles.productName}>{product.name}</h3>
-
-            <p className={styles.productDescription}>
-              {product.description}
+            <p className={styles.productsSubtitle}>
+              {t(
+                "home.products.subtitle",
+                "Sifatli va ishonchli gidroizolyatsiya mahsulotlari bilan tanishing"
+              )}
             </p>
-
-            <div className={styles.productFooter}>
-              <button
-                type="button"
-                className={styles.productMoreBtn}
-                onClick={(e) => {
-                  e.stopPropagation()
-                  setSelectedProduct(product)
-                }}
-              >
-                {t("home.products.more", "Batafsil")}
-              </button>
-            </div>
           </div>
-        </article>
-      ))}
-    </div>
-  </div>
-</section>
-{/* Product section end */}
+
+          <div className={styles.productsGrid}>
+            {products.map((product) => (
+              <article
+                key={product.id}
+                className={styles.productCard}
+                onClick={() => setSelectedProduct(product)}
+              >
+                <div className={styles.productImageWrap}>
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className={styles.productImage}
+                    loading="lazy"
+                  />
+
+                  <div className={styles.productImageOverlay} />
+
+                  <span className={styles.productFloatingTag}>
+                    {t("home.products.cardTag", "Premium")}
+                  </span>
+                </div>
+
+                <div className={styles.productBody}>
+                  <h3 className={styles.productName}>{product.name}</h3>
+
+                  <p className={styles.productDescription}>
+                    {product.description}
+                  </p>
+
+                  <div className={styles.productFooter}>
+                    <button
+                      type="button"
+                      className={styles.productMoreBtn}
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        setSelectedProduct(product)
+                      }}
+                    >
+                      {t("home.products.more", "Batafsil")}
+                    </button>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* Product section end */}
 
       {/* About Section  start*/}
       <section className={styles.aboutSection}>
@@ -243,9 +244,18 @@ export default function Home() {
                 {t("home.about.description")}
               </p>
 
-              <button className={styles.moreBtn}>
-                {t("home.about.more")}
-              </button>
+           
+
+                 <button
+                    type="button"
+                   className={styles.moreBtn}
+                    onClick={() => {
+                      setSelectedProduct(null)
+                      navigate("/products")
+                    }}
+                  >
+                    {t("home.about.more")}
+                  </button>
 
               <img
                 className={styles.aboutImgRight}
@@ -259,81 +269,95 @@ export default function Home() {
       {/* About section end */}
 
       {/* Modal oynasi start*/}
-  {selectedProduct && (
-  <div
-    className={styles.modalOverlay}
-    onClick={() => setSelectedProduct(null)}
-  >
-    <div
-      className={styles.modalContent}
-      onClick={(e) => e.stopPropagation()}
-    >
-      <button
-        className={styles.modalClose}
-        onClick={() => setSelectedProduct(null)}
-        aria-label={t("common.close", "Yopish")}
-        type="button"
-      >
-        ×
-      </button>
-
-      <div className={styles.modalInner}>
-        <div className={styles.modalImageSide}>
-          <div className={styles.modalImageFrame}>
-            <img
-              src={selectedProduct.image}
-              alt={selectedProduct.name}
-              className={styles.modalImage}
-            />
-          </div>
-        </div>
-
-        <div className={styles.modalTextSide}>
-          <span className={styles.modalBadge}>
-            {t("home.products.modalBadge", "Mahsulot haqida")}
-          </span>
-
-          <h3 className={styles.modalTitle}>{selectedProduct.name}</h3>
-
-          <p className={styles.modalDescription}>
-            {selectedProduct.description}
-          </p>
-
-          <div className={styles.modalFeatures}>
-            <div className={styles.modalFeatureItem}>
-              <span className={styles.modalFeatureDot} />
-              <span>{t("home.products.feature1", "Yuqori sifat")}</span>
-            </div>
-
-            <div className={styles.modalFeatureItem}>
-              <span className={styles.modalFeatureDot} />
-              <span>{t("home.products.feature2", "Ishonchli himoya")}</span>
-            </div>
-
-            <div className={styles.modalFeatureItem}>
-              <span className={styles.modalFeatureDot} />
-              <span>{t("home.products.feature3", "Uzoq muddatli natija")}</span>
-            </div>
-          </div>
-
-          <div className={styles.modalActions}>
-            <button type="button" className={styles.modalContactBtn}>
-              {t("common.contact", "Bog‘lanish")}
-            </button>
-
+      {selectedProduct && (
+        <div
+          className={styles.modalOverlay}
+          onClick={() => setSelectedProduct(null)}
+        >
+          <div
+            className={styles.modalContent}
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
-              type="button"
-              className={styles.modalSecondaryBtn}
+              className={styles.modalClose}
               onClick={() => setSelectedProduct(null)}
+              aria-label={t("common.close", "Yopish")}
+              type="button"
             >
-              {t("common.close", "Yopish")}
+              ×
             </button>
+
+            <div className={styles.modalInner}>
+              <div className={styles.modalImageSide}>
+                <div className={styles.modalImageFrame}>
+                  <img
+                    src={selectedProduct.image}
+                    alt={selectedProduct.name}
+                    className={styles.modalImage}
+                  />
+                </div>
+              </div>
+
+              <div className={styles.modalTextSide}>
+                <span className={styles.modalBadge}>
+                  {t("home.products.modalBadge", "Mahsulot haqida")}
+                </span>
+
+                <h3 className={styles.modalTitle}>{selectedProduct.name}</h3>
+
+                <p className={styles.modalDescription}>
+                  {selectedProduct.description}
+                </p>
+
+                <div className={styles.modalFeatures}>
+                  <div className={styles.modalFeatureItem}>
+                    <span className={styles.modalFeatureDot} />
+                    <span>{t("home.products.feature1", "Yuqori sifat")}</span>
+                  </div>
+
+                  <div className={styles.modalFeatureItem}>
+                    <span className={styles.modalFeatureDot} />
+                    <span>
+                      {t("home.products.feature2", "Ishonchli himoya")}
+                    </span>
+                  </div>
+
+                  <div className={styles.modalFeatureItem}>
+                    <span className={styles.modalFeatureDot} />
+                    <span>
+                      {t("home.products.feature3", "Uzoq muddatli natija")}
+                    </span>
+                  </div>
+                </div>
+
+                <div className={styles.modalActions}>
+                  <button
+                    type="button"
+                    className={styles.modalContactBtn}
+                    onClick={() => {
+                      setSelectedProduct(null)
+                      navigate("/contact")
+                    }}
+                  >
+                    {t("common.contact", "Bog‘lanish")}
+                  </button>
+
+                  <button
+                    type="button"
+                    className={styles.modalSecondaryBtn}
+                    onClick={() => {
+                      setSelectedProduct(null)
+                      navigate("/products")
+                    }}
+                  >
+                    {t("home.products.more", "Batafsil")}
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-)}
+      )}
       {/* Modal oynasi end */}
 
       {/* Social media start */}
