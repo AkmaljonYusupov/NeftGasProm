@@ -5,7 +5,7 @@
     "about": "About Us",
     "contact": "Contact"
   },
- "hero": {
+  "hero": {
     "kicker": "MODERN PRODUCTS",
     "description": "We provide modern solutions in construction and waterproofing by combining reliability, technology, and a professional approach.",
     "button": "Contact Us",
@@ -56,7 +56,16 @@
       "subtitle": "Check out our latest videos and reels",
       "rels": "Instagram Reel",
       "fallback": "Open on Instagram"
-
+    },
+    "products": {
+      "title": "Our Products",
+      "subtitle": "Discover high-quality and reliable waterproofing products",
+      "cardTag": "Premium",
+      "more": "More Details",
+      "modalBadge": "About Product",
+      "feature1": "High quality",
+      "feature2": "Reliable protection",
+      "feature3": "Long-lasting result"
     },
     "partners": {
       "title": "OUR PARTNERS"
@@ -296,7 +305,7 @@
       "current": "About Us"
     }
   },
-   "productsPage": {
+  "productsPage": {
     "breadcrumb": {
       "home": "Home",
       "current": "Products"
@@ -382,7 +391,7 @@
       "text": "You can select any product and view its technical information in detail.",
       "button": "View products",
       "contact": "Contact us",
-      "order":"Send Request"
+      "order": "Send Request"
     },
     "table": {
       "headers": {

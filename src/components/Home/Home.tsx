@@ -242,9 +242,7 @@ export default function Home() {
 
               <p className={styles.description}>
                 {t("home.about.description")}
-              </p>
-
-           
+              </p>    
 
                  <button
                     type="button"

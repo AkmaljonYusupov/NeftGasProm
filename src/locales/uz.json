@@ -1,11 +1,10 @@
 {
-	"nav": {
-		"home": "Bosh sahifa",
-		"products": "Mahsulotlar",
-		"about": "Biz haqimizda",
-		"contact": "Bog‘lanish"
-	},
-	
+  "nav": {
+    "home": "Bosh sahifa",
+    "products": "Mahsulotlar",
+    "about": "Biz haqimizda",
+    "contact": "Bog‘lanish"
+  },
   "hero": {
     "kicker": "ZAMONAVIY MAHSULOTLAR",
     "description": "Ishonchlilik, texnologiya va professional yondashuv asosida qurilish va gidroizolyatsiya yo‘nalishlarida zamonaviy yechimlarni taqdim etamiz.",
@@ -51,254 +50,262 @@
       }
     ]
   },
-	"home": {
-		"social": {
-			"title": "IJTIMOIY TARMOQDA BIZ",
-			"subtitle": "So‘nggi video va reel’larimiz bilan tanishing",
-			"rels": "Instagram Reel",
-			"fallback": "Instagram’da ochish"
-		},
-		"partners": {
-			"title": "HAMKORLARIMIZ"
-		},
-		"testimonial": {
-			"title": "MIJOZLARIMIZ FIKRI",
-			"desc": "Biz bilan hamkorlik qilgan kompaniyalar va insonlar ishimiz sifatini hamda layoqatimizni yuqori baholaydilar.",
-			"client1": {
-				"name": "Qayumov Dilshod",
-				"text": "Mahsulot juda sifatli, jahon bozori talablariga ham bemalol javob beradi"
-			},
-			"client2": {
-				"name": "Hasanov Zafar",
-				"text": "Servis ham o‘z o‘rnida. Mahsulotlar yetib kelishida muammo bo‘lmadi."
-			},
-			"client3": {
-				"name": "Keldiyorov Samandar",
-				"text": "Barcha tanishlarimga bemalol tavsiya qilsam bo‘ladi. Ishonchli brend."
-			}
-		},
-		"map": {
-			"title": "Kompaniya joylashuvi"
-		},
-		"about": {
-			"title": "Biz haqimizda",
-			"more": "Batafsil",
-			"description": "NeftGasProm — Toshkentda ro‘yxatdan o‘tgan, gidroizolyatsiya materiallari ishlab chiqarishga ixtisoslashgan mahalliy kompaniya. Bitum va bitum-polimer asosidagi mahsulotlarni ishlab chiqarib, obyektlarni namlik va suv ta’siridan ishonchli himoya bilan ta’minlaydi. Zamonaviy texnologiyalar va sifatga qat’iy rioya qilish orqali barqaror natijalarga erishib kelmoqdamiz.",
-			"alt": {
-				"main": "Biz haqimizda"
-			},
-			"product": {
-				"title": "Mahsulotlar"
-			}
-		},
-		"product1": {
-			"name": "MASTIK №1 BITUMEN",
-			"desc": "Professional gidroizolyatsiya mastikasi. 9 kg chelakda mavjud. Namlik va suvdan 100% himoya."
-		},
-		"product2": {
-			"name": "POLIMER-BITUM MASTIK",
-			"desc": "Yuqori elastiklik va issiqlikka chidamli. Qurilish va tom yopish uchun ideal."
-		},
-		"product3": {
-			"name": "GIDROIZOLYATSION QOPLAMA",
-			"desc": "Suv o'tkazmaydigan qoplama. Beton va metall yuzalar uchun maxsus."
-		},
-		"product4": {
-			"name": "BITUM-PRIMER",
-			"desc": "Yuzani tayyorlash uchun primer. Mahsulotlarning yaxshi yopishishi uchun zarur."
-		}
-	},
-	"lang": {
-		"uz": "O‘zbek",
-		"ru": "Русский",
-		"en": "English"
-	},
-	"common": {
-		"close": "Yopish",
-		"contact": "Bog‘lanish"
-	},
-	"footer": {
-		"main": {
-			"title": "ASOSIY",
-			"home": "Bosh sahifa",
-			"about": "Biz haqimizda",
-			"shop": "Mahsulotlar",
-			"blogs": "Bloglar",
-			"contact": "Bog‘lanish"
-		},
-		"service": {
-			"title": "XIZMATLAR",
-			"returns": "Qaytarish",
-			"privacy": "Maxfiylik siyosati",
-			"terms": "Foydalanish shartlari"
-		},
-		"social": {
-			"title": "Ijtimoiy tarmoqlar"
-		},
-		"contact": {
-			"title": "ALOQA",
-			"address": "Toshkent shahri, Chorbog‘ ko‘chasi, 1A"
-		}
-	},
-	"contact": {
-		"label": "Biz bilan bog‘laning",
-		"title": "Aloqa o‘rnatish uchun qulay va tezkor sahifa",
-		"description": "Savollaringiz, tijoriy takliflaringiz yoki hamkorlik bo‘yicha murojaatlaringiz bo‘lsa, bizga yozing. Jamoamiz siz bilan imkon qadar tez bog‘lanadi.",
-		"breadcrumb": {
-			"home": "Bosh sahifa",
-			"current": "Bog‘lanish"
-		},
-		"backHome": "Bosh sahifaga qaytish",
-		"quick": {
-			"title": "Tezkor aloqa",
-			"subtitle": "Biz bilan qulay usulda bog‘laning",
-			"phone": "Telefon",
-			"email": "Email",
-			"address": "Manzil"
-		},
-		"cards": {
-			"address": {
-				"title": "Manzil",
-				"text": "Toshkent shahri, Chorbog‘ ko‘chasi, 1A"
-			},
-			"phone": {
-				"title": "Telefon"
-			},
-			"email": {
-				"title": "Email"
-			},
-			"time": {
-				"title": "Ish vaqti",
-				"text": "Dushanba - Shanba, 9:00 - 18:00"
-			}
-		},
-		"stats": {
-			"support": "Aloqa xizmati",
-			"reply": "Javob darajasi",
-			"office": "Ofis raqami"
-		},
-		"features": {
-			"fast": "Tezkor aloqa va tez javob",
-			"support": "Doimiy maslahat va qo‘llab-quvvatlash",
-			"cooperation": "Hamkorlik uchun ochiq takliflar"
-		},
-		"form": {
-			"smallTitle": "Biz bilan bog‘laning",
-			"title": "Bizga xabar yuboring",
-			"text": "Quyidagi formani to‘ldiring. Xabaringizni ko‘rib chiqib, tez orada siz bilan bog‘lanamiz.",
-			"formTitle": "Murojaat formasi",
-			"formDesc": "Ism, telefon raqam va xabaringizni qoldiring. Biz sizga qisqa vaqt ichida javob beramiz.",
-			"fields": {
-				"fullName": "Ism",
-				"phone": "Telefon raqam",
-				"message": "Xabar"
-			},
-			"placeholders": {
-				"fullName": "Ismingizni kiriting",
-				"phone": "+998 90 123 45 67",
-				"message": "Xabaringizni yozing..."
-			},
-			"send": "Xabar yuborish",
-			"sending": "Yuborilmoqda...",
-			"success": "Xabaringiz muvaffaqiyatli yuborildi.",
-			"error": "Xabar yuborishda xatolik yuz berdi.",
-			"validation": {
-				"fullNameRequired": "Iltimos, ismingizni kiriting",
-				"fullNameMin": "Ism kamida 3 ta belgidan iborat bo‘lishi kerak",
-				"phoneRequired": "Iltimos, telefon raqamingizni kiriting",
-				"phoneInvalid": "Telefon raqam noto‘g‘ri kiritildi",
-				"messageRequired": "Iltimos, xabaringizni kiriting",
-				"messageMin": "Xabar kamida 10 ta belgidan iborat bo‘lishi kerak"
-			}
-		},
-		"telegram": {
-			"title": "YANGI MUROJAAT",
-			"client": "Mijoz",
-			"phone": "Telefon",
-			"message": "Xabar",
-			"date": "Sana",
-			"time": "Vaqt",
-			"page": "Sahifa",
-			"status": "Holat",
-			"new": "Yangi xabar qabul qilindi"
-		}
-	},
-	"aboutPage": {
-		"social": {
-			"title": "IJTIMOIY TARMOQDA BIZ",
-			"subtitle": "So‘nggi video va reel’larimiz bilan tanishing",
-			"rels": "Instagram Reel",
-			"fallback": "Instagram’da ochish"
-		},
-		"label": "Biz haqimizda",
-		"title": "Qurilishda tajriba, ishonch va zamonaviy yondashuv",
-		"description": "Kompaniyamiz yirik sanoat va infratuzilma loyihalarini sifatli, aniq reja asosida va zamonaviy texnologiyalar yordamida amalga oshirib kelmoqda. Har bir loyiha biz uchun mas’uliyat va ishonch timsolidir.",
-		"buttons": {
-			"contact": "Bog‘lanish",
-			"projects": "Loyihalarni ko‘rish"
-		},
-		"stats": {
-			"experience": "yillik tajriba",
-			"projects": "muvaffaqiyatli loyihalar",
-			"team": "malakali mutaxassislar"
-		},
-		"badge": {
-			"title": "Ishonchli hamkor",
-			"text": "Sifat va muddatni bir xil darajada qadrlaymiz"
-		},
-		"experience": {
-			"small": "Tajriba",
-			"title": "18 yildan ortiq amaliy tajriba"
-		},
-		"story": {
-			"label": "Bizning tarix",
-			"title": "Kompaniyamiz faoliyati va rivojlanish yo‘li",
-			"text1": "Biz o‘z faoliyatimiz davomida qurilish va montaj ishlari bo‘yicha ko‘plab muhim loyihalarni amalga oshirdik. Har bir ishda texnik aniqlik, xavfsizlik va sifat talablariga qat’iy rioya qilamiz.",
-			"text2": "Jamoamiz tajribali mutaxassislar, samarali boshqaruv va kuchli amaliy bazaga tayanadi. Shu sababli biz yirik obyektlarda ham ishonchli natija bera olamiz."
-		},
-		"advantageLabel": "Afzalliklarimiz",
-		"advantageTitle": "Nima uchun aynan bizni tanlashadi",
-		"advantages": {
-			"quality": {
-				"title": "Yuqori sifat",
-				"text": "Har bir loyiha zamonaviy standartlar va qat’iy nazorat asosida bajariladi."
-			},
-			"experience": {
-				"title": "Amaliy tajriba",
-				"text": "Ko‘p yillik tajriba va real yirik loyihalar bizning asosiy ustunligimizdir."
-			},
-			"approach": {
-				"title": "Tizimli yondashuv",
-				"text": "Rejalashtirishdan tortib topshirishgacha bo‘lgan barcha jarayonlar puxta boshqariladi."
-			}
-		},
-		"values": {
-			"label": "Qadriyatlarimiz",
-			"title": "Bizning ish tamoyillarimiz",
-			"text": "Biz faoliyatimizda halollik, mas’uliyat, sifat va doimiy rivojlanishni asosiy mezon sifatida qabul qilamiz.",
-			"items": {
-				"item1": "Har bir obyektga individual yondashuv",
-				"item2": "Muddat va sifatga qat’iy amal qilish",
-				"item3": "Buyurtmachi bilan ochiq va ishonchli aloqa",
-				"item4": "Zamonaviy texnika va samarali boshqaruv"
-			}
-		},
-		"miniCard": {
-			"title": "Bizning maqsad",
-			"text": "Qurilish sohasida ishonchli, zamonaviy va uzoq muddatli hamkor sifatida kuchli natijalarni taqdim etish."
-		},
-		"certificates": {
-			"label": "Sertifikatlar",
-			"title": "Rasmiy hujjatlar va sertifikatlar"
-		},
-		"breadcrumb": {
-			"home": "Bosh sahifa",
-			"current": "Biz haqimizda"
-		}
-	},
-	
+  "home": {
+    "social": {
+      "title": "IJTIMOIY TARMOQDA BIZ",
+      "subtitle": "So‘nggi video va reel’larimiz bilan tanishing",
+      "rels": "Instagram Reel",
+      "fallback": "Instagram’da ochish"
+    },
+    "products": {
+      "title": "Bizning mahsulotlarimiz",
+      "subtitle": "Sifatli va ishonchli gidroizolyatsiya mahsulotlari bilan tanishing",
+      "cardTag": "Premium",
+      "more": "Batafsil",
+      "modalBadge": "Mahsulot haqida",
+      "feature1": "Yuqori sifat",
+      "feature2": "Ishonchli himoya",
+      "feature3": "Uzoq muddatli natija"
+    },
+    "partners": {
+      "title": "HAMKORLARIMIZ"
+    },
+    "testimonial": {
+      "title": "MIJOZLARIMIZ FIKRI",
+      "desc": "Biz bilan hamkorlik qilgan kompaniyalar va insonlar ishimiz sifatini hamda layoqatimizni yuqori baholaydilar.",
+      "client1": {
+        "name": "Qayumov Dilshod",
+        "text": "Mahsulot juda sifatli, jahon bozori talablariga ham bemalol javob beradi"
+      },
+      "client2": {
+        "name": "Hasanov Zafar",
+        "text": "Servis ham o‘z o‘rnida. Mahsulotlar yetib kelishida muammo bo‘lmadi."
+      },
+      "client3": {
+        "name": "Keldiyorov Samandar",
+        "text": "Barcha tanishlarimga bemalol tavsiya qilsam bo‘ladi. Ishonchli brend."
+      }
+    },
+    "map": {
+      "title": "Kompaniya joylashuvi"
+    },
+    "about": {
+      "title": "Biz haqimizda",
+      "more": "Batafsil",
+      "description": "NeftGasProm — Toshkentda ro‘yxatdan o‘tgan, gidroizolyatsiya materiallari ishlab chiqarishga ixtisoslashgan mahalliy kompaniya. Bitum va bitum-polimer asosidagi mahsulotlarni ishlab chiqarib, obyektlarni namlik va suv ta’siridan ishonchli himoya bilan ta’minlaydi. Zamonaviy texnologiyalar va sifatga qat’iy rioya qilish orqali barqaror natijalarga erishib kelmoqdamiz.",
+      "alt": {
+        "main": "Biz haqimizda"
+      },
+      "product": {
+        "title": "Mahsulotlar"
+      }
+    },
+    "product1": {
+      "name": "MASTIK №1 BITUMEN",
+      "desc": "Professional gidroizolyatsiya mastikasi. 9 kg chelakda mavjud. Namlik va suvdan 100% himoya."
+    },
+    "product2": {
+      "name": "POLIMER-BITUM MASTIK",
+      "desc": "Yuqori elastiklik va issiqlikka chidamli. Qurilish va tom yopish uchun ideal."
+    },
+    "product3": {
+      "name": "GIDROIZOLYATSION QOPLAMA",
+      "desc": "Suv o'tkazmaydigan qoplama. Beton va metall yuzalar uchun maxsus."
+    },
+    "product4": {
+      "name": "BITUM-PRIMER",
+      "desc": "Yuzani tayyorlash uchun primer. Mahsulotlarning yaxshi yopishishi uchun zarur."
+    }
+  },
+  "lang": {
+    "uz": "O‘zbek",
+    "ru": "Русский",
+    "en": "English"
+  },
+  "common": {
+    "close": "Yopish",
+    "contact": "Bog‘lanish"
+  },
+  "footer": {
+    "main": {
+      "title": "ASOSIY",
+      "home": "Bosh sahifa",
+      "about": "Biz haqimizda",
+      "shop": "Mahsulotlar",
+      "blogs": "Bloglar",
+      "contact": "Bog‘lanish"
+    },
+    "service": {
+      "title": "XIZMATLAR",
+      "returns": "Qaytarish",
+      "privacy": "Maxfiylik siyosati",
+      "terms": "Foydalanish shartlari"
+    },
+    "social": {
+      "title": "Ijtimoiy tarmoqlar"
+    },
+    "contact": {
+      "title": "ALOQA",
+      "address": "Toshkent shahri, Chorbog‘ ko‘chasi, 1A"
+    }
+  },
+  "contact": {
+    "label": "Biz bilan bog‘laning",
+    "title": "Aloqa o‘rnatish uchun qulay va tezkor sahifa",
+    "description": "Savollaringiz, tijoriy takliflaringiz yoki hamkorlik bo‘yicha murojaatlaringiz bo‘lsa, bizga yozing. Jamoamiz siz bilan imkon qadar tez bog‘lanadi.",
+    "breadcrumb": {
+      "home": "Bosh sahifa",
+      "current": "Bog‘lanish"
+    },
+    "backHome": "Bosh sahifaga qaytish",
+    "quick": {
+      "title": "Tezkor aloqa",
+      "subtitle": "Biz bilan qulay usulda bog‘laning",
+      "phone": "Telefon",
+      "email": "Email",
+      "address": "Manzil"
+    },
+    "cards": {
+      "address": {
+        "title": "Manzil",
+        "text": "Toshkent shahri, Chorbog‘ ko‘chasi, 1A"
+      },
+      "phone": {
+        "title": "Telefon"
+      },
+      "email": {
+        "title": "Email"
+      },
+      "time": {
+        "title": "Ish vaqti",
+        "text": "Dushanba - Shanba, 9:00 - 18:00"
+      }
+    },
+    "stats": {
+      "support": "Aloqa xizmati",
+      "reply": "Javob darajasi",
+      "office": "Ofis raqami"
+    },
+    "features": {
+      "fast": "Tezkor aloqa va tez javob",
+      "support": "Doimiy maslahat va qo‘llab-quvvatlash",
+      "cooperation": "Hamkorlik uchun ochiq takliflar"
+    },
+    "form": {
+      "smallTitle": "Biz bilan bog‘laning",
+      "title": "Bizga xabar yuboring",
+      "text": "Quyidagi formani to‘ldiring. Xabaringizni ko‘rib chiqib, tez orada siz bilan bog‘lanamiz.",
+      "formTitle": "Murojaat formasi",
+      "formDesc": "Ism, telefon raqam va xabaringizni qoldiring. Biz sizga qisqa vaqt ichida javob beramiz.",
+      "fields": {
+        "fullName": "Ism",
+        "phone": "Telefon raqam",
+        "message": "Xabar"
+      },
+      "placeholders": {
+        "fullName": "Ismingizni kiriting",
+        "phone": "+998 90 123 45 67",
+        "message": "Xabaringizni yozing..."
+      },
+      "send": "Xabar yuborish",
+      "sending": "Yuborilmoqda...",
+      "success": "Xabaringiz muvaffaqiyatli yuborildi.",
+      "error": "Xabar yuborishda xatolik yuz berdi.",
+      "validation": {
+        "fullNameRequired": "Iltimos, ismingizni kiriting",
+        "fullNameMin": "Ism kamida 3 ta belgidan iborat bo‘lishi kerak",
+        "phoneRequired": "Iltimos, telefon raqamingizni kiriting",
+        "phoneInvalid": "Telefon raqam noto‘g‘ri kiritildi",
+        "messageRequired": "Iltimos, xabaringizni kiriting",
+        "messageMin": "Xabar kamida 10 ta belgidan iborat bo‘lishi kerak"
+      }
+    },
+    "telegram": {
+      "title": "YANGI MUROJAAT",
+      "client": "Mijoz",
+      "phone": "Telefon",
+      "message": "Xabar",
+      "date": "Sana",
+      "time": "Vaqt",
+      "page": "Sahifa",
+      "status": "Holat",
+      "new": "Yangi xabar qabul qilindi"
+    }
+  },
+  "aboutPage": {
+    "social": {
+      "title": "IJTIMOIY TARMOQDA BIZ",
+      "subtitle": "So‘nggi video va reel’larimiz bilan tanishing",
+      "rels": "Instagram Reel",
+      "fallback": "Instagram’da ochish"
+    },
+    "label": "Biz haqimizda",
+    "title": "Qurilishda tajriba, ishonch va zamonaviy yondashuv",
+    "description": "Kompaniyamiz yirik sanoat va infratuzilma loyihalarini sifatli, aniq reja asosida va zamonaviy texnologiyalar yordamida amalga oshirib kelmoqda. Har bir loyiha biz uchun mas’uliyat va ishonch timsolidir.",
+    "buttons": {
+      "contact": "Bog‘lanish",
+      "projects": "Loyihalarni ko‘rish"
+    },
+    "stats": {
+      "experience": "yillik tajriba",
+      "projects": "muvaffaqiyatli loyihalar",
+      "team": "malakali mutaxassislar"
+    },
+    "badge": {
+      "title": "Ishonchli hamkor",
+      "text": "Sifat va muddatni bir xil darajada qadrlaymiz"
+    },
+    "experience": {
+      "small": "Tajriba",
+      "title": "18 yildan ortiq amaliy tajriba"
+    },
+    "story": {
+      "label": "Bizning tarix",
+      "title": "Kompaniyamiz faoliyati va rivojlanish yo‘li",
+      "text1": "Biz o‘z faoliyatimiz davomida qurilish va montaj ishlari bo‘yicha ko‘plab muhim loyihalarni amalga oshirdik. Har bir ishda texnik aniqlik, xavfsizlik va sifat talablariga qat’iy rioya qilamiz.",
+      "text2": "Jamoamiz tajribali mutaxassislar, samarali boshqaruv va kuchli amaliy bazaga tayanadi. Shu sababli biz yirik obyektlarda ham ishonchli natija bera olamiz."
+    },
+    "advantageLabel": "Afzalliklarimiz",
+    "advantageTitle": "Nima uchun aynan bizni tanlashadi",
+    "advantages": {
+      "quality": {
+        "title": "Yuqori sifat",
+        "text": "Har bir loyiha zamonaviy standartlar va qat’iy nazorat asosida bajariladi."
+      },
+      "experience": {
+        "title": "Amaliy tajriba",
+        "text": "Ko‘p yillik tajriba va real yirik loyihalar bizning asosiy ustunligimizdir."
+      },
+      "approach": {
+        "title": "Tizimli yondashuv",
+        "text": "Rejalashtirishdan tortib topshirishgacha bo‘lgan barcha jarayonlar puxta boshqariladi."
+      }
+    },
+    "values": {
+      "label": "Qadriyatlarimiz",
+      "title": "Bizning ish tamoyillarimiz",
+      "text": "Biz faoliyatimizda halollik, mas’uliyat, sifat va doimiy rivojlanishni asosiy mezon sifatida qabul qilamiz.",
+      "items": {
+        "item1": "Har bir obyektga individual yondashuv",
+        "item2": "Muddat va sifatga qat’iy amal qilish",
+        "item3": "Buyurtmachi bilan ochiq va ishonchli aloqa",
+        "item4": "Zamonaviy texnika va samarali boshqaruv"
+      }
+    },
+    "miniCard": {
+      "title": "Bizning maqsad",
+      "text": "Qurilish sohasida ishonchli, zamonaviy va uzoq muddatli hamkor sifatida kuchli natijalarni taqdim etish."
+    },
+    "certificates": {
+      "label": "Sertifikatlar",
+      "title": "Rasmiy hujjatlar va sertifikatlar"
+    },
+    "breadcrumb": {
+      "home": "Bosh sahifa",
+      "current": "Biz haqimizda"
+    }
+  },
   "productsPage": {
-
     "breadcrumb": {
       "home": "Bosh sahifa",
       "current": "Mahsulotlar"
@@ -384,7 +391,7 @@
       "text": "Istalgan mahsulotni tanlab, uning texnik ma’lumotlarini batafsil ko‘rishingiz mumkin.",
       "button": "Mahsulotlarni ko‘rish",
       "contact": "Bog‘lanish",
-			"order":"So‘rov yuborish"
+      "order": "So‘rov yuborish"
     },
     "table": {
       "headers": {
@@ -650,5 +657,4 @@
       }
     }
   }
-
 }
