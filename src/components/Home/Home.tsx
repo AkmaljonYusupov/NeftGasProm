@@ -129,7 +129,72 @@ export default function Home() {
 
   return (
     <main className={styles.home}>
-      {/* About Section */}
+      {/* Product section start */}
+<section className={styles.productsSection}>
+  <div className={styles.container}>
+    <div className={styles.productsHeader}>
+      <h2 className={styles.productsTitle}>
+        {t("home.products.title", "Bizning mahsulotlarimiz")}
+      </h2>
+
+      <p className={styles.productsSubtitle}>
+        {t(
+          "home.products.subtitle",
+          "Sifatli va ishonchli gidroizolyatsiya mahsulotlari bilan tanishing"
+        )}
+      </p>
+    </div>
+
+    <div className={styles.productsGrid}>
+      {products.map((product) => (
+        <article
+          key={product.id}
+          className={styles.productCard}
+          onClick={() => setSelectedProduct(product)}
+        >
+          <div className={styles.productImageWrap}>
+            <img
+              src={product.image}
+              alt={product.name}
+              className={styles.productImage}
+              loading="lazy"
+            />
+
+            <div className={styles.productImageOverlay} />
+
+            <span className={styles.productFloatingTag}>
+              {t("home.products.cardTag", "Premium")}
+            </span>
+          </div>
+
+          <div className={styles.productBody}>
+            <h3 className={styles.productName}>{product.name}</h3>
+
+            <p className={styles.productDescription}>
+              {product.description}
+            </p>
+
+            <div className={styles.productFooter}>
+              <button
+                type="button"
+                className={styles.productMoreBtn}
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setSelectedProduct(product)
+                }}
+              >
+                {t("home.products.more", "Batafsil")}
+              </button>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+{/* Product section end */}
+
+      {/* About Section  start*/}
       <section className={styles.aboutSection}>
         <div className={styles.container}>
           <h2 className={styles.mainTitle}>{t("home.about.title")}</h2>
@@ -191,110 +256,147 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* About section end */}
 
-      {/* Modal oynasi */}
-      {selectedProduct && (
-        <div
-          className={styles.modalOverlay}
-          onClick={() => setSelectedProduct(null)}
-        >
-          <div
-            className={styles.modalContent}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className={styles.modalClose}
-              onClick={() => setSelectedProduct(null)}
-              aria-label={t("common.close")}
-            >
-              ×
-            </button>
+      {/* Modal oynasi start*/}
+  {selectedProduct && (
+  <div
+    className={styles.modalOverlay}
+    onClick={() => setSelectedProduct(null)}
+  >
+    <div
+      className={styles.modalContent}
+      onClick={(e) => e.stopPropagation()}
+    >
+      <button
+        className={styles.modalClose}
+        onClick={() => setSelectedProduct(null)}
+        aria-label={t("common.close", "Yopish")}
+        type="button"
+      >
+        ×
+      </button>
 
-            <div className={styles.modalInner}>
-              <div className={styles.modalImageSide}>
-                <img
-                  src={selectedProduct.image}
-                  alt={selectedProduct.name}
-                  className={styles.modalImage}
-                />
-              </div>
-
-              <div className={styles.modalTextSide}>
-                <h3 className={styles.modalTitle}>{selectedProduct.name}</h3>
-
-                <p className={styles.modalDescription}>
-                  {selectedProduct.description}
-                </p>
-
-                <button className={styles.modalContactBtn}>
-                  {t("common.contact")}
-                </button>
-              </div>
-            </div>
+      <div className={styles.modalInner}>
+        <div className={styles.modalImageSide}>
+          <div className={styles.modalImageFrame}>
+            <img
+              src={selectedProduct.image}
+              alt={selectedProduct.name}
+              className={styles.modalImage}
+            />
           </div>
         </div>
-      )}
 
-    {/* Social media */}
-<section className={styles.socialSection}>
-  <div className={styles.container}>
-    <div className={styles.socialHeader}>
-      <h2 className={styles.socialTitle}>{t("home.social.title")}</h2>
-      <p className={styles.socialSubtitle}>{t("home.social.subtitle")}</p>
-    </div>
+        <div className={styles.modalTextSide}>
+          <span className={styles.modalBadge}>
+            {t("home.products.modalBadge", "Mahsulot haqida")}
+          </span>
 
-    <div className={styles.socialGrid}>
-      {instagramPosts.map((postUrl, index) => (
-        <article key={index} className={styles.socialCard}>
-          <div className={styles.socialTop}>
-            <div className={styles.socialBadge}>
-              <FiInstagram />
-              <span>{t("home.social.rels")}</span>
+          <h3 className={styles.modalTitle}>{selectedProduct.name}</h3>
+
+          <p className={styles.modalDescription}>
+            {selectedProduct.description}
+          </p>
+
+          <div className={styles.modalFeatures}>
+            <div className={styles.modalFeatureItem}>
+              <span className={styles.modalFeatureDot} />
+              <span>{t("home.products.feature1", "Yuqori sifat")}</span>
             </div>
 
-            <a
-              href={postUrl}
-              target="_blank"
-              rel="noreferrer"
-              className={styles.socialLink}
-            >
-              {t("home.social.fallback")}
-            </a>
+            <div className={styles.modalFeatureItem}>
+              <span className={styles.modalFeatureDot} />
+              <span>{t("home.products.feature2", "Ishonchli himoya")}</span>
+            </div>
+
+            <div className={styles.modalFeatureItem}>
+              <span className={styles.modalFeatureDot} />
+              <span>{t("home.products.feature3", "Uzoq muddatli natija")}</span>
+            </div>
           </div>
 
-          <div className={styles.socialEmbedWrap}>
-            <blockquote
-              className="instagram-media"
-              data-instgrm-permalink={postUrl}
-              data-instgrm-version="14"
-              style={{
-                background: "#fff",
-                border: 0,
-                borderRadius: "16px",
-                margin: 0,
-                minWidth: "100%",
-                width: "100%",
-              }}
+          <div className={styles.modalActions}>
+            <button type="button" className={styles.modalContactBtn}>
+              {t("common.contact", "Bog‘lanish")}
+            </button>
+
+            <button
+              type="button"
+              className={styles.modalSecondaryBtn}
+              onClick={() => setSelectedProduct(null)}
             >
-              <a
-                href={postUrl}
-                target="_blank"
-                rel="noreferrer"
-                className={styles.socialFallback}
-                aria-label="Instagram post"
-              >
-                <FiInstagram />
-                <span>{t("home.social.fallback")}</span>
-              </a>
-            </blockquote>
+              {t("common.close", "Yopish")}
+            </button>
           </div>
-        </article>
-      ))}
+        </div>
+      </div>
     </div>
   </div>
-</section>
+)}
+      {/* Modal oynasi end */}
 
-      {/* Partnerlar bo'limi */}
+      {/* Social media start */}
+      <section className={styles.socialSection}>
+        <div className={styles.container}>
+          <div className={styles.socialHeader}>
+            <h2 className={styles.socialTitle}>{t("home.social.title")}</h2>
+            <p className={styles.socialSubtitle}>{t("home.social.subtitle")}</p>
+          </div>
+
+          <div className={styles.socialGrid}>
+            {instagramPosts.map((postUrl, index) => (
+              <article key={index} className={styles.socialCard}>
+                <div className={styles.socialTop}>
+                  <div className={styles.socialBadge}>
+                    <FiInstagram />
+                    <span>{t("home.social.rels")}</span>
+                  </div>
+
+                  <a
+                    href={postUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={styles.socialLink}
+                  >
+                    {t("home.social.fallback")}
+                  </a>
+                </div>
+
+                <div className={styles.socialEmbedWrap}>
+                  <blockquote
+                    className="instagram-media"
+                    data-instgrm-permalink={postUrl}
+                    data-instgrm-version="14"
+                    style={{
+                      background: "#fff",
+                      border: 0,
+                      borderRadius: "16px",
+                      margin: 0,
+                      minWidth: "100%",
+                      width: "100%",
+                    }}
+                  >
+                    <a
+                      href={postUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={styles.socialFallback}
+                      aria-label="Instagram post"
+                    >
+                      <FiInstagram />
+                      <span>{t("home.social.fallback")}</span>
+                    </a>
+                  </blockquote>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/*  Social media end */}
+
+      {/* Partnerlar bo'limi start */}
       <section className={styles.partnersSection}>
         <div className={styles.container}>
           <h2 className={styles.partnersTitle}>
@@ -315,8 +417,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/*  Partnerlar bo'limi end*/}
 
-      {/* MIJOZLARIMIZ FIKRI */}
+      {/* MIJOZLARIMIZ FIKRI start*/}
       <section className={styles.testimonialSection}>
         <div className={styles.container}>
           <h2 className={styles.testimonialTitle}>
@@ -359,8 +462,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* MIJOZLARIMIZ FIKRI end */}
 
-      {/* Map */}
+      {/* Map start */}
       <section className={styles.mapSection}>
         <div className={styles.container}>
           <div className={styles.mapWrapper}>
@@ -375,6 +479,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* map end */}
     </main>
   )
 }
