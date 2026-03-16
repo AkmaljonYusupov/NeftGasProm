@@ -48,11 +48,11 @@
   flex-wrap: wrap;
   gap: 10px;
   min-height: 56px;
-  padding: 0 20px;
+  padding: 0 15px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.78);
   border: 1px solid rgba(17, 24, 39, 0.05);
-  box-shadow: 0 12px 28px rgba(17, 24, 39, 0.06);
+  // box-shadow: 0 12px 28px rgba(17, 24, 39, 0.06);
   backdrop-filter: blur(10px);
 }
 
@@ -1034,7 +1034,7 @@
   }
 
   .controlRow {
-    flex-direction: column;
+    // flex-direction: column;
     align-items: stretch;
   }
 
@@ -1046,6 +1046,7 @@
 
   .sortBox {
     justify-content: space-between;
+		width: fit-content;
   }
 
   .sortBox select {
@@ -1054,6 +1055,7 @@
 
   .viewMode {
     justify-content: center;
+		width: fit-content;
   }
 
   .modalOverlay {
@@ -1077,7 +1079,7 @@
   .ctaActions,
   .modalActions {
     flex-direction: column;
-    width: 100%;
+    width: fit-content;
   }
 
   .primaryBtn,
@@ -1086,7 +1088,7 @@
   .productBtn,
   .ghostBtn,
   .resetBtn {
-    width: 100%;
+    width: fit-content;
   }
 
   .heroTitle {
@@ -1102,7 +1104,7 @@
   }
 
   .filterBtn {
-    width: 100%;
+    width: fit-content;
     justify-content: center;
   }
 
@@ -1111,6 +1113,6 @@
   }
 
   .breadcrumb {
-    width: 100%;
+    width: fit-content;
   }
 }
