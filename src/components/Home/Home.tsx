@@ -46,11 +46,7 @@ const instagramPosts = [
   "https://www.instagram.com/reel/DQW9hsdjHTK/",
   "https://www.instagram.com/reel/DQhF3PUAr81/",
   "https://www.instagram.com/reel/DQ19nqSAj7N/",
-  "https://www.instagram.com/reel/DQ1_15hApcH/",
-  "https://www.instagram.com/reel/DI-za_pCHp_/",
-  "https://www.instagram.com/reel/DQergA0AqKB/",
-  "https://www.instagram.com/reel/DQ1_sHzAkBJ/",
-  "https://www.instagram.com/reel/DQZMrLYgr6o/",
+  "https://www.instagram.com/reel/DQ1_15hApcH/"
 ]
 
 type Product = {
@@ -360,65 +356,76 @@ export default function Home() {
       )}
       {/* Modal oynasi end */}
 
-      {/* Social media start */}
-      <section className={styles.socialSection}>
-        <div className={styles.container}>
-          <div className={styles.socialHeader}>
-            <h2 className={styles.socialTitle}>{t("home.social.title")}</h2>
-            <p className={styles.socialSubtitle}>{t("home.social.subtitle")}</p>
+     {/* Social media start */}
+<section className={styles.socialSection}>
+  <div className={styles.container}>
+    <div className={styles.socialHeader}>
+      <h2 className={styles.socialTitle}>{t("home.social.title")}</h2>
+      <p className={styles.socialSubtitle}>{t("home.social.subtitle")}</p>
+    </div>
+
+    <div className={styles.socialGrid}>
+      {instagramPosts.map((postUrl, index) => (
+        <article key={index} className={styles.socialCard}>
+          <div className={styles.socialTop}>
+            <div className={styles.socialBadge}>
+              <FiInstagram />
+              <span>{t("home.social.rels")}</span>
+            </div>
+
+            <a
+              href={postUrl}
+              target="_blank"
+              rel="noreferrer"
+              className={styles.socialLink}
+            >
+              {t("home.social.fallback")}
+            </a>
           </div>
 
-          <div className={styles.socialGrid}>
-            {instagramPosts.map((postUrl, index) => (
-              <article key={index} className={styles.socialCard}>
-                <div className={styles.socialTop}>
-                  <div className={styles.socialBadge}>
-                    <FiInstagram />
-                    <span>{t("home.social.rels")}</span>
-                  </div>
-
-                  <a
-                    href={postUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={styles.socialLink}
-                  >
-                    {t("home.social.fallback")}
-                  </a>
-                </div>
-
-                <div className={styles.socialEmbedWrap}>
-                  <blockquote
-                    className="instagram-media"
-                    data-instgrm-permalink={postUrl}
-                    data-instgrm-version="14"
-                    style={{
-                      background: "#fff",
-                      border: 0,
-                      borderRadius: "16px",
-                      margin: 0,
-                      minWidth: "100%",
-                      width: "100%",
-                    }}
-                  >
-                    <a
-                      href={postUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className={styles.socialFallback}
-                      aria-label="Instagram post"
-                    >
-                      <FiInstagram />
-                      <span>{t("home.social.fallback")}</span>
-                    </a>
-                  </blockquote>
-                </div>
-              </article>
-            ))}
+          <div className={styles.socialEmbedWrap}>
+            <blockquote
+              className="instagram-media"
+              data-instgrm-permalink={postUrl}
+              data-instgrm-version="14"
+              style={{
+                background: "#fff",
+                border: 0,
+                borderRadius: "16px",
+                margin: 0,
+                minWidth: "100%",
+                width: "100%",
+              }}
+            >
+              <a
+                href={postUrl}
+                target="_blank"
+                rel="noreferrer"
+                className={styles.socialFallback}
+                aria-label="Instagram post"
+              >
+                <FiInstagram />
+                <span>{t("home.social.fallback")}</span>
+              </a>
+            </blockquote>
           </div>
-        </div>
-      </section>
-      {/*  Social media end */}
+        </article>
+      ))}
+    </div>
+
+    <div className={styles.socialAction}>
+      <a
+        href="https://www.instagram.com/neftgasprom/"
+        target="_blank"
+        rel="noreferrer"
+        className={styles.socialMoreBtn}
+      >
+        {t("home.social.more", "Batafsil")}
+      </a>
+    </div>
+  </div>
+</section>
+{/* Social media end */}
 
       {/* Partnerlar bo'limi start */}
       <section className={styles.partnersSection}>

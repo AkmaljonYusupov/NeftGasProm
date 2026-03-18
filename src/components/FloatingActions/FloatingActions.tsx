@@ -35,11 +35,10 @@ export default function FloatingActions() {
         onClick={() => navigate("/contact")}
         aria-label={t("floating.contact", "Bog‘lanish")}
       >
-        <span className={styles.contactAura}></span>
-        <span className={styles.contactRing}></span>
-        <span className={styles.contactRingDelay}></span>
-        <span className={styles.contactShine}></span>
-        <span className={styles.contactCore}></span>
+        <span className={styles.wave}></span>
+        <span className={styles.waveDelay}></span>
+        <span className={styles.inner}></span>
+        <span className={styles.shine}></span>
         <span className={styles.tooltipLeft}>
           {t("floating.contact", "Bog‘lanish")}
         </span>
@@ -52,10 +51,10 @@ export default function FloatingActions() {
         onClick={scrollToTop}
         aria-label={t("floating.toTop", "Yuqoriga")}
       >
-        <span className={styles.scrollAura}></span>
-        <span className={styles.scrollOrbit}></span>
-        <span className={styles.scrollShine}></span>
-        <span className={styles.scrollCore}></span>
+        <span className={styles.waveBlue}></span>
+        <span className={styles.waveBlueDelay}></span>
+        <span className={styles.inner}></span>
+        <span className={styles.shine}></span>
         <span className={styles.tooltipRight}>
           {t("floating.toTop", "Yuqoriga")}
         </span>
